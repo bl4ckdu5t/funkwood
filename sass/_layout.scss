@@ -1,0 +1,131 @@
+* { @include box-sizing(border-box); }
+a{ text-decoration: none; color: inherit; }
+html{
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	font-size: 62.5%;
+}
+body{
+	background-color: #eee;
+	margin: 0;
+	font-family: $font-stack;
+	font-size: 16px;
+	font-size: 1.6rem;
+}
+*:focus{ outline: 3px solid rgba(62, 184, 179, $reg_alpha); }
+::selection{ background: #999; color: white; }
+input{
+	font-family: $font-stack;
+	font-size: inherit;
+}
+[type="submit"],button{
+	cursor: pointer;
+	font-size: 1.6rem;
+	@extend input;
+}
+header{
+	position: fixed;
+	z-index: 10;
+	background: rgba($white, .8);
+	border-bottom: solid thin $white;
+	width: 100%;
+	height: 6rem;
+	padding: 5px;
+	text-align: center;
+	[data-button]{
+		position: absolute;
+		right: 2rem;
+		top: 1rem;
+	}
+}
+.title{
+	margin: 0;
+	font-family: 'Quicksand';
+	color: $myblue;
+	span{
+		color: $color-title-pink;
+	}
+}
+footer{
+	text-align: center;
+	background: #444;
+	color: #bbb;
+	padding: 2rem;
+}
+[data-header]{
+	position: relative;
+	height: 50rem;
+	background: url(../images/aura.jpg) no-repeat;
+	background-attachment: fixed;
+	background-size: 100%;
+}
+.header--content{
+	position: absolute;
+	top: 10rem;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	width: 40rem;
+	background: hsla(0,0,0,.5);
+	border-top: solid 2px $color-orange;
+	color: $white;
+	font-size: 1.8rem;
+	padding: 20px;
+	input{
+		outline: none;
+	}
+	[type="text"]{
+		border: none;
+		background: transparent;
+		color: $white;
+		@extend input;
+		width: 20rem;
+		border-bottom: solid thin $white;
+		margin-left: 1rem;
+	}
+	[data-button]{
+		background: $color-orange;
+		font-size: 2rem;
+		color: $white;
+		&:hover{
+			background: darken($color-orange, 4);
+		}
+	}
+}
+main{
+	@include container(100%);
+	margin: 3rem 0;
+	padding: 2rem;
+	color: #555;
+	font-size: 2rem;
+	[data-frame]{
+		width: 300px;
+		height: 300px;
+	}
+}
+/* Button Styles */
+[data-button]{
+	border: none;
+	padding: 1rem 2rem;
+	border-radius: 0.3rem;
+	&:hover{
+		background: #ccc;
+	}
+}
+[data-button~="primary"]{
+	background: $myblue;
+	color: $white;
+	&:hover{
+		background: darken($myblue, 5);
+	}
+}
+[data-button~="full"]{
+	width: 100%;
+}
+/* Frame Styles */
+[data-frame]{
+	border: solid 5px #ccc;
+}
+[data-frame~="circular"]{
+	border-radius: 50%;
+}
