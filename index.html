@@ -22,14 +22,26 @@
 	<![endif]-->
 	<header>
 		<h1 class="title">muster<span>d8</span></h1>
-		<button data-button="primary">Member sign in</button>
+		<button data-button="primary curvy">Member sign in</button>
+		<div class="caption">
+			<h2>Finding your date in a click</h2>
+			<button data-button="curvy transparency">Learn how it works</button>
+		</div>
 		<form action="">
-			<input type="text">
-			<input type="text">
+			<input type="text" name="name" placeholder="My name is?">
 			<select name="" id="">
-				<option value="male">Male</option>
-				<option value="male">Male</option>
+				<option value="" disabled="" selected="">My age is between?</option>
+				<option value="1">18 - 25</option>
+				<option value="2">26 - 35</option>
+				<option value="3">36 - 45</option>
+				<option value="4">46 above</option>
 			</select>
+			<select name="" id="">
+				<option value="" disabled="" selected="">I am a?</option>
+				<option value="male">Man</option>
+				<option value="female">Woman</option>
+			</select>
+			<input type="submit" data-button="material" value="Find your date">
 		</form>
 	</header>
 	<main>
@@ -45,9 +57,9 @@
 		copyright &copy; <script>var now = new Date(); document.write(now.getFullYear());</script>
 		<a href="./">Musterd8</a>
 		<ul class="fr">
-			<li>About</li>
-			<li>Privacy Policy</li>
-			<li>Terms Of Use</li>
+			<li><a href="">About</a></li>
+			<li><a href="">Privacy Policy</a></li>
+			<li><a href="">Terms Of Use</a></li>
 		</ul>
 	</footer>
 	<!-- JS -->

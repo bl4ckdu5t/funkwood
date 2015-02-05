@@ -14,25 +14,27 @@ body{
 }
 *:focus{ outline: 3px solid rgba(62, 184, 179, $reg_alpha); }
 ::selection{ background: #999; color: white; }
-input{
-	font-family: $font-stack;
-	font-size: inherit;
-}
 [type="submit"],button{
 	cursor: pointer;
 	font-size: 1.6rem;
-	@extend input;
+	font-family: $font-stack;
+	font-size: inherit;
+}
+input, select{
+	font-family: $font-stack;
+	font-size: inherit;
 }
 header{
 	position: relative;
 	height: 95vh;
-	background: url(../images/aura.jpg) no-repeat;
+	background: linear-gradient(rgba($black, .5), rgba($black, .5)), url(../images/aura.jpg) no-repeat;
 	background-attachment: fixed;
 	background-size: 100%;
-	[data-button]{
+	>[data-button]{
 		position: absolute;
 		right: 2rem;
 		top: 1rem;
+		border-bottom: solid thin darken($color-button-default, 9);
 	}
 	form{
 		position: absolute;
@@ -43,13 +45,15 @@ header{
 		padding: 3rem;
 		text-align: center;
 	}
-	input,select{
+	input,select:not(button){
 		display: inline;
 		background: $white;
-		padding: 10px;
-		margin: -2px;
-		border: solid thin #888;
+		padding: 0.8rem 1rem;
+		margin: 0 -2px;
+		vertical-align: top;
+		border: solid thin #aaa;
 		height: 4rem;
+		min-width: 10rem;
 		&:active, &:focus{
 			outline: none;
 		}
@@ -58,11 +62,37 @@ header{
 		&:first-of-type{
 			border-radius: .3rem 0  0 .3rem;
 		}
+		&:last-of-type{
+			width: 15rem;
+			border-radius: 0 .3rem .3rem 0;
+		}
+	}
+	[data-button~="material"]{
+		border-bottom: solid thin $color-wine;
+		border-left: solid thin #aaa;
+	}
+	.caption{
+		position: absolute;
+		top: 30%;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		text-align: center;
+		color: $white;
+		h2{
+			text-transform: uppercase;
+			font-size: 4rem;
+		}
+		[data-button~="transparency"]{
+			color: $white;
+		}
 	}
 }
 .title{
-	margin: 0;
+	margin: 0 1rem;
+	padding: 1rem;
 	font-family: 'Quicksand';
+	font-size: 3.5rem;
 	color: $myblue;
 	span{
 		color: $color-title-pink;
@@ -74,6 +104,9 @@ footer{
 	padding: 3rem 10rem;
 	a{
 		color: #677;
+		&:hover{
+			color: #9aa;
+		}
 	}
 	ul{
 		list-style-type: none;
@@ -83,39 +116,6 @@ footer{
 	li{
 		display: inline;
 		padding: 0 1rem;
-	}
-}
-.header--content{
-	position: absolute;
-	top: 10rem;
-	right: 0;
-	left: 0;
-	margin: 0 auto;
-	width: 40rem;
-	background: hsla(0,0,0,.5);
-	border-top: solid 2px $color-orange;
-	color: $white;
-	font-size: 1.8rem;
-	padding: 20px;
-	input{
-		outline: none;
-	}
-	[type="text"]{
-		border: none;
-		background: transparent;
-		color: $white;
-		@extend input;
-		width: 20rem;
-		border-bottom: solid thin $white;
-		margin-left: 1rem;
-	}
-	[data-button]{
-		background: $color-orange;
-		font-size: 2rem;
-		color: $white;
-		&:hover{
-			background: darken($color-orange, 4);
-		}
 	}
 }
 main{
@@ -133,9 +133,17 @@ main{
 [data-button]{
 	border: none;
 	padding: 1rem 2rem;
-	border-radius: 0.3rem;
 	&:hover{
 		background: #ccc;
+	}
+}
+[data-button~="curvy"]{
+	border-radius: 0.3rem;
+}
+[data-button~="transparency"]{
+	background: rgba(#ccc, .4);
+	&:hover{
+		background: rgba(#aaa, .4);
 	}
 }
 [data-button~="primary"]{
@@ -143,6 +151,13 @@ main{
 	color: $white;
 	&:hover{
 		background: darken($myblue, 5);
+	}
+}
+[data-button~="material"]{
+	background: $color-title-pink;
+	color: $white;
+	&:hover{
+		background: darken($color-title-pink, 5);
 	}
 }
 [data-button~="full"]{
