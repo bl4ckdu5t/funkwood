@@ -10,7 +10,7 @@
 	<!--[if IE]>
 		<link rel="stylesheet" media="screen, projection" href="stylesheets/ie.css">
 	<![endif]-->
-	<link href='http://fonts.googleapis.com/css?family=Quicksand|Cuprum' rel='stylesheet'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Quicksand' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" media="all" href="stylesheets/base.css">
 	<link rel="shortcut icon" href="favicon.png">
 	<link rel="author" href="http://ostrich-dev.com">
@@ -23,20 +23,15 @@
 	<header>
 		<h1 class="title">muster<span>d8</span></h1>
 		<button data-button="primary">Member sign in</button>
+		<form action="">
+			<input type="text">
+			<input type="text">
+			<select name="" id="">
+				<option value="male">Male</option>
+				<option value="male">Male</option>
+			</select>
+		</form>
 	</header>
-	<section data-header>
-		<div class="header--content">
-			<h2>Find your perfect match for a date</h2>
-			<form action="">
-				<p>My name is <input type="text" name="name"></p>
-				<p>
-					I am <input type="radio" name="gender" id="male"> <label for="male">Male</label>
-					<input type="radio" name="gender" id="female"> <label for="female">Female</label>
-				</p>
-				<p><input type="submit" data-button="full orange-bg" value="Find your date"></p>
-			</form>
-		</div>
-	</section>
 	<main>
 		<div data-grid="9">
 			<h3>It's easy to find your desired partner. Let's guide you</h3>
@@ -46,7 +41,15 @@
 			<img src="images/african-lovers-r1.jpeg" alt="African Lovers" data-frame="circular">
 		</div>
 	</main>
-	<footer>copyright &copy; <script>var now = new Date(); document.write(now.getFullYear());</script></footer>
+	<footer>
+		copyright &copy; <script>var now = new Date(); document.write(now.getFullYear());</script>
+		<a href="./">Musterd8</a>
+		<ul class="fr">
+			<li>About</li>
+			<li>Privacy Policy</li>
+			<li>Terms Of Use</li>
+		</ul>
+	</footer>
 	<!-- JS -->
 	<script src="js/script.min.js"></script>
 </body>
