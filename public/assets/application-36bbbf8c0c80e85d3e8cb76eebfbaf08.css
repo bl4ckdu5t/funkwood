@@ -1,0 +1,620 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+/* Social Media Colors */
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+/* line 3, /var/www/projects/musterd8/app/assets/stylesheets/_h5bp.scss */
+html, button, input, select, textarea {
+  color: #222;
+}
+
+/* line 7, /var/www/projects/musterd8/app/assets/stylesheets/_h5bp.scss */
+html {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/* Remove text-shadow in selection highlight: h5bp.com/i */
+/* line 11, /var/www/projects/musterd8/app/assets/stylesheets/_h5bp.scss */
+::-moz-selection, ::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::-moz-selection, ::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* A better looking default horizontal rule */
+/* line 17, /var/www/projects/musterd8/app/assets/stylesheets/_h5bp.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* Remove the gap between images, videos, audio and canvas and the bottom of their containers */
+/* line 27, /var/www/projects/musterd8/app/assets/stylesheets/_h5bp.scss */
+audio, canvas, img, video {
+  vertical-align: middle;
+}
+
+/* Remove default fieldset styles. */
+/* line 31, /var/www/projects/musterd8/app/assets/stylesheets/_h5bp.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Allow only vertical resizing of textareas. */
+/* line 39, /var/www/projects/musterd8/app/assets/stylesheets/_h5bp.scss */
+textarea {
+  resize: vertical;
+}
+
+/*   Browse Happy prompt */
+/* line 45, /var/www/projects/musterd8/app/assets/stylesheets/_h5bp.scss */
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* line 1, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+* {
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 2, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* line 3, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  font-size: 62.5%;
+}
+
+/* line 8, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+body {
+  background-color: #eee;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+/* line 15, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+*:focus {
+  outline: 3px solid rgba(62, 184, 179, 0.2);
+}
+
+/* line 16, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+::-moz-selection {
+  background: #999;
+  color: white;
+}
+::selection {
+  background: #999;
+  color: white;
+}
+
+/* line 17, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[type="submit"], button {
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-family: "Lato", sans-serif;
+  font-size: inherit;
+}
+
+/* line 23, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+input, select {
+  font-family: "Lato", sans-serif;
+  font-size: inherit;
+}
+
+/* line 27, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+header {
+  position: relative;
+  height: 95vh;
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/aura.jpg) no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/aura.jpg) no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+}
+/* line 33, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+header > [data-button] {
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+  border-bottom: solid thin #005159;
+}
+/* line 39, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+header form {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 10rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 3rem;
+  text-align: center;
+}
+/* line 48, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+header input, header select:not(button) {
+  display: inline;
+  background: white;
+  padding: 0.8rem 1rem;
+  margin: 0 -2px;
+  vertical-align: top;
+  border: solid thin #aaa;
+  height: 4rem;
+  min-width: 10rem;
+}
+/* line 57, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+header input:active, header input:focus, header select:not(button):active, header select:not(button):focus {
+  outline: none;
+}
+/* line 62, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+header input:first-of-type {
+  border-radius: .3rem 0  0 .3rem;
+}
+/* line 65, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+header input:last-of-type {
+  width: 15rem;
+  border-radius: 0 .3rem .3rem 0;
+}
+/* line 70, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+header [data-button~="material"] {
+  border-bottom: solid thin #b21f1f;
+  border-left: solid thin #aaa;
+}
+/* line 74, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+header .caption {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+/* line 82, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+header .caption h2 {
+  text-transform: uppercase;
+  font-size: 4rem;
+}
+/* line 86, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+header .caption [data-button~="transparency"] {
+  color: white;
+}
+
+/* line 91, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.title {
+  margin: 0 1rem;
+  padding: 1rem;
+  font-family: 'Quicksand';
+  font-size: 3.5rem;
+  color: #3366aa;
+}
+/* line 97, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.title span {
+  color: #e77187;
+}
+
+/* line 101, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+footer {
+  background: #222;
+  color: #bbb;
+  padding: 3rem 10rem;
+}
+/* line 105, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+footer a {
+  color: #677;
+}
+/* line 107, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+footer a:hover {
+  color: #9aa;
+}
+/* line 111, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 116, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+footer li {
+  display: inline;
+  padding: 0 1rem;
+}
+
+/* line 121, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+main {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 3rem 0;
+  padding: 2rem;
+  color: #555;
+  font-size: 2rem;
+}
+/* line 12, /usr/local/lib/ruby/gems/2.1.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+main:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 127, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+main [data-frame] {
+  width: 300px;
+  height: 300px;
+}
+
+/* Button Styles */
+/* line 133, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button] {
+  border: none;
+  padding: 1rem 2rem;
+}
+/* line 136, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button]:hover {
+  background: #ccc;
+}
+
+/* line 140, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="curvy"] {
+  border-radius: 0.3rem;
+}
+
+/* line 143, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="transparency"] {
+  background: rgba(204, 204, 204, 0.4);
+}
+/* line 145, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="transparency"]:hover {
+  background: rgba(170, 170, 170, 0.4);
+}
+
+/* line 149, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="primary"] {
+  background: #3366aa;
+  color: white;
+}
+/* line 152, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="primary"]:hover {
+  background: #2d5a96;
+}
+
+/* line 156, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="material"] {
+  background: #e77187;
+  color: white;
+}
+/* line 159, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="material"]:hover {
+  background: #e35b75;
+}
+
+/* line 163, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="full"] {
+  width: 100%;
+}
+
+/* Frame Styles */
+/* line 167, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-frame] {
+  border: solid 5px #ccc;
+}
+
+/* line 170, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-frame~="circular"] {
+  border-radius: 50%;
+}
+
+/*  Print Styles */
+@media print {
+  /* line 3, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 9, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  a {
+    text-decoration: underline;
+  }
+  /* line 11, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  a:visited {
+    text-decoration: underline;
+  }
+  /* line 12, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 14, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /* Don't show links for images, or javascript/internal links */
+  /* line 18, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  .ir a:after {
+    content: "";
+  }
+
+  /* line 20, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+  /* line 24, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /* line 28, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* line 29, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  tr {
+    page-break-inside: avoid;
+  }
+
+  /* line 30, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  img {
+    page-break-inside: avoid;
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+  /* line 36, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 40, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}
+/*! Helper classes */
+/*  Image replacement */
+/* line 5, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+}
+
+/* line 13, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+/* line 19, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.fr {
+  float: right;
+}
+
+/* line 20, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.fl {
+  float: left;
+}
+
+/* line 21, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.pad10 {
+  padding: 10px;
+}
+
+/* line 22, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.pad20 {
+  padding: 20px;
+}
+
+/* line 23, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.topmag10 {
+  margin-top: 10px;
+}
+
+/* line 24, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.topmag20 {
+  margin-top: 20px;
+}
+
+/* line 25, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.color-white {
+  color: white;
+}
+
+/* line 26, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.middle-block {
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 30, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.orange-bg {
+  background-color: #eba11e;
+}
+
+/* line 33, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.inline-block {
+  display: inline-block;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+/* line 38, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* line 48, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* line 57, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.clearfix:after, .clearfix:before {
+  content: " ";
+  display: table;
+}
+/* line 61, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 65, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* line 66, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.ghost {
+  display: none;
+}
+
+/* line 67, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.txtright {
+  text-align: right;
+}
+
+/* line 68, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.txtleft {
+  text-align: left;
+}
+
+/* line 69, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.txtcenter {
+  text-align: center;
+}
+
+/* line 72, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+[data-grid="1"] {
+  width: 6.33333%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 72, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+[data-grid="2"] {
+  width: 14.66667%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 72, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+[data-grid="3"] {
+  width: 23%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 72, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+[data-grid="4"] {
+  width: 31.33333%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 72, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+[data-grid="5"] {
+  width: 39.66667%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 72, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+[data-grid="6"] {
+  width: 48%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 72, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+[data-grid="7"] {
+  width: 56.33333%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 72, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+[data-grid="8"] {
+  width: 64.66667%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 72, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+[data-grid="9"] {
+  width: 73%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 72, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+[data-grid="10"] {
+  width: 81.33333%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 72, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+[data-grid="11"] {
+  width: 89.66667%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 72, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+[data-grid="12"] {
+  width: 98%;
+  float: left;
+  margin-right: 1.69492%;
+}
