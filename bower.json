@@ -1,0 +1,26 @@
+{
+  "name": "musterd8",
+  "version": "0.0.1",
+  "homepage": "https://github.com/bl4ckdu5t/musterd8",
+  "authors": [
+    "bl4ckdu5t <joerexko@gmail.com>"
+  ],
+  "description": "online dating site",
+  "main": "public",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "dating",
+    "online-dating"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
