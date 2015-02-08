@@ -36,6 +36,10 @@ gem 'spring',        group: :development
 # Use unicorn as the app server
 gem 'unicorn'
 
+group :development do
+  gem 'sass-rails-source-maps'
+end
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

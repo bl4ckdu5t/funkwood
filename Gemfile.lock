@@ -91,6 +91,10 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    sass-rails-source-maps (0.0.4)
+      rails
+      sass (>= 3.3.0.rc.3)
+      sprockets (>= 2.3.0)
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
@@ -133,6 +137,7 @@ DEPENDENCIES
   rails (= 4.1.7)
   rails_12factor
   sass-rails (~> 5.0.0)
+  sass-rails-source-maps
   sdoc (~> 0.4.0)
   spring
   susy (= 2.1.2)
