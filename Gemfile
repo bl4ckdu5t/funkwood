@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 ruby "2.1.2"
 # Autoprefixer
 gem 'autoprefixer-rails'
-
+# Devise for authentication
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use postgreSQL as database for ActiveRecord
