@@ -119,15 +119,21 @@ footer{
 	}
 }
 section{
-	@include container(100%);
-	margin: 3rem 0;
-	padding: 5rem;
 	color: #555;
 	font-size: 2rem;
+}
+[data-section~="one"]{
+	@include container(100%);
+	background: $white;
+	padding: 8rem;
 	[data-frame]{
 		width: 300px;
 		height: 300px;
 	}
+}
+[data-section~="two"]{
+	padding: 4rem;
+	text-align: center;
 }
 /* Button Styles */
 [data-button]{
@@ -189,7 +195,7 @@ section{
 	height: 20rem;
 	border: solid thick $white;
 	border-bottom: solid 2rem $white;
-	box-shadow: 0 0 2px #aaa;
+	box-shadow: 0 0 2px #888;
 }
 .heart-unite{
 	position: absolute;
@@ -217,6 +223,9 @@ section{
 		filter: image-url("blur.svg#blur");
 		-webkit-filter: blur(3px);
 		filter: blur(3px);
+		&:hover{
+			filter: none;
+		}
 	}
 	&:first-of-type{
 		right: 100px;
@@ -239,5 +248,65 @@ section{
 	&:nth-of-type(6){
 		right: 250px;
 		top: 0;
+	}
+}
+.crumbs{
+	ul{
+		list-style: none;
+		display: inline-table;
+		li{
+			display: inline;
+			float: left;
+			height: 80.5px;
+			background: #3498db;
+			text-align: center;
+			padding: 25px 40px 0 85px;
+			position: relative;
+			margin: 0 10px 0 0; 
+			font-size: 20px;
+			text-decoration: none;
+			color: #fff;
+			&:after{
+				content: "";  
+				border-top: 40px solid transparent;
+	 			border-bottom: 40px solid transparent;
+	  			border-left: 40px solid #3498db;
+				position: absolute; right: -40px; top: 0;
+				z-index: 1;
+			}
+			&:before{
+				content: "";  
+				border-top: 40px solid transparent;
+	  			border-bottom: 40px solid transparent;
+	  			border-left: 40px solid #eee;
+				position: absolute; left: 0; top: 0;
+			}
+			&:first-child{
+				border-top-left-radius: 10px; border-bottom-left-radius: 10px;
+				&:before{
+					display: none;
+				}
+			}
+			&:last-child{
+				padding-right: 80px;
+				border-top-right-radius: 10px; border-bottom-right-radius: 10px;
+				&:after{
+					display: none; 
+				}
+			}
+			&:hover{
+				background: $color-title-pink;
+				&:after{
+					border-left-color: $color-title-pink;
+				}
+			}
+			svg{
+				position: absolute;
+				top: 20px;
+				left: 40px;
+				fill: $white;
+				width: 40px;
+			}
+		}
 	}
 }
