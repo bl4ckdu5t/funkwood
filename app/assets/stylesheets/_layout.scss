@@ -118,10 +118,10 @@ footer{
 		padding: 0 1rem;
 	}
 }
-main{
+section{
 	@include container(100%);
 	margin: 3rem 0;
-	padding: 4rem;
+	padding: 5rem;
 	color: #555;
 	font-size: 2rem;
 	[data-frame]{
@@ -169,4 +169,75 @@ main{
 }
 [data-frame~="circular"]{
 	border-radius: 50%;
+}
+.frame{
+	position: relative;
+	width: 40rem;
+	height: 20rem;
+	&-left{
+		left: 0;
+		transform: rotate(-15deg);
+	}
+	&-right{
+		right: 0;
+		transform: rotate(15deg);
+	}
+}
+[class^="frame-"]{
+	position: absolute;
+	width: 20rem;
+	height: 20rem;
+	border: solid thick $white;
+	border-bottom: solid 2rem $white;
+	box-shadow: 0 0 2px #aaa;
+}
+.heart-unite{
+	position: absolute;
+	top: 20px;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	margin: 0 auto;
+	width: 8rem;
+}
+.pop{
+	position: absolute;
+	width: 8rem;
+	border-radius: 50%;
+	&-container{
+		position: relative;
+	}
+	&-small{
+		width: 5rem;
+	}
+	&-large{
+		width: 10rem;
+	}
+	&-blur{
+		filter: image-url("blur.svg#blur");
+		-webkit-filter: blur(3px);
+		filter: blur(3px);
+	}
+	&:first-of-type{
+		right: 100px;
+	}
+	&:nth-of-type(2){
+		top: 10px;
+		left: 150px;
+	}
+	&:nth-of-type(3){
+		left: 100px;
+	}
+	&:nth-of-type(4){
+		left: 300px;
+		bottom: -80px;
+	}
+	&:nth-of-type(5){
+		right: 120px;
+		top: -20px;
+	}
+	&:nth-of-type(6){
+		right: 250px;
+		top: 0;
+	}
 }

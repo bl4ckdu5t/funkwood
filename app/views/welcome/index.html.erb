@@ -44,15 +44,26 @@
 			<input type="submit" data-button="material" value="Find your date">
 		</form>
 	</header>
-	<main>
-		<div data-grid="9">
-			<h3>It's easy to find your desired partner. Let's guide you</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dignissimos dolor temporibus nostrum dicta omnis facere est ut error esse dolorem eos similique recusandae, porro voluptatum unde ipsum laborum fugit quas saepe eum, impedit! Recusandae quae delectus qui amet facilis voluptate nobis numquam sit maxime? Quia vitae sequi perferendis inventore nostrum unde iusto repellendus animi, quisquam velit! Facere, voluptates debitis dolore nulla enim ducimus. </p>
+	<section>
+		<div data-grid="5">
+			<div class="frame">
+				<%= image_tag "man1.jpg", alt: "Man", class: 'frame-left' %>
+				<%= image_tag "heart.png", alt: "loves", class: 'heart-unite' %>
+				<%= image_tag "woman1.jpg", alt: "Woman", class: 'frame-right' %>
+			</div>
 		</div>
-		<div data-grid="3">
-			<%= image_tag "african-lovers-r1.jpeg", alt: "African Lovers", 'data-frame' => 'circular' %>
+		<div data-grid="1">&nbsp;</div>
+		<div data-grid="6" class="pop-container">
+			<h3>Find a date</h3>
+			<p>Finding a date has never been so easy. You can get relationships with no strings attached and also get serious relationships</p>
+			<%= image_tag "minnie.jpg", alt: "circle pop", class: 'pop pop-small pop-blur' %>
+			<%= image_tag "MP900402637.jpg", alt: "circle pop", class: 'pop pop-small' %>
+			<%= image_tag "african-lovers-r1.jpeg", alt: "circle pop", class: 'pop pop-large' %>
+			<%= image_tag "south-africa-man.jpg", alt: "circle pop", class: 'pop pop-blur' %>
+			<%= image_tag "beach.jpg", alt: "circle pop", class: 'pop pop-blur' %>
+			<%= image_tag "topless.jpg", alt: "circle pop", class: 'pop pop-blur' %>
 		</div>
-	</main>
+	</section>
 	<footer>
 		copyright &copy; <script>var now = new Date(); document.write(now.getFullYear());</script>
 		<a href="./">Musterd8</a>
