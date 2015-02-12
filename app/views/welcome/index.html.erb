@@ -56,12 +56,12 @@
 		<div data-grid="6" class="pop-container">
 			<h3>Find a date</h3>
 			<p>Finding a date has never been so easy. You can get relationships with no strings attached and also get serious relationships</p>
-			<%= image_tag "minnie.jpg", alt: "circle pop", class: 'pop pop-small pop-blur' %>
-			<%= image_tag "MP900402637.jpg", alt: "circle pop", class: 'pop pop-small' %>
-			<%= image_tag "african-lovers-r1.jpeg", alt: "circle pop", class: 'pop pop-large' %>
-			<%= image_tag "south-africa-man.jpg", alt: "circle pop", class: 'pop pop-blur' %>
-			<%= image_tag "beach.jpg", alt: "circle pop", class: 'pop pop-blur' %>
-			<%= image_tag "topless.jpg", alt: "circle pop", class: 'pop pop-blur' %>
+			<img data-src="<%= asset_path 'minnie.jpg' %>" alt="circle pop" class="pop pop-small pop-blur">
+			<img data-src="<%= asset_path 'MP900402637.jpg' %>" alt="circle pop" class="pop pop-small">
+			<img data-src="<%= asset_path 'african-lovers-r1.jpeg' %>" alt="circle pop" class="pop pop-large">
+			<img data-src="<%= asset_path 'south-africa-man.jpg' %>" alt="circle pop" class="pop pop-blur">
+			<img data-src="<%= asset_path 'beach.jpg' %>" alt="circle pop" class="pop pop-blur">
+			<img data-src="<%= asset_path 'topless.jpg' %>" alt="circle pop" class="pop pop-blur">
 		</div>
 	</section>
 	<section data-section="two">
@@ -100,5 +100,8 @@
 	</footer>
 	<!-- JS -->
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<script>
+	$.lazyLoadXT.onload.addClass = 'animated bounceInUp';
+	</script>
 </body>
 </html>

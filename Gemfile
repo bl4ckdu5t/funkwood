@@ -39,6 +39,7 @@ gem 'unicorn'
 
 group :development do
   gem 'sass-rails-source-maps'
+  gem 'guard-livereload', require: false
 end
 
 # Use Capistrano for deployment
