@@ -126,7 +126,7 @@ section{
 [data-section~="one"]{
 	@include container(100%);
 	background: $white;
-	padding: 8rem;
+	padding: 10rem;
 	[data-frame]{
 		width: 300px;
 		height: 300px;
@@ -229,26 +229,26 @@ section{
 		}
 	}
 	&:first-of-type{
-		right: 100px;
+		top: 10px;
+		left: 180px;
 	}
 	&:nth-of-type(2){
-		top: 10px;
-		left: 150px;
+		top: -10px;
+		left: 260px;
 	}
 	&:nth-of-type(3){
-		left: 100px;
+		top: -30px;
+		left: 360px;
 	}
 	&:nth-of-type(4){
-		left: 300px;
-		bottom: -80px;
+		left: 180px;
+		bottom: -70px;
 	}
 	&:nth-of-type(5){
-		right: 120px;
-		top: -20px;
+		left: 260px;
 	}
 	&:nth-of-type(6){
-		right: 250px;
-		top: 0;
+		left: 360px;
 	}
 }
 .crumbs{
