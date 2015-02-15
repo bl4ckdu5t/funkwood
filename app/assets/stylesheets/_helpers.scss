@@ -67,9 +67,3 @@
 .txtright{ text-align: right; }
 .txtleft{ text-align: left; }
 .txtcenter{ text-align: center; }
-// Grids with AMCSS style
-@for $i from 1 through 12 {
-    [data-grid="#{$i}"]{
-        @include span( 100% * ( $i / 12% ) - 2% );
-    }
-}

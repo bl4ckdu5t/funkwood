@@ -24,11 +24,18 @@ input, select{
 	font-family: $font-stack;
 	font-size: inherit;
 }
+
+// Grids with AMCSS style
+@for $i from 1 through 12 {
+    [data-grid="#{$i}"]{
+        @include span( 100% * ( $i / 12% ) - 2% );
+    }
+}
+
 header{
 	position: relative;
 	height: 95vh;
 	background: linear-gradient(rgba($black, .5), rgba($black, .5)), image-url('aura.jpg') no-repeat;
-	background-attachment: fixed;
 	background-size: 100%;
 	>[data-button]{
 		position: absolute;
@@ -126,7 +133,7 @@ section{
 [data-section~="one"]{
 	@include container(100%);
 	background: $white;
-	padding: 10rem;
+	padding: 5rem;
 	[data-frame]{
 		width: 300px;
 		height: 300px;
@@ -181,6 +188,7 @@ section{
 	position: relative;
 	width: 40rem;
 	height: 20rem;
+	margin: 40px auto;
 	&-left{
 		left: 0;
 		transform: rotate(-15deg);
@@ -213,6 +221,7 @@ section{
 	border-radius: 50%;
 	&-container{
 		position: relative;
+		padding: 6rem;
 	}
 	&-small{
 		width: 5rem;
@@ -227,28 +236,33 @@ section{
 		&:hover{
 			filter: none;
 		}
+		@include breakpoint($breakpoint-iphone-landscape){
+			display: none;
+		}
 	}
 	&:first-of-type{
-		top: 10px;
+		top: 30px;
 		left: 180px;
 	}
 	&:nth-of-type(2){
-		top: -10px;
+		top: 15px;
 		left: 260px;
 	}
 	&:nth-of-type(3){
-		top: -30px;
+		top: 0;
 		left: 360px;
 	}
 	&:nth-of-type(4){
 		left: 180px;
-		bottom: -70px;
+		bottom: 20px;
 	}
 	&:nth-of-type(5){
 		left: 260px;
+		bottom: 10px;
 	}
 	&:nth-of-type(6){
 		left: 360px;
+		bottom: 0;
 	}
 }
 .crumbs{
@@ -296,5 +310,21 @@ section{
 				width: 40px;
 			}
 		}
+		@include breakpoint($breakpoint-tablet-wide){
+			display: block;
+			li{
+				display: block;
+				float: none;
+				width: 350px;
+				margin: 10px auto;
+				margin-left: 0;
+			}
+		}
+	}
+}
+@include breakpoint($breakpoint-tablet-wide){
+	[data-grid~="6"]{
+		width: 100%;
+		margin: 10px 0;
 	}
 }

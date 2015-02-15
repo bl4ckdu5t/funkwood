@@ -123,3 +123,8 @@
   width: $width;
   height: $height;
 }
+@mixin breakpoint($value){
+	@media (max-width: $value){
+		@content;
+	}
+}
