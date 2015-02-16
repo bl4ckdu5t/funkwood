@@ -37,6 +37,7 @@ input, select{
 	height: $top-height;
 	z-index: 300;
 	background: rgba($white, .95);
+	box-shadow: 0 0 4px #aaa;
 	[data-button]{
 		position: absolute;
 		right: 2rem;
@@ -132,6 +133,7 @@ header{
 	}
 }
 footer{
+	position: relative;
 	background: #222;
 	color: #677;
 	padding: 3rem 10rem;
@@ -150,6 +152,14 @@ footer{
 		display: inline;
 		padding: 0 1rem;
 	}
+	svg{
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		fill: $color-title-pink;
+		width: 32px;
+	}
 }
 section{
 	color: #555;
@@ -157,11 +167,12 @@ section{
 }
 [data-section~="one"]{
 	@include container(100%);
-	background: $white;
-	padding: 5rem;
-	[data-frame]{
-		width: 300px;
-		height: 300px;
+	padding: 4rem;
+	svg{
+		width: 82px;
+		fill: #555;
+		display: block;
+		margin: 0 auto;
 	}
 }
 [data-section~="two"]{
@@ -172,6 +183,7 @@ section{
 	text-align: center;
 	h2{
 		font-size: 5rem;
+		font-weight: 300;
 		color: $white;
 	}
 	ul{
@@ -192,6 +204,50 @@ section{
 		margin: 10px auto;
 		padding: 20px;
 		background: rgba($white, .8);
+	}
+}
+[data-section~="three"]{
+	text-align: center;
+	background: #eee;
+	padding: 30px;
+	h2{
+		border-top: solid thick #aaa;
+		font-weight: 300;
+		padding-top: 20px;
+		width: 60%;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+	svg{
+		width: 48px;
+		fill: #555;
+		&:hover{
+			fill: #888;
+		}
+	}
+	ul{
+		list-style-type: none;
+		padding: 0;
+	}
+	li{
+		display: inline;
+		margin: 0 20px;
+	}
+}
+[data-grid~="4"]{
+	> div{
+		padding: 2rem;
+		text-align: center;
+		font-weight: 300;
+		&:hover{
+			border-top: solid medium $myblue;
+			box-shadow: 0 0 3px #aaa;
+		}
+	}
+	br{
+		height: 1px;
+		padding: 0;
+		margin: 0;
 	}
 }
 /* Button Styles */
@@ -247,37 +303,6 @@ section{
 }
 [data-frame~="circular"]{
 	border-radius: 50%;
-}
-.frame{
-	position: relative;
-	width: 40rem;
-	height: 20rem;
-	margin: 40px auto;
-	&-left{
-		left: 0;
-		transform: rotate(-15deg);
-	}
-	&-right{
-		right: 0;
-		transform: rotate(15deg);
-	}
-}
-[class^="frame-"]{
-	position: absolute;
-	width: 20rem;
-	height: 20rem;
-	border: solid thick $white;
-	border-bottom: solid 2rem $white;
-	box-shadow: 0 0 2px #888;
-}
-.heart-unite{
-	position: absolute;
-	top: 20px;
-	left: 0;
-	right: 0;
-	z-index: 1;
-	margin: 0 auto;
-	width: 8rem;
 }
 @include breakpoint($breakpoint-tablet-wide){
 	[data-grid~="6"]{
