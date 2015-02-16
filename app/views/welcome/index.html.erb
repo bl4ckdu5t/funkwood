@@ -10,7 +10,7 @@
 	<!--[if IE]>
 		<link rel="stylesheet" media="screen, projection" href="stylesheets/ie.css">
 	<![endif]-->
-	<link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,700|Lobster' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<link rel="shortcut icon" href="favicon.png">
 	<link rel="author" href="http://ostrich-dev.com">
@@ -20,11 +20,14 @@
 	<p class="browsehappy">You are using an <strong>outdated</strong> browser. 
 	Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> 
 	<![endif]-->
+	<div class="top">
+		<h1 class="title">muster<span>D8</span></h1>
+		<%= link_to('<button data-button="curvy transparent">Member sign in</button>'.html_safe, new_user_session_path)  %> 
+	</div>
 	<header>
-		<h1 class="title">muster<span>d8</span></h1>
-		<button data-button="primary curvy">Member sign in</button>
 		<div class="caption">
-			<h2>Finding your date in a click</h2>
+			<span>Find your date in a click</span>
+			<h2>A virtual love garden</h2>
 			<button data-button="curvy transparency">Learn how it works</button>
 		</div>
 		<form action="">
@@ -52,20 +55,16 @@
 				<%= image_tag "woman1.jpg", alt: "Woman", class: 'frame-right' %>
 			</div>
 		</div>
-		<div data-grid="6" class="pop-container">
+		<div data-grid="6">
 			<h3>Find a date</h3>
 			<p>Finding a date has never been so easy. Serious relationships or no strings attached? You'll find them here</p>
-			<img data-src="<%= asset_path 'minnie.jpg' %>" alt="circle pop" class="pop pop-small pop-blur">
-			<img data-src="<%= asset_path 'MP900402637.jpg' %>" alt="circle pop" class="pop pop-blur">
-			<img data-src="<%= asset_path 'african-lovers-r1.jpeg' %>" alt="circle pop" class="pop pop-large pop-blur">
-			<img data-src="<%= asset_path 'south-africa-man.jpg' %>" alt="circle pop" class="pop pop-blur pop-small">
-			<img data-src="<%= asset_path 'beach.jpg' %>" alt="circle pop" class="pop pop-blur">
-			<img data-src="<%= asset_path 'topless.jpg' %>" alt="circle pop" class="pop pop-blur pop-large">
 		</div>
 	</section>
 	<section data-section="two">
-		<h2>Just in 3 steps you can get your perfect match</h2>
-		<div class="crumbs">
+		<div data-grid="6">
+			<h2>You can get your perfect match in 3 easy steps</h2>
+		</div>
+		<div data-grid="6">
 			<ul>
 				<li>
 					<svg id="icon-dvr" viewBox="0 0 1024 1024">
