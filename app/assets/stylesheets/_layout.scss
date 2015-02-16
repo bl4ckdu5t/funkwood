@@ -202,8 +202,9 @@ section{
 		width: 80%;
 		height: 70px;
 		margin: 10px auto;
-		padding: 20px;
+		padding: 20px 100px;
 		background: rgba($white, .8);
+		text-align: left;
 	}
 }
 [data-section~="three"]{
@@ -220,7 +221,6 @@ section{
 	}
 	svg{
 		width: 48px;
-		fill: #555;
 		&:hover{
 			fill: #888;
 		}
@@ -231,7 +231,18 @@ section{
 	}
 	li{
 		display: inline;
-		margin: 0 20px;
+		margin: 0 15px;
+	}
+}
+.icon{
+	&-facebook{
+		fill: $facebook;
+	}
+	&-twitter{
+		fill: $twitter;
+	}
+	&-googleplus{
+		fill: $googleplus;
 	}
 }
 [data-grid~="4"]{
