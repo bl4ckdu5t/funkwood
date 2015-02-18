@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Musterd8</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Our Company description">
+	<meta name="author" content="Joseph Rex">
+    <%= csrf_meta_tags %>
+	<title>Musterd8 online dating &dash; Find the love of your life</title>
+	<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Quicksand' rel='stylesheet' type='text/css'>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<link rel="shortcut icon" href="<%= root_url %>/favicon.png">
+	<link rel="author" href="http://ostrich-dev.com">
 </head>
 <body>
-
-<%= yield %>
-
+	<!--[if lt IE 7]>
+	<p class="browsehappy">You are using an <strong>outdated</strong> browser. 
+	Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> 
+	<![endif]-->
+	<%= yield %>
+	<!-- JS -->
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
