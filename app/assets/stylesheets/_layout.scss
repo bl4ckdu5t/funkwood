@@ -68,14 +68,14 @@ header{
 		padding: 3rem;
 		text-align: center;
 	}
-	input,select:not(button){
+	input,select{
 		display: inline;
 		background: $white;
 		padding: 0.8rem 1rem;
 		margin: 0 -2px;
 		vertical-align: top;
-		border: solid thin #aaa;
-		border-left: none;
+		border: none;
+		border-right: solid 2px #aaa;
 		height: 4rem;
 		min-width: 10rem;
 		&:active, &:focus{
@@ -93,6 +93,12 @@ header{
 	}
 	[data-button~="material"]{
 		border-bottom: solid thin $color-wine;
+	}
+	@include breakpoint($breakpoint-laptop){
+		height: 500px;
+	}
+	@include breakpoint(860px){
+		background-size: cover;
 	}
 }
 .caption{
@@ -130,6 +136,9 @@ header{
 	}
 	[data-button~="transparency"]{
 		color: $white;
+	}
+	@include breakpoint($breakpoint-laptop){
+		top: 30%;
 	}
 }
 .title{
@@ -201,7 +210,8 @@ section{
 }
 [data-section~="two"]{
 	@include container(100%);
-	background: image-url('sunshine.jpg');
+	background-image: image-url('sunshine.jpg');
+	background-repeat: no-repeat;
 	background-size: 100%;
 	padding: 6rem;
 	text-align: center;
@@ -239,6 +249,21 @@ section{
 		padding: 1rem;
 		h2{
 			font-size: 3rem;
+			margin: 0;
+		}
+	}
+	@include breakpoint($breakpoint-tablet-portrait){
+		background-size: cover;
+		ul{ margin: 0; }
+		li{
+			height: 40px;
+			padding: 5px 50px;
+		}
+	}
+	@include breakpoint(426px){
+		li{
+			padding: 5px;
+			text-align: center;
 		}
 	}
 }
