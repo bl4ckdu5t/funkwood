@@ -13,6 +13,7 @@ body{
 	font-size: 1.6rem;
 	height: 100%;
 }
+@include parallax-init(1, body, true);
 input{
 	&:focus, &:active{
 		outline: none;
@@ -52,6 +53,16 @@ input, select{
 	}
 	.title{
 		padding: .5rem 5rem;
+	}
+	@include breakpoint(470px){
+		height: $top-height + 50px;
+		text-align: center;
+		[data-button]{
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			top: 60px;
+		}
 	}
 }
 header{
@@ -100,9 +111,31 @@ header{
 	@include breakpoint(860px){
 		background-size: cover;
 	}
+	@include breakpoint(669px){
+		height: 610px;
+		form{
+			background: transparent;
+			position: absolute;
+			top: 60%;
+		}
+		input, select{
+			display: block;
+			width: 80%;
+			margin: 10px auto;
+			border: none;
+			border-radius: 0 !important;
+			@include breakpoint(385px){
+				width: 100%;
+			}
+		}
+		.caption button{
+			display: none;
+		}
+	}
 }
 .caption{
 	position: absolute;
+	@include parallax(-2, 1);
 	top: 40%;
 	left: 0;
 	right: 0;
@@ -113,6 +146,9 @@ header{
 		text-transform: uppercase;
 		margin: 10px 0;
 		font-size: 6rem;
+		@include breakpoint(385px){
+			font-size: 4rem;
+		}
 	}
 	span{
 		position: relative;
@@ -132,6 +168,13 @@ header{
 		&:after{
 			margin-left: 15px;
 			left: 100%;
+		}
+	}
+	@include breakpoint(470px){
+		span{
+			&:before, &:after{
+				display: none;
+			}
 		}
 	}
 	[data-button~="transparency"]{
