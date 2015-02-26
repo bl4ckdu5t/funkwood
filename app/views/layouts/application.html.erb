@@ -12,6 +12,8 @@
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<link rel="shortcut icon" href="<%= root_url %>/favicon.png">
 	<link rel="author" href="http://ostrich-dev.com">
+	<!-- JS -->
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </head>
 <body>
 	<!--[if lt IE 7]>
@@ -19,7 +21,5 @@
 	Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> 
 	<![endif]-->
 	<%= yield %>
-	<!-- JS -->
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
