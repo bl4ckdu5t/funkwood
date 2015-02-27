@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require lazyloadxt/dist/jquery.lazyloadxt
 //= require_tree .
+Turbolinks.enableProgressBar();

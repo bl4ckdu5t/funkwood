@@ -6,7 +6,9 @@
     <% end %>
     </h1>
 	<h2>Resend confirmation instructions</h2>
-
+	<% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :class => 'authentication-error' %>
+  <% end %>
 	<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
 	  <%= devise_error_messages! %>
 

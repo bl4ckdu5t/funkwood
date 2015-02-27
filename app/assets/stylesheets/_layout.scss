@@ -471,6 +471,23 @@ section{
 	h2{
 		font-weight: 300;
 	}
+	&-error{
+		position: relative;
+		padding: 10px 10px 10px 40px;
+		box-shadow: 0 2px 3px #555;
+		border-radius: 4px;
+		background: darken($white, 20%);
+		color: #444;
+		font-size: 1.5rem;
+		word-wrap: break-word;
+		margin-bottom: 10px;
+		&:before{
+			content: image-url('exclaim.svg');
+			position: absolute;
+			left: 10px;
+			top: 8px;
+		}
+	}
 }
 .devise-links{
 	text-align: center;
