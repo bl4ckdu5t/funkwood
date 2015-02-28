@@ -538,7 +538,7 @@ section{
 	}
 	&-container{
 		background: darken($white, 5%);
-		min-height: 100%;
+		min-height: 60%;
 		padding: 20px;
 	}
 	&-controls{
@@ -678,7 +678,7 @@ section{
 		background: #eee;
 		top: 0;
 		left: 275px;
-		width: 320px;
+		width: 325px;
 		height: 100%;
 		color: #555;
 		padding: 20px 10px;
@@ -711,6 +711,61 @@ section{
 			background: #bbb;
 			width: 110px;
 			transition: width 1s;
+		}
+	}
+}
+.chat{
+	margin-top: 20px;
+	h3{
+		margin: 0;
+		font-weight: 400;
+		background: #ccc;
+		padding: 10px;
+		width: 100px;
+		margin-bottom: -2px;
+		border-radius: 5px 5px 0 0;
+	}
+	&-box{
+		border: solid 3px #ccc;
+		border-radius: 4px;
+		overflow: auto;
+		max-height: 270px;
+		ul{
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+		li{
+			position: relative;
+			background: $white;
+			padding: 10px 10px 10px 40px;
+			border-bottom: solid thin #aaa;
+			cursor: pointer;
+			&:hover{
+				background: darken($white, 2%);
+			}
+			span{
+				font-size: 1.6rem;
+				font-style: italic;
+				color: #555;
+				margin-left: 20px;
+			}
+			time{
+				font-size: 1.4rem;
+				display: block;
+			}
+		}
+		small{
+			position: absolute;
+			top: 20px;
+			left: 10px;
+			background: #ddd;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			&.online{
+				background: #1CC31C;
+			}
 		}
 	}
 }
