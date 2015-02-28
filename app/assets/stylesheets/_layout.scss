@@ -751,8 +751,9 @@ section{
 				font-size: 1.6rem;
 				font-style: italic;
 				color: #555;
-				margin-left: 20px;
-				@include ellipsis-line(180px);
+				margin: 0 0 0 20px;
+				display: inline-block;
+				@include ellipsis-line(300px);
 			}
 			time{
 				font-size: 1.4rem;
