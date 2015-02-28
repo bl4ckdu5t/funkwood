@@ -1,2 +1,49 @@
-<h1>Preferences#index</h1>
-<p>Find me in app/views/preferences/index.html.erb</p>
+<section class="preference">
+	<h1 class="title">
+  <%= link_to root_url do %>
+  muster<span>d8</span>
+  <% end %>
+  </h1>
+  <form action="">
+  	<fieldset class="preference-section">
+  		<h3>Hello, <span id="js-surveyor">Joseph Rex</span></h3>
+  		<label>Which of these best describes your working class?</label>
+  		<input type="text" name="working_class" placeholder="Answer here">
+  		<nav class="clearfix fr">
+  			<%= link_to home_path, class: 'preference-nav preference-skip' do %>
+  				<svg viewBox="0 0 1024 1024">
+						<path d="M85.76 896l895.573-384-895.573-384-0.427 298.667 640 85.333-640 85.333z"></path>
+					</svg>
+  				Skip
+  			<% end %>
+  			<a href="javascript:void(0)" class="preference-nav preference-next">
+  				<svg viewBox="0 0 1024 1024">
+						<path d="M512 341.333v-170.667l341.333 341.333-341.333 341.333v-170.667h-341.333v-341.333z"></path>
+					</svg>
+  				Next
+  			</a>
+  		</nav>
+  	</fieldset>
+
+  	<fieldset class="preference-section">
+  		<label>What is your profession?</label>
+  		<input type="text" name="working_class" placeholder="Answer here">
+  		<label for="relationship_type">What kind of relationship do you seek?</label>
+  		<input type="text" placeholder="Answer here">
+  		<nav class="clearfix fr">
+  			<%= link_to home_path, class: 'preference-nav preference-prev' do %>
+  				<svg viewBox="0 0 1024 1024">
+						<path d="M512 341.333v-170.667l341.333 341.333-341.333 341.333v-170.667h-341.333v-341.333z"></path>
+					</svg>
+  				Previous
+  			<% end %>
+  			<a href="javascript:void(0)" class="preference-nav preference-next">
+  				<svg viewBox="0 0 1024 1024">
+						<path d="M512 341.333v-170.667l341.333 341.333-341.333 341.333v-170.667h-341.333v-341.333z"></path>
+					</svg>
+  				Next
+  			</a>
+  		</nav>
+  	</fieldset>
+  </form>
+</section>

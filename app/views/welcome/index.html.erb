@@ -8,21 +8,21 @@
 		<h2>A virtual love garden</h2>
 		<a href="#steps"><button data-button="curvy transparency">Learn how it works</button></a>
 	</div>
-	<form action="">
-		<input type="text" name="name" id="js-name" placeholder="My name is?">
-		<select name="age" id="js-age">
+	<form action="" id="js-register">
+		<input type="text" name="name" id="js-name" placeholder="My name is?" required>
+		<select name="age" id="js-age" required>
 			<option value="" disabled selected>My age is between?</option>
 			<option value="1">18 - 25</option>
 			<option value="2">26 - 35</option>
 			<option value="3">36 - 45</option>
 			<option value="4">46 above</option>
 		</select>
-		<select name="gender" id="js-gender">
+		<select name="gender" id="js-gender" required>
 			<option value="" disabled selected>I am a?</option>
 			<option value="male">Man</option>
 			<option value="female">Woman</option>
 		</select>
-		<input type="submit" id="js-register" data-button="material" value="Find your date">
+		<input type="submit" data-button="material" value="Find your date">
 	</form>
 </header>
 <section data-section="one">

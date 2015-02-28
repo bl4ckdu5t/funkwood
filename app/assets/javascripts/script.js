@@ -3,7 +3,7 @@ var ready = function(){
 		$(this).toggleClass('active');
 		$('.account-settings').toggle();
 	});
-	$('#js-register').click(function(e){
+	$('#js-register').submit(function(e){
 		e.preventDefault();
 		bake_cookie('visitor_name', $('#js-name').val());
 		bake_cookie('visitor_age', $('#js-age').val());
@@ -11,6 +11,7 @@ var ready = function(){
 		var destination = window.location.protocol + '//' + window.location.host + '/users/sign_up';
 		window.location.replace(destination);
 	});
+	$('#js-surveyor').text(read_cookie('visitor_name'))
 };
 // Ready Pages
 $(document).ready(ready);

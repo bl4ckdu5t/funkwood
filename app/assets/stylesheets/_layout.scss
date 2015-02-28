@@ -774,3 +774,79 @@ section{
 		}
 	}
 }
+.preference{
+	width: 600px;
+	margin: 40px auto;
+	margin-top: 40px;
+	text-align: center;
+	&-section{
+		position: relative;
+		width: 100%;
+		padding: 20px;
+		margin-top: 20px;
+		background: $white;
+		border-radius: 0 10px 10px 0;
+		border-left: solid thick $myblue;
+		box-shadow: 0 0 4px darken($white, 30%);
+		h3{
+			text-align: left;
+		}
+		label{
+			font-weight: 300;
+			display: block;
+			margin: 10px 0;
+			font-size: 3.5rem;
+		}
+		nav{
+			margin-top: 20px;
+		}
+		[type="text"]{
+			border: none;
+			border-bottom: solid thin #888;
+			& ,select{
+				width: 100%;
+				font-weight: 300;
+			}
+		}
+	}
+	&-nav{
+		border-radius: 4px;
+		padding: 6px 20px;
+		font-size: 1.8rem;
+		text-align: center;
+		svg{
+			width: 24px;
+			height: 24px;
+			vertical-align: middle;
+		}
+		&:first-of-type{
+			margin-right: 10px;
+		}
+	}
+	&-next, &-prev{
+		background: lighten($myblue, 10%);
+		color: $white;
+		border-bottom: solid 2px $myblue;
+		&:hover{
+			background: lighten($myblue, 5%);
+		}
+		svg{
+			fill: $white;
+		}
+	}
+	&-prev{
+		svg{
+			transform: rotate(180deg);
+		}
+	}
+	&-skip{
+		background: #ddd;
+		border-bottom: solid 2px #aaa;
+		&:hover{
+			background: darken(#ddd, 5%);
+		}
+		svg{
+			fill: #888;
+		}
+	}
+}
