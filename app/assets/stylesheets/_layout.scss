@@ -105,6 +105,7 @@ input, select{
 	}
 	[data-button~="material"]{
 		border-bottom: solid thin $color-wine;
+		border-right: none;
 	}
 	@include breakpoint($breakpoint-laptop){
 		height: 500px;
@@ -717,6 +718,7 @@ section{
 .chat{
 	margin-top: 20px;
 	h3{
+		text-align: center;
 		margin: 0;
 		font-weight: 400;
 		background: #ccc;
@@ -728,7 +730,8 @@ section{
 	&-box{
 		border: solid 3px #ccc;
 		border-radius: 4px;
-		overflow: auto;
+		overflow-y: auto;
+		overflow-x: hidden;
 		max-height: 270px;
 		ul{
 			list-style-type: none;
@@ -749,6 +752,7 @@ section{
 				font-style: italic;
 				color: #555;
 				margin-left: 20px;
+				@include ellipsis-line(180px);
 			}
 			time{
 				font-size: 1.4rem;
