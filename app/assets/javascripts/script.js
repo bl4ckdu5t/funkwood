@@ -5,13 +5,13 @@ var ready = function(){
 	});
 	$('#js-register').submit(function(e){
 		e.preventDefault();
-		bake_cookie('visitor_name', $('#js-name').val());
-		bake_cookie('visitor_age', $('#js-age').val());
-		bake_cookie('visitor_gender', $('#js-gender').val());
+		setCookie('visitor_name', $('#js-name').val());
+		setCookie('visitor_age', $('#js-age').val());
+		setCookie('visitor_gender', $('#js-gender').val());
 		var destination = window.location.protocol + '//' + window.location.host + '/users/sign_up';
 		window.location.replace(destination);
 	});
-	$('#js-surveyor').text(read_cookie('visitor_name'));
+	$('#js-surveyor').text(getCookie('visitor_name'));
 	// iCheck checkboxes https://github.com/fronteed/iCheck
 	$('input').iCheck({
     checkboxClass: 'icheckbox_minimal-blue',
@@ -19,24 +19,51 @@ var ready = function(){
     increaseArea: '20%' // optional
   });
   // Multisite Form navigation
-  for (var i = 0; i < 10; i++) {
-  	$('#js-form-'+i.toString()).click(function(){
-  		$('[data-form="' + i + '"]').hide();
-  		//$('[data-form='+ i + 2 +']').show();
-  	});
-  };
+  $('#js-next-1').click(function(){
+  	$('#js-form-1').hide();
+  	$('#js-form-2').show();
+  });
+  $('#js-next-2').click(function(){
+  	$('#js-form-2').hide();
+  	$('#js-form-3').show();
+  });
+  $('#js-next-3').click(function(){
+  	$('#js-form-3').hide();
+  	$('#js-form-4').show();
+  });
+
+  $('#js-prev-2').click(function(){
+  	$('#js-form-2').hide();
+  	$('#js-form-1').show();
+  });
+  $('#js-prev-3').click(function(){
+  	$('#js-form-3').hide();
+  	$('#js-form-2').show();
+  });
+  $('#js-prev-4').click(function(){
+  	$('#js-form-4').hide();
+  	$('#js-form-3').show();
+  });
 };
 // Ready Pages
 $(document).ready(ready);
 // Turbolinks
 $(document).on('page:load', ready);
 
-function bake_cookie(name, value) {
-  var cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
-  document.cookie = cookie;
+var today = new Date();
+var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
+
+function setCookie(name, value){
+  document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
 }
-function read_cookie(name) {
-	var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
-	result && (result = JSON.parse(result[1]));
-	return result;
+
+function getCookie(name){
+  var re = new RegExp(name + "=([^;]+)");
+  var value = re.exec(document.cookie);
+  return (value != null) ? unescape(value[1]) : null;
+}
+
+var expired = new Date(today.getTime() - 24 * 3600 * 1000); // less 24 hours
+function deleteCookie(name){
+  document.cookie=name + "=null; path=/; expires=" + expired.toGMTString();
 }

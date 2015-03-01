@@ -1,6 +1,8 @@
 class AccountsController < ApplicationController
 	before_action :authenticate_user!
   def home
-  	#render text: Preference.where(user_id: current_user.id).all and return
+  	unless session[:survey_prompt].present?
+  		redirect_to preference_path
+  	end
   end
 end

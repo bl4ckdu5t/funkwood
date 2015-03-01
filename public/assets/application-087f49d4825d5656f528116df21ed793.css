@@ -1,0 +1,1562 @@
+/* iCheck plugin Minimal skin, blue
+----------------------------------- */
+
+.icheckbox_minimal-blue,
+.iradio_minimal-blue {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 18px;
+    height: 18px;
+    background: url(blue.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_minimal-blue {
+    background-position: 0 0;
+}
+    .icheckbox_minimal-blue.hover {
+        background-position: -20px 0;
+    }
+    .icheckbox_minimal-blue.checked {
+        background-position: -40px 0;
+    }
+    .icheckbox_minimal-blue.disabled {
+        background-position: -60px 0;
+        cursor: default;
+    }
+    .icheckbox_minimal-blue.checked.disabled {
+        background-position: -80px 0;
+    }
+
+.iradio_minimal-blue {
+    background-position: -100px 0;
+}
+    .iradio_minimal-blue.hover {
+        background-position: -120px 0;
+    }
+    .iradio_minimal-blue.checked {
+        background-position: -140px 0;
+    }
+    .iradio_minimal-blue.disabled {
+        background-position: -160px 0;
+        cursor: default;
+    }
+    .iradio_minimal-blue.checked.disabled {
+        background-position: -180px 0;
+    }
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+    .icheckbox_minimal-blue,
+    .iradio_minimal-blue {
+        background-image: url(blue@2x.png);
+        background-size: 200px 20px;
+    }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+
+ */
+/* Social Media Colors */
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+/* line 3, /var/www/projects/musterd8/app/assets/stylesheets/_h5bp.scss */
+html, button, input, select, textarea {
+  color: #222;
+}
+
+/* line 7, /var/www/projects/musterd8/app/assets/stylesheets/_h5bp.scss */
+html {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/* Remove text-shadow in selection highlight: h5bp.com/i */
+/* line 11, /var/www/projects/musterd8/app/assets/stylesheets/_h5bp.scss */
+::-moz-selection, ::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::-moz-selection, ::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* A better looking default horizontal rule */
+/* line 17, /var/www/projects/musterd8/app/assets/stylesheets/_h5bp.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* Remove the gap between images, videos, audio and canvas and the bottom of their containers */
+/* line 27, /var/www/projects/musterd8/app/assets/stylesheets/_h5bp.scss */
+audio, canvas, img, video {
+  vertical-align: middle;
+}
+
+/* Remove default fieldset styles. */
+/* line 31, /var/www/projects/musterd8/app/assets/stylesheets/_h5bp.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Allow only vertical resizing of textareas. */
+/* line 39, /var/www/projects/musterd8/app/assets/stylesheets/_h5bp.scss */
+textarea {
+  resize: vertical;
+}
+
+/*   Browse Happy prompt */
+/* line 45, /var/www/projects/musterd8/app/assets/stylesheets/_h5bp.scss */
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* line 1, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+* {
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 2, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* line 3, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  font-size: 62.5%;
+  height: 100%;
+}
+
+/* line 9, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+body {
+  margin: 0;
+  background: #f2f2f2;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  height: 100%;
+}
+
+/* line 140, /var/www/projects/musterd8/app/assets/stylesheets/_mixins.scss */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* line 147, /var/www/projects/musterd8/app/assets/stylesheets/_mixins.scss */
+body {
+  overflow: auto;
+  -webkit-perspective: 1px;
+  perspective: 1px;
+}
+/* line 181, /var/www/projects/musterd8/app/assets/stylesheets/_mixins.scss */
+body, body * {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+/* line 19, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+input:focus, input:active {
+  outline: none;
+}
+
+/* line 23, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+*:focus {
+  outline: 3px solid rgba(62, 184, 179, 0.2);
+}
+
+/* line 24, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+::-moz-selection {
+  background: #999;
+  color: white;
+}
+::selection {
+  background: #999;
+  color: white;
+}
+
+/* line 25, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[type="submit"], button {
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: inherit;
+}
+
+/* line 31, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+input, select {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: inherit;
+}
+
+/* line 38, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-grid="1"] {
+  width: 6.33333%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 38, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-grid="2"] {
+  width: 14.66667%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 38, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-grid="3"] {
+  width: 23%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 38, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-grid="4"] {
+  width: 31.33333%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 38, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-grid="5"] {
+  width: 39.66667%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 38, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-grid="6"] {
+  width: 48%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 38, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-grid="7"] {
+  width: 56.33333%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 38, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-grid="8"] {
+  width: 64.66667%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 38, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-grid="9"] {
+  width: 73%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 38, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-grid="10"] {
+  width: 81.33333%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 38, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-grid="11"] {
+  width: 89.66667%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 38, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-grid="12"] {
+  width: 98%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+/* line 42, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 300;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 4px #aaa;
+}
+/* line 50, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.top [data-button] {
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+}
+/* line 55, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.top .title {
+  padding: .5rem 5rem;
+}
+@media (max-width: 470px) {
+  /* line 42, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  .top {
+    height: 120px;
+    text-align: center;
+  }
+  /* line 61, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  .top [data-button] {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 60px;
+  }
+}
+
+/* line 69, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.header-index {
+  position: relative;
+  height: 650px;
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/header.jpg) no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/header.jpg) no-repeat;
+  background-size: 100%;
+}
+/* line 74, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.header-index form {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 10rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 3rem;
+  text-align: center;
+}
+/* line 83, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.header-index input, .header-index select {
+  display: inline;
+  background: white;
+  padding: 0.8rem 1rem;
+  margin: 0 -2px;
+  vertical-align: top;
+  border: none;
+  border-right: solid 2px #aaa;
+  height: 4rem;
+  min-width: 10rem;
+}
+/* line 93, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.header-index input:active, .header-index input:focus, .header-index select:active, .header-index select:focus {
+  outline: none;
+}
+/* line 98, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.header-index input:first-of-type {
+  border-radius: .3rem 0  0 .3rem;
+}
+/* line 101, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.header-index input:last-of-type {
+  width: 15rem;
+  border-radius: 0 .3rem .3rem 0;
+}
+/* line 106, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.header-index [data-button~="material"] {
+  border-bottom: solid thin #b21f1f;
+  border-right: none;
+}
+@media (max-width: 1170px) {
+  /* line 69, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  .header-index {
+    height: 500px;
+  }
+}
+@media (max-width: 860px) {
+  /* line 69, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  .header-index {
+    background-size: cover;
+  }
+}
+@media (max-width: 669px) {
+  /* line 69, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  .header-index {
+    height: 610px;
+  }
+  /* line 118, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  .header-index form {
+    background: transparent;
+    position: absolute;
+    top: 60%;
+  }
+  /* line 123, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  .header-index input, .header-index select {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    border: none;
+    border-radius: 0 !important;
+  }
+}
+@media (max-width: 669px) and (max-width: 385px) {
+  /* line 123, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  .header-index input, .header-index select {
+    width: 100%;
+  }
+}
+@media (max-width: 669px) {
+  /* line 133, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  .header-index .caption button {
+    display: none;
+  }
+}
+
+/* line 138, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.caption {
+  position: absolute;
+  -webkit-transform: rotate(translateZ(-2px) scale(3));
+  transform: rotate(translateZ(-2px) scale(3));
+  z-index: -200;
+  top: 40%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+/* line 147, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.caption h2 {
+  text-transform: uppercase;
+  margin: 10px 0;
+  font-size: 6rem;
+}
+@media (max-width: 385px) {
+  /* line 147, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  .caption h2 {
+    font-size: 4rem;
+  }
+}
+/* line 155, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.caption span {
+  position: relative;
+}
+/* line 157, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.caption span:before, .caption span:after {
+  content: "";
+  height: 5px;
+  width: 14rem;
+  top: 0;
+  margin-top: 10px;
+  position: absolute;
+  border-top: solid thin white;
+}
+/* line 166, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.caption span:before {
+  margin-right: 15px;
+  right: 100%;
+}
+/* line 170, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.caption span:after {
+  margin-left: 15px;
+  left: 100%;
+}
+@media (max-width: 470px) {
+  /* line 177, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  .caption span:before, .caption span:after {
+    display: none;
+  }
+}
+/* line 182, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.caption [data-button~="transparency"] {
+  color: white;
+}
+@media (max-width: 1170px) {
+  /* line 138, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  .caption {
+    top: 30%;
+  }
+}
+
+/* line 189, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.title {
+  margin: 0 1rem;
+  font-family: 'Quicksand';
+  font-size: 3.5rem;
+  text-shadow: 0 1px 2px #444;
+  color: #3366aa;
+}
+/* line 195, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.title span {
+  color: #e77187;
+}
+
+/* line 199, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+footer {
+  position: relative;
+  background: #222;
+  color: #677;
+  padding: 3rem 10rem;
+}
+/* line 204, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+footer a {
+  color: #bbb;
+}
+/* line 206, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+footer a:hover {
+  color: #9aa;
+}
+/* line 210, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+footer ul {
+  float: right;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 216, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+footer li {
+  display: inline;
+  padding: 0 1rem;
+}
+/* line 220, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+footer svg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  fill: #e77187;
+  width: 32px;
+}
+@media (max-width: 1024px) {
+  /* line 199, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  footer {
+    padding: 3rem;
+  }
+}
+@media (max-width: 768px) {
+  /* line 199, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  footer {
+    padding: 6rem 3rem 3rem;
+    text-align: center;
+  }
+  /* line 234, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  footer ul {
+    float: none;
+  }
+  /* line 237, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  footer svg {
+    top: 2rem;
+  }
+}
+
+/* line 242, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+section {
+  color: #555;
+  font-size: 2rem;
+}
+
+/* line 246, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-section~="one"] {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4rem;
+  background: white;
+}
+/* line 12, /usr/local/lib/ruby/gems/2.1.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+[data-section~="one"]:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 250, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-section~="one"] svg {
+  width: 82px;
+  fill: #555;
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 257, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-section~="two"] {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(/assets/sunshine.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 6rem;
+  text-align: center;
+}
+/* line 12, /usr/local/lib/ruby/gems/2.1.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+[data-section~="two"]:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 264, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-section~="two"] h2 {
+  font-size: 5rem;
+  font-weight: 300;
+  color: white;
+}
+/* line 269, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-section~="two"] ul {
+  list-style-type: none;
+  padding: 0;
+  color: #999999;
+}
+/* line 273, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-section~="two"] ul svg {
+  fill: #999999;
+  position: relative;
+  top: 4px;
+  width: 20px;
+  margin-right: 10px;
+}
+/* line 281, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-section~="two"] li {
+  width: 80%;
+  height: 70px;
+  margin: 10px auto;
+  padding: 20px 100px;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: left;
+}
+@media (max-width: 1227px) {
+  /* line 290, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  [data-section~="two"] li {
+    padding: 20px 50px;
+  }
+}
+@media (max-width: 1075px) {
+  /* line 257, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  [data-section~="two"] {
+    padding: 1rem;
+  }
+  /* line 296, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  [data-section~="two"] h2 {
+    font-size: 3rem;
+    margin: 0;
+  }
+}
+@media (max-width: 768px) {
+  /* line 257, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  [data-section~="two"] {
+    background-size: cover;
+  }
+  /* line 303, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  [data-section~="two"] ul {
+    margin: 0;
+  }
+  /* line 304, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  [data-section~="two"] li {
+    height: 40px;
+    padding: 5px 50px;
+  }
+}
+@media (max-width: 426px) {
+  /* line 310, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  [data-section~="two"] li {
+    padding: 5px;
+    text-align: center;
+  }
+}
+
+/* line 316, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-section~="three"] {
+  text-align: center;
+  background: #eee;
+  padding: 30px;
+}
+/* line 320, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-section~="three"] h2 {
+  border-top: solid thick #aaa;
+  font-weight: 300;
+  padding-top: 20px;
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+/* line 328, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-section~="three"] svg {
+  width: 48px;
+}
+/* line 330, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-section~="three"] svg:hover {
+  fill: #888;
+}
+/* line 334, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-section~="three"] ul {
+  list-style-type: none;
+  padding: 0;
+}
+/* line 338, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-section~="three"] li {
+  display: inline;
+  margin: 0 15px;
+}
+
+/* line 344, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.icon-facebook {
+  fill: #3b5998;
+}
+/* line 347, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.icon-twitter {
+  fill: #00aced;
+}
+/* line 350, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.icon-googleplus {
+  fill: #dd4b39;
+}
+
+/* line 355, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-grid~="4"] > div {
+  padding: 2rem;
+  text-align: center;
+  font-weight: 300;
+}
+/* line 359, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-grid~="4"] > div:hover {
+  border-top: solid medium #3366aa;
+  box-shadow: 0 0 3px #aaa;
+}
+/* line 364, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-grid~="4"] br {
+  height: 1px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Button Styles */
+/* line 371, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button] {
+  border: none;
+  padding: 1rem 2rem;
+}
+/* line 374, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button]:hover {
+  background: #ccc;
+}
+
+/* line 378, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="curvy"] {
+  border-radius: 0.3rem;
+}
+
+/* line 381, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="transparent"] {
+  background: transparent;
+  border: solid thin #666666;
+  color: #666666;
+}
+/* line 385, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="transparent"]:hover {
+  background: transparent;
+  color: #b3b3b3;
+  border: solid thin #b3b3b3;
+}
+/* line 390, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="transparent"]:focus, [data-button~="transparent"]:active {
+  outline: none;
+}
+
+/* line 394, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="transparency"] {
+  background: rgba(204, 204, 204, 0.4);
+}
+/* line 396, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="transparency"]:hover {
+  background: rgba(170, 170, 170, 0.4);
+}
+
+/* line 400, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="primary"] {
+  background: #3366aa;
+  color: white;
+}
+/* line 403, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="primary"]:hover {
+  background: #2d5a96;
+}
+
+/* line 407, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="material"][data-button~="material"] {
+  background: #e77187;
+  color: white;
+}
+/* line 410, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="material"][data-button~="material"]:hover {
+  background: #e35b75;
+}
+
+/* line 414, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-button~="full"] {
+  width: 100%;
+}
+
+/* Frame Styles */
+/* line 418, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-frame] {
+  border: solid 5px #ccc;
+}
+
+/* line 421, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+[data-frame~="circular"] {
+  border-radius: 50%;
+}
+
+@media (max-width: 1075px) {
+  /* line 425, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  [data-grid~="6"] {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+@media (max-width: 768px) {
+  /* line 431, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+  [data-grid~="4"] {
+    width: 100%;
+  }
+}
+/* line 435, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.authentication {
+  min-height: 100%;
+  width: 100%;
+  background: #f2f2f2;
+  padding: 40px;
+}
+/* line 440, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.authentication input {
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+/* line 443, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.authentication input:not([type="submit"]):not([type="checkbox"]) {
+  width: 100%;
+  border: none;
+  height: 40px;
+  padding: 5px 10px;
+  background: #ebebeb;
+  box-shadow: 0 0 5px #555 inset;
+}
+/* line 450, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.authentication input:not([type="submit"]):not([type="checkbox"]):focus {
+  background: #fafafa;
+}
+/* line 454, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.authentication input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background: #3366aa;
+  padding: 10px;
+  color: white;
+  border: solid thin #1b375c;
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.25), transparent);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), transparent);
+}
+/* line 462, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.authentication input[type="submit"]:hover {
+  box-shadow: 0 2px 8px #999;
+}
+/* line 467, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.authentication-box {
+  width: 300px;
+  margin: 0 auto;
+}
+/* line 471, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.authentication .title {
+  text-align: center;
+}
+/* line 474, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.authentication h2 {
+  font-weight: 300;
+}
+/* line 477, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.authentication-error, .authentication #error_explanation {
+  position: relative;
+  padding: 10px 10px 10px 40px;
+  box-shadow: 0 2px 3px #555;
+  border-radius: 4px;
+  background: #cccccc;
+  color: #444;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+  margin-bottom: 10px;
+}
+/* line 487, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.authentication-error:before, .authentication #error_explanation:before {
+  content: url(/assets/exclaim.svg);
+  position: absolute;
+  left: 10px;
+  top: 8px;
+}
+/* line 493, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.authentication-error h2, .authentication #error_explanation h2 {
+  font-weight: 400;
+  font-size: 2rem;
+  margin-top: 0;
+}
+/* line 498, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.authentication-error ul, .authentication #error_explanation ul {
+  padding: 0;
+}
+
+/* line 501, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.devise-links {
+  text-align: center;
+}
+/* line 503, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.devise-links a {
+  color: #888;
+  font-size: 1.6rem;
+}
+/* line 506, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.devise-links a:hover {
+  text-decoration: underline;
+}
+
+/* line 511, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account {
+  height: 100%;
+}
+/* line 513, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account a {
+  color: #3366aa;
+}
+/* line 516, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account-header {
+  position: relative;
+  border-top: solid 10px #e77187;
+  padding: 15px 50px;
+  width: 100%;
+  height: 100px;
+  background: white;
+  box-shadow: 0 1px 3px #888;
+}
+/* line 524, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account-header > svg {
+  width: 24px;
+  height: 24px;
+  fill: #888;
+  position: absolute;
+  right: 20px;
+  top: 35px;
+  cursor: pointer;
+}
+/* line 532, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account-header > svg.active {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+/* line 536, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account-header .title {
+  max-width: 100px;
+}
+/* line 540, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account-container {
+  background: #f2f2f2;
+  min-height: 60%;
+  padding: 20px;
+}
+/* line 545, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account-controls {
+  float: right;
+}
+/* line 548, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account-avatar {
+  display: inline;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: solid 4px white;
+  box-shadow: 0 0 2px #999999;
+  margin-left: 10px;
+}
+/* line 557, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account-menu {
+  display: inline;
+  list-style-type: none;
+  padding: 0;
+}
+/* line 561, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account-menu li {
+  position: relative;
+  display: inline;
+  margin: 0 10px;
+  margin-top: 20px;
+}
+/* line 567, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account-menu small {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  z-index: 1;
+  background: #3366aa;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  padding: 1.2px;
+  text-align: center;
+}
+/* line 580, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account-menu svg {
+  width: 32px;
+  height: 32px;
+  fill: #888;
+  vertical-align: middle;
+}
+/* line 587, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account-settings {
+  position: absolute;
+  width: 300px;
+  top: 115px;
+  right: 5px;
+  z-index: 100;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background: white;
+  box-shadow: 0 2px 1px #555;
+  width: 200px;
+  display: none;
+}
+/* line 600, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account-settings::before {
+  content: '';
+  position: absolute;
+  right: 20px;
+  top: -6px;
+  width: 30px;
+  z-index: -110;
+  height: 30px;
+  background: white;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+/* line 611, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account-settings a {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  border-bottom: solid thin #eee;
+  border-left: solid 2px #6f9ad4;
+}
+/* line 617, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account-settings a:hover {
+  border-left: solid 2px #e77187;
+}
+/* line 621, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.account-settings svg {
+  width: 24px;
+  height: 24px;
+  fill: #555;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+/* line 631, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.tailored h2 {
+  margin-top: 0;
+  font-weight: 300;
+  padding: 8px;
+}
+/* line 636, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.tailored-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 6px;
+}
+/* line 642, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.tailored p {
+  text-align: right;
+  padding-top: 0;
+  margin-right: 80px;
+  font-size: 1.5rem;
+}
+
+/* line 649, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.profile {
+  position: relative;
+  background: white;
+  box-shadow: 0 0 4px #b3b3b3;
+  margin: 20px;
+  padding: 20px;
+  height: 125px;
+  overflow: hidden;
+}
+/* line 657, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.profile p {
+  margin: 0;
+}
+/* line 658, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.profile h4 {
+  display: inline;
+  margin: 0;
+  margin-right: 10px;
+  font-weight: 300;
+  font-size: 4rem;
+}
+/* line 664, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.profile h4.ok {
+  color: green;
+}
+/* line 668, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.profile-shape {
+  position: absolute;
+  top: 0;
+  left: 150px;
+  width: 0;
+  height: 0;
+  border-top: 125px solid #eee;
+  border-left: 125px solid transparent;
+}
+/* line 677, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.profile-description {
+  position: absolute;
+  background: #eee;
+  top: 0;
+  left: 275px;
+  width: 325px;
+  height: 100%;
+  color: #555;
+  padding: 20px 10px;
+  font-style: italic;
+}
+
+/* line 690, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.search-form label {
+  font-weight: 800;
+  display: block;
+  margin: 0 0 10px;
+  font-size: 3rem;
+}
+/* line 696, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.search-form input[type="text"] {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: solid 3px #ccc;
+  padding: 10px;
+}
+/* line 703, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.search-form [type="submit"] {
+  border: none;
+  background: #ccc;
+  color: #666;
+  width: 100px;
+  border-radius: 0 0 5px 5px;
+  margin-top: -2px;
+  padding: 10px;
+}
+/* line 711, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.search-form [type="submit"]:hover {
+  background: #bbb;
+  width: 110px;
+  -webkit-transition: width 1s;
+          transition: width 1s;
+}
+
+/* line 718, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.chat {
+  margin-top: 20px;
+}
+/* line 720, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.chat h3 {
+  text-align: center;
+  margin: 0;
+  font-weight: 400;
+  background: #ccc;
+  padding: 10px;
+  width: 100px;
+  margin-bottom: -2px;
+  border-radius: 5px 5px 0 0;
+}
+/* line 730, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.chat-box {
+  border: solid 3px #ccc;
+  border-radius: 4px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 270px;
+}
+/* line 736, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.chat-box ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 741, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.chat-box li {
+  position: relative;
+  background: white;
+  padding: 10px 10px 10px 40px;
+  border-bottom: solid thin #aaa;
+  cursor: pointer;
+}
+/* line 747, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.chat-box li:hover {
+  background: #fafafa;
+}
+/* line 750, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.chat-box li span {
+  font-size: 1.6rem;
+  font-style: italic;
+  color: #555;
+  margin: 0 0 0 20px;
+  display: inline-block;
+  width: 300px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* line 758, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.chat-box li time {
+  font-size: 1.4rem;
+  display: block;
+}
+/* line 763, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.chat-box small {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  background: #ddd;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+/* line 771, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.chat-box small.online {
+  background: #1CC31C;
+}
+
+/* line 777, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference {
+  width: 600px;
+  margin: 40px auto;
+  margin-top: 40px;
+  text-align: center;
+}
+/* line 782, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference-label {
+  font-weight: 300;
+  display: block;
+  margin: 10px 0;
+  font-size: 3.5rem;
+}
+/* line 788, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference--line {
+  margin: 0 40px 5px;
+  text-align: left;
+}
+/* line 791, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference--line label {
+  margin-left: 10px;
+}
+/* line 795, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference-section {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  margin-top: 20px;
+  background: white;
+  border-radius: 0 10px 10px 0;
+  border-left: solid thick #3366aa;
+  box-shadow: 0 0 4px #b3b3b3;
+}
+/* line 804, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference-section h3 {
+  text-align: left;
+}
+/* line 807, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference-section nav {
+  margin-top: 20px;
+}
+/* line 810, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference-section [type="text"] {
+  border: none;
+  border-bottom: solid thin #888;
+}
+/* line 813, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference-section [type="text"], .preference-section [type="text"] select {
+  width: 100%;
+  font-weight: 300;
+}
+/* line 819, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference-nav {
+  border-radius: 4px;
+  padding: 6px 20px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+/* line 824, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference-nav svg {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+/* line 829, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference-nav:first-of-type {
+  margin-right: 10px;
+}
+/* line 833, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference-next, .preference-prev {
+  background: #487fc8;
+  color: white;
+  border-bottom: solid 2px #3366aa;
+}
+/* line 837, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference-next:hover, .preference-prev:hover {
+  background: #3972be;
+}
+/* line 840, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference-next svg, .preference-prev svg {
+  fill: white;
+}
+/* line 845, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference-prev svg {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+/* line 849, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference-skip {
+  background: #ddd;
+  border-bottom: solid 2px #aaa;
+}
+/* line 852, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference-skip:hover {
+  background: #d0d0d0;
+}
+/* line 855, /var/www/projects/musterd8/app/assets/stylesheets/_layout.scss */
+.preference-skip svg {
+  fill: #888;
+}
+
+/*  Print Styles */
+@media print {
+  /* line 3, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 9, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  a {
+    text-decoration: underline;
+  }
+  /* line 11, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  a:visited {
+    text-decoration: underline;
+  }
+  /* line 12, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 14, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /* Don't show links for images, or javascript/internal links */
+  /* line 18, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  .ir a:after {
+    content: "";
+  }
+
+  /* line 20, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+  /* line 24, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /* line 28, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* line 29, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  tr {
+    page-break-inside: avoid;
+  }
+
+  /* line 30, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  img {
+    page-break-inside: avoid;
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+  /* line 36, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 40, /var/www/projects/musterd8/app/assets/stylesheets/_print.scss */
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}
+/*! Helper classes */
+/*  Image replacement */
+/* line 5, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+}
+
+/* line 13, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+/* line 19, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.fr {
+  float: right;
+}
+
+/* line 20, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.fl {
+  float: left;
+}
+
+/* line 21, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.pad10 {
+  padding: 10px;
+}
+
+/* line 22, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.pad20 {
+  padding: 20px;
+}
+
+/* line 23, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.topmag10 {
+  margin-top: 10px;
+}
+
+/* line 24, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.topmag20 {
+  margin-top: 20px;
+}
+
+/* line 25, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.color-white {
+  color: white;
+}
+
+/* line 26, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.middle-block {
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 30, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.orange-bg {
+  background-color: #eba11e;
+}
+
+/* line 33, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.inline-block {
+  display: inline-block;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+/* line 38, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* line 48, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* line 57, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.clearfix:after, .clearfix:before {
+  content: " ";
+  display: table;
+}
+/* line 61, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 65, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* line 66, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.ghost {
+  display: none;
+}
+
+/* line 67, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.txtright {
+  text-align: right;
+}
+
+/* line 68, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.txtleft {
+  text-align: left;
+}
+
+/* line 69, /var/www/projects/musterd8/app/assets/stylesheets/_helpers.scss */
+.txtcenter {
+  text-align: center;
+}

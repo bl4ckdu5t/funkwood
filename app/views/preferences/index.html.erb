@@ -5,11 +5,11 @@
   <% end %>
   </h1>
   <form action="">
-  	<fieldset class="preference-section" data-form="1">
+  	<fieldset class="preference-section" id="js-form-1">
   		<h3>Hello, <span id="js-surveyor">Joseph Rex</span></h3>
   		<label class="preference-label">Which of these best describes your working class?</label>
   		<p class="preference--line">
-  			<input type="radio" name="working_class" id="stuent" value="student"><label for="stuent">Student</label>
+  			<input type="radio" name="working_class" id="student" value="student"><label for="student">Student</label>
   		</p>
   		<p class="preference--line">
   			<input type="radio" name="working_class" id="working" value="working"><label for="working">Working</label>
@@ -17,6 +17,8 @@
   		<p class="preference--line">
   			<input type="radio" name="working_class" id="retired" value="retired"><label for="retired">Retired</label>
   		</p>
+  		<label for="career" class="preference-label">What is your profession?</label>
+  		<input type="text" name="career" placeholder="Answer here">
   		<nav class="clearfix fr">
   			<%= link_to home_path, class: 'preference-nav preference-skip' do %>
   				<svg viewBox="0 0 1024 1024">
@@ -24,7 +26,7 @@
 					</svg>
   				Skip
   			<% end %>
-  			<a href="javascript:void(0)" class="preference-nav preference-next" id="js-form-1">
+  			<a href="javascript:void(0)" class="preference-nav preference-next" id="js-next-1">
   				<svg viewBox="0 0 1024 1024">
 						<path d="M512 341.333v-170.667l341.333 341.333-341.333 341.333v-170.667h-341.333v-341.333z"></path>
 					</svg>
@@ -33,19 +35,119 @@
   		</nav>
   	</fieldset>
 
-  	<fieldset class="preference-section ghost" data-form="2">
-  		<label for="career" class="preference-label">What is your profession?</label>
-  		<input type="text" name="career" placeholder="Answer here">
+  	<fieldset class="preference-section ghost" id="js-form-2">
   		<label for="relationship_type" class="preference-label">What kind of relationship do you seek?</label>
-  		<input type="text" placeholder="Answer here" name="relationship_type">
+  		<p class="preference--line">
+  			<input type="radio" name="relationship_type" id="serious" value="serious"><label for="serious">Serious</label>
+  		</p>
+  		<p class="preference--line">
+  			<input type="radio" name="relationship_type" id="casual" value="casual"><label for="casual">Casual</label>
+  		</p>
+  		<p class="preference--line">
+  			<input type="radio" name="relationship_type" id="friendship" value="friendship"><label for="friendship">Friendship</label>
+  		</p>
+  		<p class="preference--line">
+  			<input type="radio" name="relationship_type" id="one-night" value="one-night"><label for="one-night">One night stand</label>
+  		</p>
+  		<label for="religion" class="preference-label">What is your religion?</label>
+  		<p class="preference--line">
+  			<input type="radio" name="relationship_type" id="christianity" value="christianity"><label for="christianity">Christianity</label>
+  		</p>
+  		<p class="preference--line">
+  			<input type="radio" name="relationship_type" id="islam" value="islam"><label for="islam">Islam</label>
+  		</p>
+  		<p class="preference--line">
+  			<input type="radio" name="relationship_type" id="other" value="other"><label for="other">Other</label>
+  		</p>
+  		<p class="preference--line">
+  			<input type="radio" name="relationship_type" id="atheist" value="atheist"><label for="atheist">Atheist</label>
+  		</p>
   		<nav class="clearfix fr">
-  			<a href="js-prev-2" class='preference-nav preference-prev'>
+  			<a href="javascript:void(0)" class='preference-nav preference-prev' id="js-prev-2">
   				<svg viewBox="0 0 1024 1024">
 						<path d="M512 341.333v-170.667l341.333 341.333-341.333 341.333v-170.667h-341.333v-341.333z"></path>
 					</svg>
   				Previous
   			</a>
-  			<a href="javascript:void(0)" class="preference-nav preference-next" id="js-form-2">
+  			<a href="javascript:void(0)" class="preference-nav preference-next" id="js-next-2">
+  				<svg viewBox="0 0 1024 1024">
+						<path d="M512 341.333v-170.667l341.333 341.333-341.333 341.333v-170.667h-341.333v-341.333z"></path>
+					</svg>
+  				Next
+  			</a>
+  		</nav>
+  	</fieldset>
+
+  	<fieldset class="preference-section ghost" id="js-form-3">
+  		<label for="complexion" class="preference-label">Which describes your complexion?</label>
+  		<p class="preference--line">
+  			<input type="radio" name="complexion" id="light-skin" value="light-skin"><label for="light-skin">Light Skinned</label>
+  		</p>
+  		<p class="preference--line">
+  			<input type="radio" name="complexion" id="dark-skin" value="dark-skin"><label for="dark-skin">Dark Skinned</label>
+  		</p>
+  		<label for="height" class="preference-label">What is your height?</label>
+  		<input type="text" name="height" placeholder="e.g 180cm or 6'1 feet">
+  		<label for="weight" class="preference-label">What do you weigh?</label>
+  		<input type="text" name="weight" placeholder="e.g 160 LBS, 160 pounds, 73kg">
+  		<label for="body_type" class="preference-label">Which is your body type?</label>
+  		<p class="preference--line">
+  			<input type="radio" name="body_type" id="tall-slim" value="tall-slim"><label for="tall-slim">Tall and Slim</label>
+  		</p>
+  		<p class="preference--line">
+  			<input type="radio" name="body_type" id="tall-thick" value="tall-thick"><label for="tall-thick">Tall and Thick</label>
+  		</p>
+  		<p class="preference--line">
+  			<input type="radio" name="body_type" id="short-slim" value="short-slim"><label for="short-slim">Short and Slim</label>
+  		</p>
+  		<p class="preference--line">
+  			<input type="radio" name="body_type" id="short-thick" value="short-thick"><label for="short-thick">Short and Thick</label>
+  		</p>
+  		<nav class="clearfix fr">
+  			<a href="javascript:void(0)" class='preference-nav preference-prev' id="js-prev-3">
+  				<svg viewBox="0 0 1024 1024">
+						<path d="M512 341.333v-170.667l341.333 341.333-341.333 341.333v-170.667h-341.333v-341.333z"></path>
+					</svg>
+  				Previous
+  			</a>
+  			<a href="javascript:void(0)" class="preference-nav preference-next" id="js-next-3">
+  				<svg viewBox="0 0 1024 1024">
+						<path d="M512 341.333v-170.667l341.333 341.333-341.333 341.333v-170.667h-341.333v-341.333z"></path>
+					</svg>
+  				Next
+  			</a>
+  		</nav>
+  	</fieldset>
+
+  	<fieldset class="preference-section ghost" id="js-form-4">
+  		<label for="partner_complexion" class="preference-label">Which is your preferred partner complexion?</label>
+  		<p class="preference--line">
+  			<input type="radio" name="partner_complexion" id="light-skin" value="light-skin"><label for="light-skin">Light Skinned</label>
+  		</p>
+  		<p class="preference--line">
+  			<input type="radio" name="partner_complexion" id="dark-skin" value="dark-skin"><label for="dark-skin">Dark Skinned</label>
+  		</p>
+  		<label for="partner_body_type" class="preference-label">Which is your preferred partner body type?</label>
+  		<p class="preference--line">
+  			<input type="radio" name="partner_body_type" id="tall-slim" value="tall-slim"><label for="tall-slim">Tall and Slim</label>
+  		</p>
+  		<p class="preference--line">
+  			<input type="radio" name="partner_body_type" id="tall-thick" value="tall-thick"><label for="tall-thick">Tall and Thick</label>
+  		</p>
+  		<p class="preference--line">
+  			<input type="radio" name="partner_body_type" id="short-slim" value="short-slim"><label for="short-slim">Short and Slim</label>
+  		</p>
+  		<p class="preference--line">
+  			<input type="radio" name="partner_body_type" id="short-thick" value="short-thick"><label for="short-thick">Short and Thick</label>
+  		</p>
+  		<nav class="clearfix fr">
+  			<a href="javascript:void(0)" class='preference-nav preference-prev' id="js-prev-4">
+  				<svg viewBox="0 0 1024 1024">
+						<path d="M512 341.333v-170.667l341.333 341.333-341.333 341.333v-170.667h-341.333v-341.333z"></path>
+					</svg>
+  				Previous
+  			</a>
+  			<a href="javascript:void(0)" class="preference-nav preference-next" id="js-next-4">
   				<svg viewBox="0 0 1024 1024">
 						<path d="M512 341.333v-170.667l341.333 341.333-341.333 341.333v-170.667h-341.333v-341.333z"></path>
 					</svg>
