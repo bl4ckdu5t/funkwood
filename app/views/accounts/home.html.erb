@@ -18,7 +18,7 @@
 					</a>
 				</li>
 			</ul>
-			<%= image_tag 'profile.jpg', class: 'account-avatar' %>
+			<%= image_tag 'avatar.jpg', class: 'account-avatar' %>
 		</div>
 		<svg viewBox="0 0 1024 1024">
 			<path d="M707.627 366.293l-195.627 195.627-195.627-195.627-60.373 60.373 256 256 256-256z"></path>
@@ -61,7 +61,7 @@
 	<section class="account-container">
 		<div data-grid="6">
 			<div class="tailored">
-				<h2>Hey Joseph, here are some partners tailored for you</h2>
+				<h2>Hey <%= @preference.fullname.blank? ? 'user' : "#{@preference.fullname}".split[0] %>, here are some partners tailored for you</h2>
 				<% (1..6).each do |w| %>
 				<% if w % 2 == 0 %>
 				<%= image_tag 'woman1.jpg', class: 'tailored-image' %>

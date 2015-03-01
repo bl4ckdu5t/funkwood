@@ -1,8 +1,18 @@
 var ready = function(){
+	// Submitting the preferences form
+	$(document).on('submit','#js-preference-form',function(e){
+		e.preventDefault();
+		var data = $(this).serialize();
+		console.log(data);
+		$('#js-form-4').hide();
+		$('#js-form-complete').show();
+	});
+	// home page settings dropdown
 	$('.account-header > svg').click(function(){
 		$(this).toggleClass('active');
 		$('.account-settings').toggle();
 	});
+	// Register process for users
 	$('#js-register').submit(function(e){
 		e.preventDefault();
 		setCookie('visitor_name', $('#js-name').val());
@@ -11,7 +21,9 @@ var ready = function(){
 		var destination = window.location.protocol + '//' + window.location.host + '/users/sign_up';
 		window.location.replace(destination);
 	});
-	$('#js-surveyor').text(getCookie('visitor_name'));
+	if($('#js-surveyor').text() === ''){
+		$('#js-surveyor').text(getCookie('visitor_name') == null ? 'user' : getCookie('visitor_name'));
+	}
 	// iCheck checkboxes https://github.com/fronteed/iCheck
 	$('input').iCheck({
     checkboxClass: 'icheckbox_minimal-blue',

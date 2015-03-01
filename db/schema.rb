@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150228153447) do
     t.integer  "user_id"
     t.string   "fullname"
     t.string   "username"
+    t.string   "avatar"
     t.string   "gender"
     t.string   "age_range"
     t.string   "working_class"

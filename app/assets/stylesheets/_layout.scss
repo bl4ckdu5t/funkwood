@@ -628,6 +628,7 @@ section{
 	}
 }
 .tailored{
+	margin: 0 auto;
 	h2{
 		margin-top: 0;
 		font-weight: 300;
@@ -638,11 +639,14 @@ section{
 		height: 80px;
 		border-radius: 50%;
 		margin: 0 6px;
+		&:first-of-type{
+			margin-left: 30px;
+		}
 	}
 	p{
 		text-align: right;
 		padding-top: 0;
-		margin-right: 80px;
+		margin-right: 50px;
 		font-size: 1.5rem;
 	}
 }
@@ -650,7 +654,8 @@ section{
 	position: relative;
 	background: $white;
 	box-shadow: 0 0 4px darken($white, 30%);
-	margin: 20px;
+	margin: 20px auto;
+	max-width: 598px;
 	padding: 20px;
 	height: 125px;
 	overflow: hidden;
@@ -846,6 +851,20 @@ section{
 			transform: rotate(180deg);
 		}
 	}
+	&-submit{
+		background: $color-success;
+		color: $white;
+		border: none;
+		border-bottom: solid 2px darken($color-success, 10%);
+		&:hover{
+			background: darken($color-success, 10%);
+		}
+		svg{
+			fill: $white;
+			width: 20px;
+			height: 20px;
+		}
+	}
 	&-skip{
 		background: #ddd;
 		border-bottom: solid 2px #aaa;
@@ -855,5 +874,22 @@ section{
 		svg{
 			fill: #888;
 		}
+	}
+	&-complete{
+		width: 100px;
+		height: 100px;
+		margin: 20px auto;
+		padding: 15px;
+		border-radius: 50%;
+		border: solid medium $color-success;
+		svg{
+			width: 64px;
+			fill: $color-success;
+			vertical-align: middle;
+		}
+	}
+	h2{
+		font-weight: 300;
+		color: $color-success;
 	}
 }
