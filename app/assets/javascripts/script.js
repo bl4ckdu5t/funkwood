@@ -11,7 +11,20 @@ var ready = function(){
 		var destination = window.location.protocol + '//' + window.location.host + '/users/sign_up';
 		window.location.replace(destination);
 	});
-	$('#js-surveyor').text(read_cookie('visitor_name'))
+	$('#js-surveyor').text(read_cookie('visitor_name'));
+	// iCheck checkboxes https://github.com/fronteed/iCheck
+	$('input').iCheck({
+    checkboxClass: 'icheckbox_minimal-blue',
+    radioClass: 'iradio_minimal-blue',
+    increaseArea: '20%' // optional
+  });
+  // Multisite Form navigation
+  for (var i = 0; i < 10; i++) {
+  	$('#js-form-'+i.toString()).click(function(){
+  		$('[data-form="' + i + '"]').hide();
+  		//$('[data-form='+ i + 2 +']').show();
+  	});
+  };
 };
 // Ready Pages
 $(document).ready(ready);

@@ -779,6 +779,19 @@ section{
 	margin: 40px auto;
 	margin-top: 40px;
 	text-align: center;
+	&-label{
+		font-weight: 300;
+		display: block;
+		margin: 10px 0;
+		font-size: 3.5rem;
+	}
+	&--line{
+		margin: 0 40px 5px;
+		text-align: left;
+		label{
+			margin-left: 10px;
+		}
+	}
 	&-section{
 		position: relative;
 		width: 100%;
@@ -790,12 +803,6 @@ section{
 		box-shadow: 0 0 4px darken($white, 30%);
 		h3{
 			text-align: left;
-		}
-		label{
-			font-weight: 300;
-			display: block;
-			margin: 10px 0;
-			font-size: 3.5rem;
 		}
 		nav{
 			margin-top: 20px;

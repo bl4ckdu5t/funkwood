@@ -5,10 +5,18 @@
   <% end %>
   </h1>
   <form action="">
-  	<fieldset class="preference-section">
+  	<fieldset class="preference-section" data-form="1">
   		<h3>Hello, <span id="js-surveyor">Joseph Rex</span></h3>
-  		<label>Which of these best describes your working class?</label>
-  		<input type="text" name="working_class" placeholder="Answer here">
+  		<label class="preference-label">Which of these best describes your working class?</label>
+  		<p class="preference--line">
+  			<input type="radio" name="working_class" id="stuent" value="student"><label for="stuent">Student</label>
+  		</p>
+  		<p class="preference--line">
+  			<input type="radio" name="working_class" id="working" value="working"><label for="working">Working</label>
+  		</p>
+  		<p class="preference--line">
+  			<input type="radio" name="working_class" id="retired" value="retired"><label for="retired">Retired</label>
+  		</p>
   		<nav class="clearfix fr">
   			<%= link_to home_path, class: 'preference-nav preference-skip' do %>
   				<svg viewBox="0 0 1024 1024">
@@ -16,7 +24,7 @@
 					</svg>
   				Skip
   			<% end %>
-  			<a href="javascript:void(0)" class="preference-nav preference-next">
+  			<a href="javascript:void(0)" class="preference-nav preference-next" id="js-form-1">
   				<svg viewBox="0 0 1024 1024">
 						<path d="M512 341.333v-170.667l341.333 341.333-341.333 341.333v-170.667h-341.333v-341.333z"></path>
 					</svg>
@@ -25,19 +33,19 @@
   		</nav>
   	</fieldset>
 
-  	<fieldset class="preference-section">
-  		<label>What is your profession?</label>
-  		<input type="text" name="working_class" placeholder="Answer here">
-  		<label for="relationship_type">What kind of relationship do you seek?</label>
-  		<input type="text" placeholder="Answer here">
+  	<fieldset class="preference-section ghost" data-form="2">
+  		<label for="career" class="preference-label">What is your profession?</label>
+  		<input type="text" name="career" placeholder="Answer here">
+  		<label for="relationship_type" class="preference-label">What kind of relationship do you seek?</label>
+  		<input type="text" placeholder="Answer here" name="relationship_type">
   		<nav class="clearfix fr">
-  			<%= link_to home_path, class: 'preference-nav preference-prev' do %>
+  			<a href="js-prev-2" class='preference-nav preference-prev'>
   				<svg viewBox="0 0 1024 1024">
 						<path d="M512 341.333v-170.667l341.333 341.333-341.333 341.333v-170.667h-341.333v-341.333z"></path>
 					</svg>
   				Previous
-  			<% end %>
-  			<a href="javascript:void(0)" class="preference-nav preference-next">
+  			</a>
+  			<a href="javascript:void(0)" class="preference-nav preference-next" id="js-form-2">
   				<svg viewBox="0 0 1024 1024">
 						<path d="M512 341.333v-170.667l341.333 341.333-341.333 341.333v-170.667h-341.333v-341.333z"></path>
 					</svg>
