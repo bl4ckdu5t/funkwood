@@ -21,8 +21,23 @@ var ready = function(){
 		var destination = window.location.protocol + '//' + window.location.host + '/users/sign_up';
 		window.location.replace(destination);
 	});
-	if($('#js-surveyor').text() === ''){
-		$('#js-surveyor').text(getCookie('visitor_name') == null ? 'user' : getCookie('visitor_name'));
+	if($('#js-visitor-name').text() === ''){
+		$('#js-visitor-name').text(getCookie('visitor_name') == null ? 'user' : getCookie('visitor_name'));
+	}
+	if($('.js-visitor-name').val() === ''){
+		if(getCookie('visitor_name') != null){
+			$('.js-visitor-name').val(getCookie('visitor_name'));
+		}
+	}
+	if($('.js-visitor-age').val() === ''){
+		if(getCookie('visitor_age') != null){
+			$('.js-visitor-age').val(getCookie('visitor_age'));
+		}
+	}
+	if($('.js-visitor-gender').val() === ''){
+		if(getCookie('visitor_gender') != null){
+			$('.js-visitor-gender').val(getCookie('visitor_gender'));
+		}
 	}
 	// iCheck checkboxes https://github.com/fronteed/iCheck
 	$('input').iCheck({

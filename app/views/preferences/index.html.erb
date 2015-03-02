@@ -6,7 +6,10 @@
   </h1>
   <form action="" id="js-preference-form">
   	<fieldset class="preference-section" id="js-form-1">
-  		<h3>Hello, <span id="js-surveyor"><%= @preference.fullname %></span></h3>
+  		<h3>Hello, <span id="js-visitor-name"><%= @preference.fullname %></span></h3>
+      <input type="hidden" name="fullname" class="js-visitor-name" value="">
+      <input type="hidden" name="age_range" class="js-visitor-age" value="">
+      <input type="hidden" name="gender" class="js-visitor-gender" value="">
   		<label class="preference-label">Which of these best describes your working class?</label>
   		<p class="preference--line">
   			<input type="radio" name="working_class" id="student" value="student"><label for="student">Student</label>
@@ -51,16 +54,16 @@
   		</p>
   		<label for="religion" class="preference-label">What is your religion?</label>
   		<p class="preference--line">
-  			<input type="radio" name="relationship_type" id="christianity" value="christianity"><label for="christianity">Christianity</label>
+  			<input type="radio" name="religion" id="christianity" value="christianity"><label for="christianity">Christianity</label>
   		</p>
   		<p class="preference--line">
-  			<input type="radio" name="relationship_type" id="islam" value="islam"><label for="islam">Islam</label>
+  			<input type="radio" name="religion" id="islam" value="islam"><label for="islam">Islam</label>
   		</p>
   		<p class="preference--line">
-  			<input type="radio" name="relationship_type" id="other" value="other"><label for="other">Other</label>
+  			<input type="radio" name="religion" id="other" value="other"><label for="other">Other</label>
   		</p>
   		<p class="preference--line">
-  			<input type="radio" name="relationship_type" id="atheist" value="atheist"><label for="atheist">Atheist</label>
+  			<input type="radio" name="religion" id="atheist" value="atheist"><label for="atheist">Atheist</label>
   		</p>
   		<nav class="clearfix fr">
   			<a href="javascript:void(0)" class='preference-nav preference-prev' id="js-prev-2">
@@ -122,20 +125,20 @@
   	<fieldset class="preference-section ghost" id="js-form-4">
   		<label for="partner_complexion" class="preference-label">Which is your preferred partner complexion?</label>
   		<p class="preference--line">
-  			<input type="radio" name="partner_complexion" id="light-skin" value="light-skin"><label for="light-skin">Light Skinned</label>
+  			<input type="radio" name="partner_complexion" id="light-skin-partner" value="light-skin"><label for="light-skin-partner">Light Skinned</label>
   		</p>
   		<p class="preference--line">
-  			<input type="radio" name="partner_complexion" id="dark-skin" value="dark-skin"><label for="dark-skin">Dark Skinned</label>
+  			<input type="radio" name="partner_complexion" id="dark-skin-partner" value="dark-skin"><label for="dark-skin-partner">Dark Skinned</label>
   		</p>
   		<label for="partner_body_type" class="preference-label">Which is your preferred partner body type?</label>
   		<p class="preference--line">
-  			<input type="radio" name="partner_body_type" id="tall-slim" value="tall-slim"><label for="tall-slim">Tall and Slim</label>
+  			<input type="radio" name="partner_body_type" id="tall-slim-partner" value="tall-slim"><label for="tall-slim-partner">Tall and Slim</label>
   		</p>
   		<p class="preference--line">
-  			<input type="radio" name="partner_body_type" id="tall-thick" value="tall-thick"><label for="tall-thick">Tall and Thick</label>
+  			<input type="radio" name="partner_body_type" id="tall-thick-partner" value="tall-thick"><label for="tall-thick-partner">Tall and Thick</label>
   		</p>
   		<p class="preference--line">
-  			<input type="radio" name="partner_body_type" id="short-slim" value="short-slim"><label for="short-slim">Short and Slim</label>
+  			<input type="radio" name="partner_body_type" id="short-slim-partner" value="short-slim"><label for="short-slim-partner">Short and Slim</label>
   		</p>
   		<p class="preference--line">
   			<input type="radio" name="partner_body_type" id="short-thick" value="short-thick"><label for="short-thick">Short and Thick</label>

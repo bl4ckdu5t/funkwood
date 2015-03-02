@@ -582,6 +582,9 @@ section{
 			height: 32px;
 			fill: #888;
 			vertical-align: middle;
+			&:hover{
+				fill: #555;
+			}
 		}
 	}
 	&-settings{
@@ -667,7 +670,13 @@ section{
 		font-weight: 300;
 		font-size: 4rem;
 		&.ok{
-			color: green;
+			color: $color-success;
+		}
+		&.bad{
+			color: $red;
+		}
+		&.fair{
+			color: $color-orange;
 		}
 	}
 	&-shape{
@@ -891,5 +900,65 @@ section{
 	h2{
 		font-weight: 300;
 		color: $color-success;
+	}
+}
+.user_profile{
+	margin-top: 100px;
+	position: relative;
+	&-avatar{
+		position: absolute;
+		top: -50px;
+		z-index: 1;
+		display: block;
+		overflow: hidden;
+		width: 150px;
+		height: 150px;
+		transform: rotate(45deg);
+		box-shadow: 1px 0 2px #888;
+		img{
+			width: 220px;
+			height: 220px;
+			transform: rotate(-45deg);
+			margin-top: -34px;
+			margin-left: -30px;
+		}
+	}
+	&-title{
+		border-top: solid thin #999;
+		padding: 10px 200px;
+		h2{
+			margin: 0 10px 10px;
+			font-weight: 300;
+			font-size: 4rem;
+		}
+	}
+	&-content{
+		margin-top: 20px;
+		ul{
+			list-style-type: none;
+			padding: 0;
+			width: 180px;
+			float: left;
+			svg{
+				width: 16px;
+				height: 16px;
+				vertical-align: top;
+				margin-top: 2px;
+				fill: #555;
+			}
+		}
+		li{
+			border-bottom: solid thin #888;
+			padding: 5px 10px;
+			font-size: 1.6rem;
+		}
+		article{
+			padding: 0 20px;
+			width: 75%;
+			float: left;
+		}
+		h3, p{
+			margin: 10px 0;
+		}
 	}
 }

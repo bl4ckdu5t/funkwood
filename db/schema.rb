@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20150228153447) do
     t.string   "partner_working_class"
     t.string   "partner_career"
     t.string   "partner_religion"
+    t.string   "location"
+    t.text     "about"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

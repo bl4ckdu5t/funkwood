@@ -20,6 +20,8 @@ class CreatePreferences < ActiveRecord::Migration
     	t.string :partner_working_class
     	t.string :partner_career
     	t.string :partner_religion
+        t.string :location
+        t.text :about
       t.timestamps
     end
   end
