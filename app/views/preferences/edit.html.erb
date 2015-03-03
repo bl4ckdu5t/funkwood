@@ -7,9 +7,9 @@
   <%= form_for @preference, id: 'js-preference-form', remote: true do |f| %>
   	<fieldset class="preference-section" id="js-form-1">
   		<h3>Hello, <span id="js-visitor-name"><%= @preference.fullname %></span></h3>
-      <%= f.hidden_field :fullname, class: 'js-visitor-name', value: '' %>
-      <%= f.hidden_field :age_range, class: 'js-visitor-age', value: '' %>
-      <%= f.hidden_field :gender, class: 'js-visitor-gender', value: '' %>
+      <%= f.hidden_field :fullname, class: 'js-visitor-name', value: "#{@preference.fullname}" %>
+      <%= f.hidden_field :age_range, class: 'js-visitor-age', value: "#{@preference.age_range}" %>
+      <%= f.hidden_field :gender, class: 'js-visitor-gender', value: "#{@preference.gender}" %>
       <%= f.label :working_class, "Which of these best describes your working class?", class: 'preference-label' %>
   		<p class="preference--line">
   			<%= f.radio_button :working_class, 'student', id: 'student' %><label for="student">Student</label>
