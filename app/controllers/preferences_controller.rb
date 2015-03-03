@@ -1,10 +1,25 @@
 class PreferencesController < ApplicationController
 	before_action :authenticate_user!
-  def index
+	before_filter :init
+  def edit
   	session[:survey_prompt] = 'seen'
-  	@preference = Preference.where(user_id: current_user.id).first
   end
-  def create
+  def update
+  	updated = @preference.update_attributes(pref_params)
+		if updated
+			redirect_to :back, notice: 'Record updated'
+		else
+			render "index"
+		end
+  end
+
+  private
+
+  def pref_params
+		params.require(:preference).permit!
+	end
+
+  def init
   	@preference = Preference.where(user_id: current_user.id).first
   end
 end

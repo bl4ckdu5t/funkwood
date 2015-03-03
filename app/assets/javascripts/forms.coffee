@@ -1,10 +1,11 @@
 ready = ->
-	$('[id^="edit_department"]').on("ajax:success", (e, data, status, xhr) ->
-		$(this).append "<p class='fr'>Updated Succesfully</p>"
-		$(this).children('.fr').delay(2000).fadeOut()
+	$('[id^="edit_preference"]').on("ajax:success", (e, data, status, xhr) ->
+		alert("hello");
+		$('#js-form-4').hide()
+		$('#js-form-complete').show()
 	).on "ajax:error", (e, data, status, error) ->
-		$(this).append "<p class='fr'>Failed to update</p>"
+		$('#js-form-4').hide()
 		return
 
-$(document).ready(ready)
-$(document).on('page:load', ready)
+#$(document).ready(ready)
+#$(document).on('page:load', ready)

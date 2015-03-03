@@ -1,12 +1,12 @@
 var ready = function(){
 	// Submitting the preferences form
-	$(document).on('submit','#js-preference-form',function(e){
+	/*$(document).on('submit','#js-preference-form',function(e){
 		e.preventDefault();
 		var data = $(this).serialize();
 		console.log(data);
 		$('#js-form-4').hide();
 		$('#js-form-complete').show();
-	});
+	});*/
 	// home page settings dropdown
 	$('.account-header > svg').click(function(){
 		$(this).toggleClass('active');
@@ -40,11 +40,13 @@ var ready = function(){
 		}
 	}
 	// iCheck checkboxes https://github.com/fronteed/iCheck
-	$('input').iCheck({
-    checkboxClass: 'icheckbox_minimal-blue',
-    radioClass: 'iradio_minimal-blue',
-    increaseArea: '20%' // optional
-  });
+	if($().iCheck){
+		$('input').iCheck({
+	    checkboxClass: 'icheckbox_minimal-blue',
+	    radioClass: 'iradio_minimal-blue',
+	    increaseArea: '20%' // optional
+	  });
+	}
   // Multisite Form navigation
   $('#js-next-1').click(function(){
   	$('#js-form-1').hide();
