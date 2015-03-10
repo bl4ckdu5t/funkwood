@@ -937,28 +937,55 @@ section{
 		ul{
 			list-style-type: none;
 			padding: 0;
-			width: 180px;
+			width: 200px;
 			float: left;
 			svg{
 				width: 16px;
 				height: 16px;
-				vertical-align: top;
-				margin-top: 2px;
+				vertical-align: middle;
+				margin-top: -2px;
 				fill: #555;
 			}
 		}
 		li{
-			border-bottom: solid thin #888;
-			padding: 5px 10px;
+			border-bottom: solid thin #ddd;
+			padding: 10px;
 			font-size: 1.6rem;
-		}
-		article{
-			padding: 0 20px;
-			width: 75%;
-			float: left;
 		}
 		h3, p{
 			margin: 10px 0;
 		}
 	}
+	&-review{
+		background: $white;
+		border-radius: 2px;
+		border: solid thin #ddd;
+		padding: 0 20px;
+		width: 71%;
+		float: left;
+	}
+	&-cover{
+		position: absolute;
+		top: -100px;
+		width: 100%;
+		height: 100px;
+		background: image-url('gaussian-blur.jpg');
+		background-size: cover;
+		background-position: bottom;
+	}
+	&-buttons{
+		background: $white;
+		padding: 10px 20px;
+		width: 100%;
+		border: solid thin #ddd;
+		border-radius: 2px;
+	}
+}
+.button{
+	background: transparent;
+	border: 0;
+	border: solid thin #ccc;
+	border-radius: 4px;
+	padding: 10px;
+	font-size: 1.6rem;
 }

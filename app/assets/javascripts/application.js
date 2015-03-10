@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require angular/angular
 // enquire iCheck/icheck
 //= require_tree .
 Turbolinks.enableProgressBar();
