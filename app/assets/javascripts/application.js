@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require chat
 //= require turbolinks
+//= require private_pub
 //= require angular/angular
 // enquire iCheck/icheck
 //= require_tree .

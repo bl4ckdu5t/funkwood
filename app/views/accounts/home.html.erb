@@ -33,28 +33,18 @@
 			<h3>Chat</h3>
 			<div class="chat-box">
 				<ul>
-					<li>
+					<% if @users.present? %>
+					<% @users.each_with_index do |user, index| %>
+					<li class="start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= user.id %>">
 						<small class="online"></small>
-						<strong>Scarlett Johansson</strong>
+						<strong><%= Preference.find(user.id).fullname.present? ? Preference.find(user.id).fullname : user.email %></strong>
 						<span>Hi! remember you owe me some pizza?</span>
 						<time>Thu 21 may</time>
 					</li>
-					<li>
-						<small></small>
-						<strong>Scarlett Johansson</strong>
-						<span>Hi! remember you owe me some pizza?</span>
-						<time>Thu 21 may</time>
-					</li>
-					<li>
-						<small class="online"></small>
-						<strong>Scarlett Johansson</strong>
-						<span>Hi! remember you owe me some pizza?</span>
-						<time>Thu 21 may</time>
-					</li>
-					<li><small></small><strong>Scarlett Johansson</strong><span>Hi! remember you owe me some pizza? Sandra thinks you are cheating on her</span><time>Thu 21 may</time></li>
-					<li><small></small><strong>Scarlett Johansson</strong><span>Hi! remember you owe me some pizza?</span><time>Thu 21 may</time></li>
-					<li><small class="online"></small><strong>Scarlett Johansson</strong><span>Hi! remember you owe me some pizza?</span><time>Thu 21 may</time></li>
-					<li><small class="online"></small><strong>Scarlett Johansson</strong><span>Hi! remember you owe me some pizza?</span><time>Thu 21 may</time></li>
+					<% end %>
+					<% else %>
+					<li>You've not had any chat heads up yet. Start a conversation with someone from their profile</li>
+					<% end %>
 				</ul>
 			</div>
 		</div>

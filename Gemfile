@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 ruby "2.1.2"
+# Using Faye for Asynchronous chat with Bayeux protocol http://svn.cometd.org/trunk/bayeux/bayeux.html
+gem 'private_pub'
+gem 'thin'
 # Autoprefixer
 gem 'autoprefixer-rails'
 # Devise for authentication

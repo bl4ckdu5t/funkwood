@@ -1,0 +1,34 @@
+<div class="chatboxhead">
+  <div class="chatboxtitle">
+    <svg viewBox="0 0 1024 1024">
+      <path d="M896 256h-85.333v384h-554.667v85.333c0 23.467 19.2 42.667 42.667 42.667h469.333l170.667 170.667v-640c0-23.467-19.2-42.667-42.667-42.667zM725.333 512v-384c0-23.467-19.2-42.667-42.667-42.667h-554.667c-23.467 0-42.667 19.2-42.667 42.667v597.333l170.667-170.667h426.667c23.467 0 42.667-19.2 42.667-42.667z"></path>
+    </svg>
+ 
+    <h1 title="<%= @receiver.email %>"><%= @receiver.email %></h1>
+  </div>
+  <div class="chatboxoptions">
+    <%= link_to "#", class: "toggleChatBox", "data-cid" => @conversation.id do %>
+    <svg width="15">
+      <line x1="0" y1="10" x2="15" y2="10" stroke="white" stroke-width="2">
+    </svg>
+    <% end %>
+    <%= link_to "#", class: "closeChat", "data-cid" => @conversation.id  do %>
+    <svg viewBox="0 0 1024 1024">
+      <path d="M810.667 273.707l-60.373-60.373-238.293 238.293-238.293-238.293-60.373 60.373 238.293 238.293-238.293 238.293 60.373 60.373 238.293-238.293 238.293 238.293 60.373-60.373-238.293-238.293z"></path>
+    </svg>
+    <% end %>
+  </div>
+  <br clear="all"/>
+</div>
+<div class="chatboxcontent">
+  <% if @messages.any? %>
+      <%= render @messages %>
+  <% end %>
+</div>
+<div class="chatboxinput">
+  <%= form_for([@conversation, @message], :remote => true, :html => {id: "conversation_form_#{@conversation.id}"}) do |f| %>
+      <%= f.text_area :body, class: "chatboxtextarea", "data-cid" => @conversation.id %>
+  <% end %>
+</div>
+ 
+<%= subscribe_to conversation_path(@conversation) %>

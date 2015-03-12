@@ -1,12 +1,4 @@
 var ready = function(){
-	// Submitting the preferences form
-	/*$(document).on('submit','#js-preference-form',function(e){
-		e.preventDefault();
-		var data = $(this).serialize();
-		console.log(data);
-		$('#js-form-4').hide();
-		$('#js-form-complete').show();
-	});*/
 	// home page settings dropdown
 	$('.account-header > svg').click(function(){
 		$(this).toggleClass('active');

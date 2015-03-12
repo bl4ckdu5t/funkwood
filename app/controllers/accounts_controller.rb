@@ -36,5 +36,6 @@ class AccountsController < ApplicationController
 
   def init
   	@preference = Preference.where(user_id: current_user.id).first
+    @users = User.where.not(id: current_user.id).order(created_at: :desc)
   end
 end
