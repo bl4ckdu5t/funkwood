@@ -934,35 +934,55 @@ section{
 	}
 	&-content{
 		margin-top: 20px;
-		ul{
-			list-style-type: none;
-			padding: 0;
-			width: 200px;
-			float: left;
-			svg{
-				width: 16px;
-				height: 16px;
-				vertical-align: middle;
-				margin-top: -2px;
-				fill: #555;
-			}
+		h3, p{
+			margin: 10px 0;
+		}
+	}
+	&-meta{
+		list-style-type: none;
+		padding: 0;
+		width: 200px;
+		float: left;
+		svg{
+			width: 16px;
+			height: 16px;
+			vertical-align: middle;
+			margin-top: -2px;
+			fill: #555;
 		}
 		li{
 			border-bottom: solid thin #ddd;
 			padding: 10px;
 			font-size: 1.6rem;
-		}
-		h3, p{
-			margin: 10px 0;
-		}
+			}
 	}
 	&-review{
 		background: $white;
 		border-radius: 2px;
 		border: solid thin #ddd;
-		padding: 0 20px;
-		width: 71%;
+		padding: 20px 40px;
+		margin-bottom: 20px;
+		width: 70.5%;
 		float: left;
+		font-size: 1.8rem;
+		h3{
+			color: darken($myblue, 10%);
+			font-weight: 400;
+			margin: 10px 0;
+		}
+		strong{
+			color: darken($white, 40%);
+			font-weight: 400;
+		}
+	}
+	&-details{
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		li{
+			border-bottom: solid thin #ddd;
+			padding: 10px 0;
+		}
 	}
 	&-cover{
 		position: absolute;
