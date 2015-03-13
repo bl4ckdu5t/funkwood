@@ -151,6 +151,9 @@
     margin: 1px;
     overflow: hidden;
     resize: none !important;
+    &:focus, &:active{
+        outline: none;
+    }
 }
  
 .chatboxtextareaselected {

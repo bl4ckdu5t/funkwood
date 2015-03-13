@@ -4,7 +4,7 @@
       <path d="M896 256h-85.333v384h-554.667v85.333c0 23.467 19.2 42.667 42.667 42.667h469.333l170.667 170.667v-640c0-23.467-19.2-42.667-42.667-42.667zM725.333 512v-384c0-23.467-19.2-42.667-42.667-42.667h-554.667c-23.467 0-42.667 19.2-42.667 42.667v597.333l170.667-170.667h426.667c23.467 0 42.667-19.2 42.667-42.667z"></path>
     </svg>
  
-    <h1 title="<%= @receiver.email %>"><%= @receiver.email %></h1>
+    <h1 title="<%= @recipient %>"><%= name_or_email(@recipient) %></h1>
   </div>
   <div class="chatboxoptions">
     <%= link_to "#", class: "toggleChatBox", "data-cid" => @conversation.id do %>

@@ -1,15 +1,15 @@
 <section class="account-container">
 	<div data-grid="6">
 		<div class="tailored">
-			<h2>Hey <span id="js-visitor-name"><%= @preference.fullname %></span>, here are some partners tailored for you</h2>
-			<% (1..6).each do |w| %>
-			<% if w % 2 == 0 %>
-			<%= image_tag 'woman1.jpg', class: 'tailored-image' %>
-			<% else %>
-			<%= image_tag 'woman2.jpg', class: 'tailored-image' %>
+			<h2>Hello <span id="js-visitor-name"><%= @preference.fullname %></span>,</h2>
+			<% if @users.present? %>
+			<% @users.take(5).each_with_index do |user, index| %>
+			  <% if Preference.find_by(user_id: user.id).avatar.present? %>
+				<%= image_tag 'woman2.jpg', class: 'tailored-image' %>
+				<% end %>
 			<% end %>
 			<% end %>
-			<p><a href="">View more</a></p>
+			<% if @users.count > 5 %><p><a href="">View more</a></p><% end %>
 		</div>
 		<div class="profile">
 			<p>Your profile is:</p>
@@ -33,13 +33,15 @@
 			<h3>Chat</h3>
 			<div class="chat-box">
 				<ul>
-					<% if @users.present? %>
+					<% if @users.any? %>
 					<% @users.each_with_index do |user, index| %>
 					<li class="start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= user.id %>">
-						<small class="online"></small>
+						<small class="<%= User.find(user.id).online? ? 'online' : '' %>"></small>
 						<strong><%= Preference.find(user.id).fullname.present? ? Preference.find(user.id).fullname : user.email %></strong>
-						<span>Hi! remember you owe me some pizza?</span>
-						<time>Thu 21 may</time>
+						<span><%= Conversation.between(current_user.id, user.id).first.messages.last.body %></span>
+						<time>
+							<%= Conversation.between(current_user.id, user.id).first.messages.last.created_at.strftime('%v %R') %>
+						</time>
 					</li>
 					<% end %>
 					<% else %>
