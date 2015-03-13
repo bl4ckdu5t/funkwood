@@ -6,4 +6,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   has_many :conversations, :foreign_key => :sender_id
+
+  def online?
+	  updated_at > 10.minutes.ago
+	end
+
+	scope :online, lambda{ where("updated_at > ?", 10.minutes.ago) }
 end

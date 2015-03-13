@@ -21,6 +21,7 @@ class AccountsController < ApplicationController
 	  		redirect_to preference_path
 	  	end
 	  end
+    @conversations = Conversation.involving(current_user).order(created_at: :desc)
   end
 
   def profile
