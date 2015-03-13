@@ -5,12 +5,16 @@
 	<div class="user_profile-title">
 		<h2><%= @user.fullname ? @user.fullname : 'No name' %></h2>
 		<div class="user_profile-buttons">
+			<% if current_user.id == @user.id %>
+			<button class="button">Edit Profile</button>
+			<% else %>
 			<button class="button">send a message</button>
 			<button class="button">Arrange a date</button>
+			<% end %>
 		</div>
 	</div>
 	<div class="user_profile-content clearfix">
-		<ul>
+		<ul class="user_profile-meta">
 			<li>
 				<% if @user.gender == 'male' %>
 				<svg viewBox="0 0 1024 1024">
@@ -52,7 +56,13 @@
 		</ul>
 		<main class="user_profile-review">
 			<h3>About me</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla cupiditate est reprehenderit illum accusamus autem temporibus aliquam perspiciatis inventore cum magni molestiae incidunt sed similique dolorum, maiores iste voluptatibus ad odit velit aliquid! Iste consequuntur esse quos ipsum incidunt? Debitis aspernatur aliquam ut dolores, pariatur cum odit praesentium placeat mollitia.</p>
+			<p><%= @user.about.present? ? @user.about : 'No information about user' %></p>
+			<h3>Details</h3>
+			<ul class="user_profile-details">
+				<li><strong>Username:</strong> <%= @user.username %></li>
+				<li><strong>Height:</strong> <%= @user.height %></li>
+			</ul>
+			<button class="button topmag20">Deactivate account</button>
 		</main>
 	</div>
 </section>
