@@ -33,7 +33,7 @@
 			<h3>Chat</h3>
 			<div class="chat-box">
 				<ul>
-					<% if @users.any? %>
+					<% if @conversations.any? %>
 					<% @users.each_with_index do |user, index| %>
 					<li class="start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= user.id %>">
 						<small class="<%= User.find(user.id).online? ? 'online' : '' %>"></small>

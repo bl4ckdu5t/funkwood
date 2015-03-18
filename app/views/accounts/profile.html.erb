@@ -7,9 +7,11 @@
 		<div class="user_profile-buttons">
 			<% if @user.user_id.eql? current_user.id %>
 			<button class="button">Edit Profile</button>
-			<% else %>
+			<% elsif Chat.between(current_user.id, @user.user_id).present? %>
 			<button class="button">send a message</button>
 			<button class="button">Arrange a date</button>
+			<% else %>
+			<button class="button" id="js-crequest" data-url="<%= @user.user_id %>">Send chat request</button>
 			<% end %>
 		</div>
 	</div>

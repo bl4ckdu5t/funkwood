@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310121231) do
+ActiveRecord::Schema.define(version: 20150315180201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chats", force: true do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.boolean  "accepted",     default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "conversations", force: true do |t|
     t.integer  "sender_id"
@@ -36,6 +44,15 @@ ActiveRecord::Schema.define(version: 20150310121231) do
 
   add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
+
+  create_table "notifications", force: true do |t|
+    t.integer  "sender_id"
+    t.integer  "receiver_id"
+    t.string   "message"
+    t.boolean  "seen",        default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "preferences", force: true do |t|
     t.integer  "user_id"

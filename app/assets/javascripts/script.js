@@ -1,4 +1,21 @@
 var ready = function(){
+	// Sending chat requests
+	$('#js-crequest').click(function(){
+		if(document.location.hostname === 'localhost'){
+			var url = document.location.protocol + '//localhost:3000/' + 'chat_r';
+		}else{
+			var url = document.location.protocol + '//' + document.location.hostname + '/' + 'chat_r';
+		}
+		$.ajax({
+			type: 'POST',
+			data: 'id='+$(this).data('url'),
+			url: url
+		}).done(function(response){
+			alert(response.status);
+		}).fail(function(){
+			console.log('failed');
+		});
+	});
 	// home page settings dropdown
 	$('.account-header > svg').click(function(){
 		$(this).toggleClass('active');

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+	get 'chat_r' => 'chats#request'
+	resources :chats
 	resources :conversations do
 		resources :messages
 	end
