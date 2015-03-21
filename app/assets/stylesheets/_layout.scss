@@ -536,6 +536,9 @@ section{
 		.title{
 			max-width: 100px;
 		}
+		a:active, a:focus{
+			outline: none;
+		}
 	}
 	&-container{
 		background: darken($white, 5%);
@@ -627,6 +630,53 @@ section{
 			fill: #555;
 			vertical-align: middle;
 			margin-right: 6px;
+		}
+	}
+	&-notifier{
+		position: absolute;
+		width: 300px;
+		top: 115px;
+		right: 50px;
+		z-index: 100;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		background: $white;
+		box-shadow: 0 2px 1px #555;
+		width: 200px;
+		display: none;
+		> a{
+			display: block;
+			width: 100%;
+			text-align: center;
+			margin: 5px 0;
+			color: darken($white, 50%);
+		}
+		li{
+			padding: 5px;
+			border-bottom: solid thin #eee;
+			border-left: solid 2px lighten($myblue, 20%);
+		}
+		&::before{
+			content: '';
+			position: absolute;
+			right: 90px;
+			top: -6px;
+			width: 30px;
+			z-index: -110;
+			height: 30px;
+			background: $white;
+			transform: rotate(45deg);
+		}
+		.empty-record{
+			text-align: center;
+			padding: 10px 20px;
+			svg{
+				fill : #555;
+				width: 40px;
+				height: 40px;
+				vertical-align: middle;
+			}
 		}
 	}
 }
@@ -987,7 +1037,7 @@ section{
 		top: -100px;
 		width: 100%;
 		height: 100px;
-		background: image-url('gaussian-blur.jpg');
+		background: #666;
 		background-size: cover;
 		background-position: bottom;
 	}
@@ -1006,6 +1056,9 @@ section{
 	border-radius: 4px;
 	padding: 10px;
 	font-size: 1.6rem;
+	&.disabled{
+		color: #ccc;
+	}
 }
 @-webkit-keyframes animate-stripes {
    100% { background-position: -250px 0px; }
@@ -1038,5 +1091,33 @@ progress[value]{
 		background-size: 35px 20px, 100% 100%, 100% 100%;
 		-webkit-animation: animate-stripes 5s linear infinite;
     animation: animate-stripes 5s linear infinite;
+	}
+}
+.window{
+	width: 90%;
+	background-color: $white;
+	padding: 10px 20px;
+	margin: 20px auto;
+	border: solid thin darken($white, 20%);
+	&-title{
+		border-bottom: solid thin darken($white, 60%);
+		margin: 10px 0;
+		padding: 10px 0;
+	}
+	&-list{
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+		li{
+			border-bottom: solid thin darken($white, 20%);
+			padding: 5px;
+			&:hover{
+				background-color: #F0F0F0;
+			}
+		}
+		time{
+			font-size: 1.5rem;
+			color: darken($white, 40%);
+		}
 	}
 }

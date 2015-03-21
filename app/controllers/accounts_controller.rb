@@ -38,5 +38,7 @@ class AccountsController < ApplicationController
   def init
   	@preference = Preference.where(user_id: current_user.id).first
     @users = User.where.not(id: current_user.id).order(created_at: :desc)
+    @notifications = Notification.where({seen: false, receiver_id: current_user.id}).count
+    @allnotifications = Notification.where({seen: false, receiver_id: current_user.id}).take(4)
   end
 end

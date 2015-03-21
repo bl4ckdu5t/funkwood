@@ -1,0 +1,20 @@
+<section class="window">
+	<h3 class="window-title">Notifications</h3>
+	<main class="window-content" id="js-infinite-scroll">
+		<% if @totalNotifications.present? %>
+		<ul class="window-list">
+			<% for notification in @totalNotifications %>
+			<li>
+				<%= "#{notification.message}".capitalize %> from
+				<a href="<%= root_url %>user/<%= Preference.find_by(user_id: notification.sender_id).username.blank? ? notification.sender_id : Preference.find_by(user_id: notification.sender_id).username %>"><%= name_or_email(notification.sender_id) %></a>
+				<br>
+				<time><%= Time.diff(Time.now.to_s, notification.created_at, '%d %h')[:diff].to_i < 1 ? 'Few minutes ago' : Time.diff(Time.now.to_s, notification.created_at, '%d %h')[:diff] + ' hours ago' %></time>
+			</li>
+			<% end %>
+		</ul>
+		<% else %>
+		<p>There are no notifcations</p>
+		<% end %>
+		<%= will_paginate @totalNotifications %>
+	</main>
+</section>

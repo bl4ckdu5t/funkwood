@@ -1,25 +1,63 @@
 var ready = function(){
-	// Sending chat requests
-	$('#js-crequest').click(function(){
-		if(document.location.hostname === 'localhost'){
-			var url = document.location.protocol + '//localhost:3000/' + 'chat_r';
-		}else{
-			var url = document.location.protocol + '//' + document.location.hostname + '/' + 'chat_r';
-		}
+	if(document.location.hostname === 'localhost'){
+		var baseurl = document.location.protocol + '//localhost:3000/';
+	}else{
+		var baseurl = document.location.protocol + '//' + document.location.hostname + '/';
+	}
+	// Infinite Scrolling
+	$('#js-infinite-scroll').jscroll({
+		loadingHtml: '<span>Loading...</span>',
+		padding: 20,
+		autoTriggerUntil: 2,
+		nextSelector: '.next_page',
+		contentSelector: '.window-list'
+	});
+	// Accepting chat requests
+	$('#js-arequest').click(function(){
+		var url = baseurl + 'chat_a';
 		$.ajax({
 			type: 'POST',
-			data: 'id='+$(this).data('url'),
+			data: 'id='+$(this).data('id')+'&rid='+$(this).data('rid'),
 			url: url
 		}).done(function(response){
-			alert(response.status);
+			if (response.status === 'success') {
+				$('.user_profile-buttons').html($('#js-acceptedReturn').html());
+			};
 		}).fail(function(){
 			console.log('failed');
 		});
 	});
+	// Sending chat requests
+	$('#js-crequest').click(function(){
+		var url = baseurl + 'chat_r';
+		$.ajax({
+			type: 'POST',
+			data: 'id='+$(this).data('id'),
+			url: url
+		}).done(function(response){
+			if (response.status === 'success') {
+				$('.user_profile-buttons').html('<button class="disabled button">Request sent</button>')
+			};
+		}).fail(function(){
+			console.log('failed');
+		});
+	});
+	var d = Snap('#js-dropper');
+	if(d){
+		d.path("M707.627 366.293l-195.627 195.627-195.627-195.627-60.373 60.373 256 256 256-256z");
+	}
 	// home page settings dropdown
 	$('.account-header > svg').click(function(){
-		$(this).toggleClass('active');
 		$('.account-settings').toggle();
+		$('.account ul').removeClass('on-top');
+		$('.account-settings').toggleClass('on-top');
+	});
+	// Reading notifications
+	$('#js-notifier').click(function(){
+		$('.account-notifier').toggle();
+		$('.account ul').removeClass('on-top');
+		$('.account-notifier').toggleClass('on-top');
+		$.get(baseurl + 'notifications');
 	});
 	// Register process for users
 	$('#js-register').submit(function(e){

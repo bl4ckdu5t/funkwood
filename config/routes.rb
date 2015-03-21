@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-	get 'chat_r' => 'chats#request'
+  get 'notifications' => 'notifications#index', :as => :notifications
+
+	post 'chat_d' => 'chats#decline'
+	post 'chat_a' => 'chats#accept'
+	post 'chat_r' => 'chats#call'
 	resources :chats
 	resources :conversations do
 		resources :messages

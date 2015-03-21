@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require private_pub
 //= require angular/angular
-// enquire iCheck/icheck
+//= require Snap.svg/dist/snap.svg-min
+//= require jquery.jscroll/jquery.jscroll
 //= require_tree .
 Turbolinks.enableProgressBar();

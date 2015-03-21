@@ -30,6 +30,7 @@
 .orange-bg{
     background-color: $color-orange;
 }
+.on-top{ z-index: 110; }
 .inline-block{ display: inline-block; }
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v

@@ -11,8 +11,12 @@ var ready = function () {
  
         var sender_id = $(this).data('sid');
         var recipient_id = $(this).data('rip');
- 
-        $.post("/conversations", { sender_id: sender_id, recipient_id: recipient_id }, function (data) {
+        if(document.location.hostname === 'localhost'){
+            var url = document.location.protocol + '//localhost:3000/' + 'conversations';
+        }else{
+            var url = document.location.protocol + '//' + document.location.hostname + '/' + 'conversations';
+        }
+        $.post('http://localhost:3000/conversations', { sender_id: sender_id, recipient_id: recipient_id }, function (data) {
             chatBox.chatWith(data.conversation_id);
         });
     });

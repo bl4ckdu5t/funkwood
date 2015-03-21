@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
 ruby "2.1.2"
+# Pagination needs 
+gem 'will_paginate', '~> 3.0.6'
+# Getting Time difference
+gem 'time_diff', '~> 0.3.0'
 # Using Faye for Asynchronous chat with Bayeux protocol http://svn.cometd.org/trunk/bayeux/bayeux.html
 gem 'private_pub'
 gem 'thin'
