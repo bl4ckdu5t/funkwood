@@ -1121,3 +1121,10 @@ progress[value]{
 		}
 	}
 }
+.block--chat{
+	position: absolute;
+	right: 10px;
+	background-color: $myblue;
+	color: $white;
+	border-color: darken($myblue, 10%);
+}

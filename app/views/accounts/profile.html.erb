@@ -18,6 +18,7 @@
 			<% elsif Chat.between(current_user.id, @user.user_id).present? %>
 			<button class="button start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= @user.id %>">send a message</button>
 			<button class="button">Arrange a date</button>
+			<button class="button block--chat">Chatting</button>
 			<% else %>
 			<button class="button" id="js-crequest" data-id="<%= @user.user_id %>">Send chat request</button>
 			<% end %>
