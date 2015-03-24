@@ -9,7 +9,7 @@ class PreferencesController < ApplicationController
 		if updated
 			redirect_to :back, notice: 'Record updated'
 		else
-			render "index"
+			render "edit"
 		end
   end
 

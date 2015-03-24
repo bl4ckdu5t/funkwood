@@ -1,9 +1,65 @@
 var ready = function(){
-	if(document.location.hostname === 'localhost'){
-		var baseurl = document.location.protocol + '//localhost:3000/';
+	if(window.location.hostname === 'localhost'){
+		var baseurl = window.location.protocol + '//localhost:3000/';
 	}else{
-		var baseurl = document.location.protocol + '//' + document.location.hostname + '/';
+		var baseurl = window.location.protocol + '//' + window.location.hostname + '/';
 	}
+	// Save profile changes
+	$('.user_profile-buttons').on('click', '#js-save-profile', function(){
+		var url = baseurl + 'preferences';
+		var data = 'preference["fullname"]=' + $('[name=fullname]').val() + '&preference["about"]=' + $('[name=about]').val() 
+		+ '&preference["username"]=' + $('[name=username]').val()+'&preference["height"]='+$('[name=height]').val()+
+		'&preference["weight"]='+$('[name=weight]').val()+'&preference["body_type"]='+$('[name=body_type]').val()
+		+'&preference["complexion"]='+$('[name=complexion]').val()+'&preference["religion"]='+$('[name=religion]').val()
+		+'&preference["gender"]='+$('[name=gender]').val()+'&preference["age"]='+$('[name=age]').val()
+		+'&preference["location"]='+$('[name=location]').val()+'&preference["working_class"]='+$('[name=working_class]').val()
+		+'&_method=patch&controller=preferences&action=update';
+		$.ajax({
+			type: 'POST',
+			data: data,
+			url: url
+		}).done(function(response){
+			alert('Successful!');
+		}).fail(function(){
+			alert('Failed');
+		});
+	});
+	// Cancel profile changes
+	$('.user_profile-buttons').on('click', '#js-cancel-profile',function(){
+		window.location.reload();
+	});
+	// Edit profile
+	$('#js-editProfile').click(function(){
+		$(this).closest('.user_profile-buttons').html('<button id="js-save-profile" class="blue button">Save Changes</button>'
+			+'<button id="js-cancel-profile" class="button">Cancel</button>'+' <em>Edit profile fields below</em>');
+		$('.user_profile-details strong').each(function() {
+			var newName = $(this).prop('id').slice(0, -5);
+      $(this).after('<input type="text" name="'+newName+'" placeholder="'+newName.replace('_', ' ')+' here" value="'+
+      	$(this).data('value')+'">');
+    });
+    var profileName = $('#js-profile-name').text();
+    $('#js-profile-name').html('<input type="text" class="unameEntry" name="fullname" value="'+profileName+'">');
+    var aboutUser = $('#js-userStory').text();
+    $('#js-userStory').html('<textarea class="user-story" name="about">'+aboutUser+'</textarea>');
+    $('.sideEntry').each(function(){
+    	var sideEntry = $(this).data('entry');
+    	var entryVal = $(this).text().slice(0, 7) == 'Unknown' ? '' : $(this).text();
+    	$(this).html('<input type="text" name="'+sideEntry+'" value="'+ entryVal +
+    		'" placeholder="'+sideEntry.replace('_',' ')+'"">');
+    });
+    $('.unameEntry').focus();
+    $('.js-profile-unwanted').fadeOut();
+	});
+	// Changing chat buttons to block chat
+	$('#js-chatActive').hover(function(){
+		$(this).removeClass('blue');
+		$(this).addClass('warn');
+		$(this).html($('#js-template-block').html());
+	},function(){
+		$(this).removeClass('warn');
+		$(this).addClass('blue');
+		$(this).html($('#js-template-chat').html());
+	});
 	// Infinite Scrolling
 	$('#js-infinite-scroll').jscroll({
 		loadingHtml: '<span>Loading...</span>',
@@ -57,7 +113,9 @@ var ready = function(){
 		$('.account-notifier').toggle();
 		$('.account ul').removeClass('on-top');
 		$('.account-notifier').toggleClass('on-top');
-		$.get(baseurl + 'notifications');
+		$.get(baseurl + 'notifications',function(){
+			$('#js-notifbox').fadeOut();
+		});
 	});
 	// Register process for users
 	$('#js-register').submit(function(e){

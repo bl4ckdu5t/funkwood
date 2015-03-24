@@ -3,10 +3,10 @@
 	</div>
 	<span class="user_profile-avatar"><%= image_tag 'avatar.jpg' %></span>
 	<div class="user_profile-title">
-		<h2><%= @user.fullname ? @user.fullname : 'No name' %></h2>
+		<h2 id="js-profile-name"><%= @user.fullname ? @user.fullname : 'No name' %></h2>
 		<div class="user_profile-buttons">
 			<% if @user.user_id.eql? current_user.id %>
-			<button class="button">Edit Profile</button>
+			<button class="button" id="js-editProfile">Edit Profile</button>
 			<% elsif Chat.between(current_user.id, @user.user_id).present? && Chat.between(current_user.id, @user.user_id).first.accepted === false && Chat.between(current_user.id, @user.user_id).first.recipient_id == @user.user_id %>
 			<button class="disabled button">Request sent</button>
 			<% elsif Chat.between(current_user.id, @user.user_id).present? && Chat.between(current_user.id, @user.user_id).first.accepted === false %>
@@ -18,7 +18,24 @@
 			<% elsif Chat.between(current_user.id, @user.user_id).present? %>
 			<button class="button start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= @user.id %>">send a message</button>
 			<button class="button">Arrange a date</button>
-			<button class="button block--chat">Chatting</button>
+			<button class="lefted blue button" id="js-chatActive" data-remodal-target="block-user">
+				<svg viewBox="0 0 1024 1024">
+					<path d="M512 85.333c-235.307 0-426.667 191.36-426.667 426.667s191.36 426.667 426.667 426.667 426.667-191.36 426.667-426.667-191.36-426.667-426.667-426.667zM512 853.333c-188.16 0-341.333-153.173-341.333-341.333s153.173-341.333 341.333-341.333 341.333 153.173 341.333 341.333-153.173 341.333-341.333 341.333zM640 512c0 70.613-57.387 128-128 128s-128-57.387-128-128 57.387-128 128-128 128 57.387 128 128z"></path>
+				</svg>
+				Chatting
+			</button>
+			<template id="js-template-chat">
+				<svg viewBox="0 0 1024 1024">
+					<path d="M512 85.333c-235.307 0-426.667 191.36-426.667 426.667s191.36 426.667 426.667 426.667 426.667-191.36 426.667-426.667-191.36-426.667-426.667-426.667zM512 853.333c-188.16 0-341.333-153.173-341.333-341.333s153.173-341.333 341.333-341.333 341.333 153.173 341.333 341.333-153.173 341.333-341.333 341.333zM640 512c0 70.613-57.387 128-128 128s-128-57.387-128-128 57.387-128 128-128 128 57.387 128 128z"></path>
+				</svg>
+				Chatting
+			</template>
+			<template id="js-template-block">
+				<svg viewBox="0 0 1024 1024">
+					<path d="M512 85.333c-235.733 0-426.667 190.933-426.667 426.667s190.933 426.667 426.667 426.667 426.667-190.933 426.667-426.667-190.933-426.667-426.667-426.667zM512 853.333c-188.587 0-341.333-152.747-341.333-341.333 0-78.933 27.093-151.253 71.893-209.067l478.507 478.507c-57.813 44.8-130.133 71.893-209.067 71.893zM781.44 721.067l-478.507-478.507c57.813-44.8 130.133-71.893 209.067-71.893 188.587 0 341.333 152.747 341.333 341.333 0 78.933-27.093 151.253-71.893 209.067z"></path>
+				</svg>
+				Block Chat access
+			</template>
 			<% else %>
 			<button class="button" id="js-crequest" data-id="<%= @user.user_id %>">Send chat request</button>
 			<% end %>
@@ -36,27 +53,29 @@
 					<path d="M577.248 599.072v105.376h127.872v127.872h-127.872v127.872h-129.824v-127.872h-127.84v-127.872h127.84v-105.76c-109.92-28.64-191.136-128.288-191.136-247.136 0-141.216 114.496-255.712 255.712-255.712 141.248 0 255.68 114.496 255.68 255.712 0 119.328-79.872 219.264-190.432 247.52zM512 223.712c-70.624 0-127.872 57.216-127.872 127.84 0 70.592 57.248 127.84 127.872 127.84s127.872-57.248 127.872-127.84c0-70.624-57.248-127.84-127.872-127.84z"></path>
 				</svg>
 				<% else %>
-				Gender not set
+				<span class="sideEntry" data-entry="gender">Gender not set</span>
 				<% end %>
-				<%= @user.gender %>
+				<span class="sideEntry" data-entry="gender"><%= @user.gender %></span>
 			</li>
 			<li>
 				<svg viewBox="0 0 1024 1024">
 					<path d="M896 960h-768c-35.328 0-64-28.672-64-64v-672c0-35.328 28.672-64 64-64h64v32c0 53.024 42.976 96 96 96s96-42.976 96-96v-32h256v32c0 53.024 43.008 96 96 96s96-42.976 96-96v-32h64c35.328 0 64 28.672 64 64v672c0 35.328-28.672 64-64 64zM896 384h-768v512h768v-512zM418.208 634.528c6.304-10.048 9.472-20.672 9.472-31.776 0-24.736-13.312-37.12-39.936-37.12-23.136 0-45.248 9.184-66.368 27.552v-52.128c23.36-15.136 49.76-22.688 79.136-22.688 27.488 0 48.96 6.912 64.416 20.704s23.168 32.48 23.168 55.968c0 31.36-18.816 63.808-56.448 97.312l-55.328 49.12v1.12h109.12v49.12h-176.992v-46.112l77.056-73.696c15.488-14.848 26.4-27.296 32.704-37.376zM634.784 741.312c8.448-6.496 12.672-15.552 12.672-27.2 0-12-5.216-21.248-15.648-27.744s-24.768-9.76-43.040-9.76h-24.192v-45.376h22.304c35.008 0 52.512-11.616 52.512-34.88 0-21.888-13.44-32.8-40.32-32.8-17.984 0-35.488 5.824-52.512 17.44v-48.384c18.88-9.504 40.864-14.24 65.984-14.24 27.488 0 48.896 6.176 64.224 18.56s22.976 28.448 22.976 48.192c0 35.136-17.824 57.12-53.44 65.984v0.928c19.008 2.368 33.984 9.28 44.992 20.704s16.512 25.472 16.512 42.080c0 25.12-9.184 44.992-27.552 59.616s-43.744 21.952-76.128 21.952c-27.744 0-50.304-4.512-67.68-13.504v-51.552c17.984 13.12 39.008 19.68 63.008 19.68 15.104 0.064 26.88-3.2 35.328-9.696zM735.008 256c-34.816 0-63.008-28.192-63.008-63.008v-65.984c0-34.816 28.192-63.008 63.008-63.008s63.008 28.192 63.008 63.008v65.984c0 34.816-28.192 63.008-63.008 63.008zM287.008 256c-34.816 0-63.008-28.192-63.008-63.008v-65.984c0-34.816 28.192-63.008 63.008-63.008s63.008 28.192 63.008 63.008v65.984c0 34.816-28.224 63.008-63.008 63.008z"></path>
 				</svg>
-				<%= @user.age_range == '1'? '18 - 25' : @user.age_range == '2'? '26 - 35' : 'No age specified' %>
+				<span class="sideEntry" data-entry="age">
+					<%= @user.age_range == '1'? '18 - 25' : @user.age_range == '2'? '26 - 35' : 'No age specified' %>
+				</span>
 			</li>
 			<li>
 				<svg viewBox="0 0 1024 1024">
 					<path d="M357.216 369.728c0-84.96 69.312-153.824 154.784-153.824s154.784 68.864 154.784 153.824-69.312 153.792-154.784 153.792-154.784-68.864-154.784-153.792zM248.864 388.928c0 64.352 78.528 200 78.528 200l184.608 307.648 174.016-307.616c0 0 89.12-136.64 89.12-200 0-144.416-117.824-261.472-263.136-261.472s-263.136 117.024-263.136 261.44z"></path>
 				</svg>
-				<%= @user.location ? @user.location : 'Unknown location' %>
+				<span class="sideEntry" data-entry="location"><%= @user.location ? @user.location : 'Unknown location' %></span>
 			</li>
 			<li>
 				<svg viewBox="0 0 1024 1024">
 					<path d="M864 928h-736c-35.36 0-64-28.672-64-64v-384c0 0 167.072 85.92 320 121.088v38.912c0 17.696 14.304 32 32 32h160c17.664 0 32-14.304 32-32v-38.912c152.896-35.168 320-121.088 320-121.088v384c0 35.328-28.672 64-64 64zM544 544c17.664 0 32 14.304 32 32v32c0 17.696-14.336 32-32 32h-96c-17.696 0-32-14.304-32-32v-32c0-17.696 14.304-32 32-32h96zM608 544c0-17.696-14.336-32-32-32h-160c-17.696 0-32 14.304-32 32v28.672c-152.928-36.224-320-124.672-320-124.672v-128c0-35.328 28.64-64 64-64h192v-64c0-35.328 28.672-64 64-64h224c35.328 0 64 28.672 64 64v64h192c35.328 0 64 28.672 64 64v128c0 0-167.104 88.448-320 124.672v-28.672zM608 224c0-17.696-14.336-32-32-32h-160c-17.696 0-32 14.304-32 32 0 17.664 0 32 0 32h224c0 0 0-14.336 0-32z"></path>
 				</svg>
-				<%= @user.working_class ? @user.working_class : 'Unknown working class' %>
+				<span class="sideEntry" data-entry="working_class"><%= @user.working_class ? @user.working_class : 'Unknown working class' %></span>
 			</li>
 			<!-- <li>
 				<svg viewBox="0 0 1024 1024">
@@ -67,19 +86,31 @@
 		</ul>
 		<main class="user_profile-review">
 			<h3>About me</h3>
-			<p><%= @user.about.present? ? @user.about : 'No information about user' %></p>
+			<p id="js-userStory"><%= @user.about.present? ? @user.about : 'No information about user' %></p>
 			<h3>Details</h3>
 			<ul class="user_profile-details">
-				<li><strong>Username:</strong> <%= @user.username %></li>
-				<li><strong>Height:</strong> <%= @user.height %></li>
-				<li><strong>Weight:</strong> <%= @user.weight %></li>
-				<li><strong>Body type:</strong> <%= @user.body_type %></li>
-				<li><strong>Complexion:</strong> <%= @user.complexion %></li>
-				<li><strong>Religion:</strong> <%= @user.religion %></li>
+				<li><strong data-value="<%= @user.username %>" id="usernameLabel">Username:</strong> <%= @user.username %></li>
+				<li><strong data-value="<%= @user.height %>" id="heightLabel">Height:</strong> <%= @user.height %></li>
+				<li><strong data-value="<%= @user.weight %>" id="weightLabel">Weight:</strong> <%= @user.weight %></li>
+				<li><strong data-value="<%= @user.body_type %>" id="body_typeLabel">Body type:</strong> <%= @user.body_type %></li>
+				<li><strong data-value="<%= @user.complexion %>" id="complexionLabel">Complexion:</strong> <%= @user.complexion %></li>
+				<li><strong data-value="<%= @user.religion %>" id="religionLabel">Religion:</strong> <%= @user.religion %></li>
 			</ul>
 			<% if @user.id.eql? current_user.id %>
-			<button class="button topmag20">Account Settings</button>
+				<%= link_to edit_user_registration_path do %>
+					<button class="button topmag20 js-profile-unwanted">Account Settings</button>
+				<% end %>
 			<% end %>
 		</main>
 	</div>
 </section>
+<!-- Modal Dialogs From here -->
+<div class="remodal" data-remodal-id="block-user">
+    <h1>Confirm block</h1>
+    <p>
+      This user will not be able to send messages to you anymore. Are you sure you want to do this?
+    </p>
+    <br>
+    <a class="remodal-cancel" href="#">Cancel</a>
+    <a class="remodal-confirm" href="#">Yes</a>
+</div>

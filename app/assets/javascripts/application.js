@@ -13,10 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require chat
-//= require turbolinks
 //= require private_pub
 //= require angular/angular
 //= require Snap.svg/dist/snap.svg-min
 //= require jquery.jscroll/jquery.jscroll
+//= require remodal/dist/jquery.remodal
 //= require_tree .
-Turbolinks.enableProgressBar();

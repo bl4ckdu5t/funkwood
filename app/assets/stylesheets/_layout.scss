@@ -1031,6 +1031,10 @@ section{
 			border-bottom: solid thin #ddd;
 			padding: 10px 0;
 		}
+		input{
+			border: none;
+			border-bottom: solid thin #aaa;
+		}
 	}
 	&-cover{
 		position: absolute;
@@ -1047,50 +1051,57 @@ section{
 		width: 100%;
 		border: solid thin #ddd;
 		border-radius: 2px;
+		em{
+			font-size: 1.6rem;
+			color: #666;
+			margin: 0 10px;
+		}
 	}
 }
 .button{
-	background: transparent;
+	background: #eee;
 	border: 0;
 	border: solid thin #ccc;
 	border-radius: 4px;
 	padding: 10px;
 	font-size: 1.6rem;
+	font-weight: bold;
+	color: #777;
+	@include gradient-light-linear;
 	&.disabled{
 		color: #ccc;
 	}
-}
-@-webkit-keyframes animate-stripes {
-   100% { background-position: -250px 0px; }
-}
-
-@keyframes animate-stripes {
-   100% { background-position: -250px 0px; }
-}
-progress[value]{
-	-webkit-appearance: none;
-	   -moz-appearance: none;
-	        appearance: none;
-	/* Get rid of border in FF */
-	border: none;
-	width: 250px;
-	height: 20px;
-
-	/* For IE10 */
-	color: blue;
-	&::-webkit-progress-bar{
-		background-color: #eee;
-		border-radius: 2px;
-		box-shadow: 0 2px 5px rgba($black, 0.25) inset;
+	svg{
+		width: 24px;
+		vertical-align: middle;
+		margin-top: -5px;
+		fill: #777;
 	}
-	&::-webkit-progress-value, &::-moz-progress-bar{
-		background-image: -webkit-linear-gradient(-45deg, transparent 33%, rgba($black, .1) 33%,  rgba($black, .1) 66%, transparent 66%),
-	  -webkit-linear-gradient(top, rgba($black, .25), rgba($black, .25)),
-	  -webkit-linear-gradient(left, #aaa, #cde);
-		border-radius: 2px;
-		background-size: 35px 20px, 100% 100%, 100% 100%;
-		-webkit-animation: animate-stripes 5s linear infinite;
-    animation: animate-stripes 5s linear infinite;
+	&:hover{
+		background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(200, 200, 200, 0.8));
+	}
+	&.blue{
+		background-color: $myblue;
+		color: $white;
+		border-color: darken($myblue, 10%);
+		svg{
+			fill: $white;
+		}
+		&:hover{
+			background-image: linear-gradient(rgba(lighten($myblue, 10%), 0.5), rgba($myblue, 0.8));
+		}
+	}
+	&.lefted{
+		position: absolute;
+		right: 10px;
+	}
+	&.warn{
+		@extend .blue;
+		background-color: $color-wine;
+		border-color: lighten($color-wine, 10%);
+		&:hover{
+			background-image: linear-gradient(rgba(lighten($color-wine, 10%), 0.5), rgba($color-wine, 0.8));
+		}
 	}
 }
 .window{
@@ -1121,10 +1132,19 @@ progress[value]{
 		}
 	}
 }
-.block--chat{
-	position: absolute;
-	right: 10px;
-	background-color: $myblue;
-	color: $white;
-	border-color: darken($myblue, 10%);
+.unameEntry{
+	background: transparent;
+	border: none;
+	color: #aaa;
+}
+.user-story{
+	resize: none;
+	width: 90%;
+	height: 50px;
+	border: none;
+	font-family: $font-stack;
+	border-bottom: solid thin #aaa;
+	&:focus, &:active{
+		outline: none;
+	}
 }
