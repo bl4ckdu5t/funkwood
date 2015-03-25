@@ -1,6 +1,12 @@
 source 'https://rubygems.org'
 
 ruby "2.1.2"
+# Paperclip to handle uploads
+gem 'paperclip'
+# AWS S3 SDK
+gem 'aws-sdk'
+# Rack Timeout
+gem 'rack-timeout'
 # Pagination needs 
 gem 'will_paginate', '~> 3.0.6'
 # Getting Time difference

@@ -17,3 +17,6 @@
 
 # Ignore Secrets file
 /config/secrets.yml
+
+# Local environment variable storage
+/.env
