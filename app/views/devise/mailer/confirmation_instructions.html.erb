@@ -1,5 +1,7 @@
-<p>Welcome <%= @email %>!</p>
+<h2 class="article-title">Welcome <%= @email %>!</h2>
 
+<div class="article-content">
 <p>You can confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+</div>
