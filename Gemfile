@@ -5,7 +5,7 @@ ruby "2.1.2"
 gem 'paperclip'
 # AWS S3 SDK
 gem 'aws-sdk'
-# Rack Timeout
+# Timing out
 gem 'rack-timeout'
 # Pagination needs 
 gem 'will_paginate', '~> 3.0.6'
