@@ -4,6 +4,26 @@ var ready = function(){
 	}else{
 		var baseurl = window.location.protocol + '//' + window.location.hostname + '/';
 	}
+	// Owl Carousel
+	$("#owl-plugin").owlCarousel({
+		autoPlay: true,
+		stopOnHover: true,
+		lazyLoad: true
+	});
+	// Material preloader
+	var preloader = new $.materialPreloader({
+    position: 'top',
+    height: '5px',
+    col_1: '#159756',
+    col_2: '#da4733',
+    col_3: '#3b78e7',
+    col_4: '#fdba2c',
+    fadeIn: 200,
+    fadeOut: 200
+  });
+  $(document).on('click', 'a:not([href*=#]):not([href*=javascript])', function(){
+  	preloader.on();
+  });
 	// Save profile changes
 	$('.user_profile-buttons').on('click', '#js-save-profile', function(){
 		var url = baseurl + 'preferences';
@@ -181,8 +201,6 @@ var ready = function(){
 };
 // Ready Pages
 $(document).ready(ready);
-// Turbolinks
-$(document).on('page:load', ready);
 
 var today = new Date();
 var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days

@@ -18,4 +18,6 @@
 //= require Snap.svg/dist/snap.svg-min
 //= require jquery.jscroll/jquery.jscroll
 //= require remodal/dist/jquery.remodal
+//= require owl-carousel/owl-carousel/owl.carousel
+//= require Material-Preloader/js/materialPreloader
 //= require_tree .

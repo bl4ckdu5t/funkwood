@@ -3,13 +3,13 @@
 		<div class="tailored">
 			<h2>Hello <span id="js-visitor-name"><%= @preference.fullname %></span>,</h2>
 			<% if @users.present? %>
+			<div id="owl-plugin" class="owl-carousel">
 			<% @users.take(5).each_with_index do |user, index| %>
-			  <%# if Preference.find_by(user_id: user.id).avatar.present? %>
 			  <a href="<%= root_url %>user/<%= Preference.find_by(user_id: user.id).username.blank? ? user.id : Preference.find_by(user_id: user.id).username %>">
 				<%= image_tag 'avatar.jpg', class: 'tailored-image' %>
 				</a>
-				<%# end %>
 			<% end %>
+			</div>
 			<% end %>
 			<% if @users.count > 5 %><p><a href="">View more</a></p><% end %>
 		</div>

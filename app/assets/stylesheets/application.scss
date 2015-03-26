@@ -9,8 +9,9 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- * = require iCheck/skins/minimal/blue
  * = require remodal/dist/jquery.remodal
+ * = require owl-carousel/owl-carousel/owl.carousel
+ * = require Material-Preloader/css/materialPreloader
  */
 @import "variables";
 @import "mixins";

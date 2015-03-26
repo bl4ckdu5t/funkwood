@@ -953,73 +953,52 @@ section{
 	}
 }
 .user_profile{
-	margin-top: 100px;
+	margin-top: 20px;
 	position: relative;
-	&-avatar{
-		position: absolute;
-		top: -50px;
-		z-index: 1;
-		display: block;
-		overflow: hidden;
-		width: 150px;
-		height: 150px;
-		transform: rotate(45deg);
-		box-shadow: 1px 0 2px #888;
-		img{
-			width: 220px;
-			height: 220px;
-			transform: rotate(-45deg);
-			margin-top: -34px;
-			margin-left: -30px;
-		}
+	&-wrapper{
+		width: 80%;
+		margin: 10px auto;
 	}
-	&-title{
-		border-top: solid thin #999;
-		padding: 10px 200px;
+	&-box{
+		width: 22%;
+		background: $white;
+		text-align: center;
+		padding: 20px 10px;
+		border: solid thin #ddd;
+		border-top: solid 4px #ddd;
+		float: left;
 		h2{
-			margin: 0 10px 10px;
-			font-weight: 300;
-			font-size: 4rem;
-		}
-	}
-	&-content{
-		margin-top: 20px;
-		h3, p{
 			margin: 10px 0;
 		}
-	}
-	&-meta{
-		list-style-type: none;
-		padding: 0;
-		width: 200px;
-		float: left;
-		svg{
-			width: 16px;
-			height: 16px;
-			vertical-align: middle;
-			margin-top: -2px;
-			fill: #555;
+		.button{
+			width: 100%;
 		}
-		li{
-			border-bottom: solid thin #ddd;
-			padding: 10px;
-			font-size: 1.6rem;
-			}
+	}
+	&-avatar{
+		width: 150px;
+		height: 150px;
+		border: solid 3px #aaa;
+		border-radius: 50%;
+	}
+	&-content{
+		background: $white;
+		border: solid thin #ddd;
+		width: 77%;
+		float: right;
+	}
+	&-gallery{
+		background-color: #676C77;
+		min-height: 100px;
 	}
 	&-review{
-		background: $white;
-		border-radius: 2px;
-		border: solid thin #ddd;
-		padding: 20px 40px;
-		margin-bottom: 40px;
-		width: 70.5%;
-		float: left;
+		padding: 20px 30px 40px;
 		font-size: 1.6rem;
 		h3{
 			color: darken($myblue, 10%);
 			font-weight: 400;
+			font-size: 2.5rem;
+			margin: 10px 0;
 		}
-
 	}
 	&-details{
 		list-style-type: none;
@@ -1036,14 +1015,19 @@ section{
 			border-bottom: solid thin #aaa;
 		}
 	}
-	&-cover{
-		position: absolute;
-		top: -100px;
-		width: 100%;
-		height: 100px;
-		background: #666;
-		background-size: cover;
-		background-position: bottom;
+	&-engagement{
+		font-size: 1.5rem;
+		color: #629446;
+		svg{
+			width: 24px;
+			height: 24px;
+			vertical-align: middle;
+			fill: #629446;
+		}
+		a{
+			font-weight: bolder;
+			color: inherit;
+		}
 	}
 	&-buttons{
 		background: $white;
@@ -1148,3 +1132,4 @@ section{
 		outline: none;
 	}
 }
+#materialPreloader{ z-index: 9999; }
