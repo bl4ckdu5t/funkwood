@@ -20,4 +20,5 @@
 //= require remodal/dist/jquery.remodal
 //= require owl-carousel/owl-carousel/owl.carousel
 //= require Material-Preloader/js/materialPreloader
+//= require sweetalert/lib/sweet-alert
 //= require_tree .

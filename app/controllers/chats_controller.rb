@@ -26,5 +26,6 @@ class ChatsController < ApplicationController
 	end
 
 	def decline
+		Chat.find(params[:id]).destroy
 	end
 end

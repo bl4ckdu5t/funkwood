@@ -4,6 +4,28 @@ var ready = function(){
 	}else{
 		var baseurl = window.location.protocol + '//' + window.location.hostname + '/';
 	}
+	// Confirming user block
+	$('#blockUser').click(function(event){
+		swal({
+			title: "Are you sure?",
+			text: "If you do this, conversations with this user will be cleared",
+			type: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#DD6B55",
+			confirmButtonText: "Yes, continue!",
+			closeOnConfirm: false 
+		},function(){
+			var url = baseurl + 'chat_d';
+			$.ajax({
+				type: 'POST',
+				data: 'id='+$('#blockUser').data('id'),
+				url: url
+			});
+			$('.user_profile-buttons').html('<button class="button" id="js-crequest" data-id="'+$('#blockUser').data('rid')
+					+'">Send chat request</button>');
+			swal("Blocked!", "This user has been blocked from sending chats", "success");
+		});
+	});
 	// Ensuring all disabled are actually disabled
 	$('.disabled').click(function(e){
 		e.preventDefault();
@@ -56,8 +78,10 @@ var ready = function(){
 	$('#js-editProfile').click(function(){
 		$(this).closest('.user_profile-buttons').html('<button id="js-save-profile" class="blue button">Save Changes</button>'
 			+'<button id="js-cancel-profile" class="warn button">Cancel</button>');
-		$('.user_profile-details strong').each(function() {
+		$('.user_profile-details.editable strong').each(function() {
 			var newName = $(this).prop('id').slice(0, -5);
+			$reserve = $(this);
+			$(this).closest('li').html($reserve);
       $(this).after('<input type="text" name="'+newName+'" placeholder="'+newName.replace('_', ' ')+' here" value="'+
       	$(this).data('value')+'">');
     });
@@ -81,6 +105,21 @@ var ready = function(){
 		autoTriggerUntil: 2,
 		nextSelector: '.next_page',
 		contentSelector: '.window-list'
+	});
+	// Declining chat requests
+	$('#js-drequest').click(function(){
+		var url = baseurl + 'chat_d';
+		$.ajax({
+			type: 'POST',
+			data: 'id='+$(this).data('id'),
+			url: url
+		}).done(function(){
+			$('.user_profile-buttons').html('<button class="button" id="js-crequest" data-id="'+$(this).data('rid')
+					+'">Send chat request</button>');
+		}).fail(function(){
+			$('.user_profile-buttons').html('<button class="button" id="js-crequest" data-id="'+$(this).data('rid')
+					+'">Send chat request</button>');
+		});
 	});
 	// Accepting chat requests
 	$('#js-arequest').click(function(){
