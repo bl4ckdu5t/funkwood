@@ -89,12 +89,6 @@ var ready = function(){
     $('#js-profile-name').html('<input type="text" class="unameEntry" name="fullname" value="'+profileName+'">');
     var aboutUser = $('#js-userStory').text();
     $('#js-userStory').html('<textarea class="user-story" name="about">'+aboutUser+'</textarea>');
-    $('.sideEntry').each(function(){
-    	var sideEntry = $(this).data('entry');
-    	var entryVal = $(this).text().slice(0, 7) == 'Unknown' ? '' : $(this).text();
-    	$(this).html('<input type="text" name="'+sideEntry+'" value="'+ entryVal +
-    		'" placeholder="'+sideEntry.replace('_',' ')+'"">');
-    });
     $('.unameEntry').focus();
     $('.js-profile-unwanted').fadeOut();
 	});
