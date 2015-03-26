@@ -4,6 +4,10 @@ var ready = function(){
 	}else{
 		var baseurl = window.location.protocol + '//' + window.location.hostname + '/';
 	}
+	// Ensuring all disabled are actually disabled
+	$('.disabled').click(function(e){
+		e.preventDefault();
+	});
 	// Owl Carousel
 	$("#owl-plugin").owlCarousel({
 		autoPlay: true,
@@ -51,7 +55,7 @@ var ready = function(){
 	// Edit profile
 	$('#js-editProfile').click(function(){
 		$(this).closest('.user_profile-buttons').html('<button id="js-save-profile" class="blue button">Save Changes</button>'
-			+'<button id="js-cancel-profile" class="button">Cancel</button>'+' <em>Edit profile fields below</em>');
+			+'<button id="js-cancel-profile" class="warn button">Cancel</button>');
 		$('.user_profile-details strong').each(function() {
 			var newName = $(this).prop('id').slice(0, -5);
       $(this).after('<input type="text" name="'+newName+'" placeholder="'+newName.replace('_', ' ')+' here" value="'+
@@ -69,16 +73,6 @@ var ready = function(){
     });
     $('.unameEntry').focus();
     $('.js-profile-unwanted').fadeOut();
-	});
-	// Changing chat buttons to block chat
-	$('#js-chatActive').hover(function(){
-		$(this).removeClass('blue');
-		$(this).addClass('warn');
-		$(this).html($('#js-template-block').html());
-	},function(){
-		$(this).removeClass('warn');
-		$(this).addClass('blue');
-		$(this).html($('#js-template-chat').html());
 	});
 	// Infinite Scrolling
 	$('#js-infinite-scroll').jscroll({

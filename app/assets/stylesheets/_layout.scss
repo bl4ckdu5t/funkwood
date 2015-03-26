@@ -462,6 +462,10 @@ section{
 			&:hover{
 				box-shadow: 0 2px 8px #999;
 			}
+			&.warn{
+				background-color: $color-wine;
+				border-color: lighten($color-wine, 10%);
+			}
 		}
 	}
 	&-box{
@@ -572,7 +576,7 @@ section{
 			top: -10px;
 			right: 0;
 			z-index: 1;
-			background: $myblue;
+			background: $color-wine;
 			color: $white;	
 			border-radius: 50%;
 			width: 20px;
@@ -619,7 +623,6 @@ section{
 			width: 100%;
 			padding: 5px;
 			border-bottom: solid thin #eee;
-			border-left: solid 2px lighten($myblue, 20%);
 			&:hover{
 				border-left: solid 2px $color-title-pink;
 			}
@@ -651,11 +654,13 @@ section{
 			text-align: center;
 			margin: 5px 0;
 			color: darken($white, 50%);
+			&:hover{
+				font-weight: bolder;
+			}
 		}
 		li{
 			padding: 5px;
 			border-bottom: solid thin #eee;
-			border-left: solid 2px lighten($myblue, 20%);
 		}
 		&::before{
 			content: '';
@@ -959,19 +964,45 @@ section{
 		width: 80%;
 		margin: 10px auto;
 	}
-	&-box{
+	&-aside{
+		float: left;
 		width: 22%;
+		nav a{
+			display: block;
+			background-color: $white;
+			border: solid thin #ddd;
+			width: 100%;
+			height: 50px;
+			font-size: 1.6rem;
+			padding: 15px 15px;
+			color: darken($white, 70%);
+			transition: 1s margin ease;
+			&:hover{
+				margin-top: -3px;
+			}
+			svg{
+				width: 16px;
+				height: 16px;
+				vertical-align: middle;
+				margin-top: -5px;
+				fill: darken($white, 70%);
+				margin-right: 5px;
+			}
+		}
+	}
+	&-box{
 		background: $white;
 		text-align: center;
 		padding: 20px 10px;
 		border: solid thin #ddd;
 		border-top: solid 4px #ddd;
-		float: left;
+		margin-bottom: 20px;
 		h2{
 			margin: 10px 0;
 		}
 		.button{
 			width: 100%;
+			margin-bottom: 5px;
 		}
 	}
 	&-avatar{
@@ -1012,7 +1043,6 @@ section{
 		}
 		input{
 			border: none;
-			border-bottom: solid thin #aaa;
 		}
 	}
 	&-engagement{
@@ -1027,18 +1057,6 @@ section{
 		a{
 			font-weight: bolder;
 			color: inherit;
-		}
-	}
-	&-buttons{
-		background: $white;
-		padding: 10px 20px;
-		width: 100%;
-		border: solid thin #ddd;
-		border-radius: 2px;
-		em{
-			font-size: 1.6rem;
-			color: #666;
-			margin: 0 10px;
 		}
 	}
 }
@@ -1085,6 +1103,14 @@ section{
 		border-color: lighten($color-wine, 10%);
 		&:hover{
 			background-image: linear-gradient(rgba(lighten($color-wine, 10%), 0.5), rgba($color-wine, 0.8));
+		}
+	}
+	&.verified{
+		@extend .blue;
+		background-color: $color-success;
+		border-color: lighten($color-success, 10%);
+		&:hover{
+			background-image: linear-gradient(rgba(lighten($color-success, 10%), 0.5), rgba($color-success, 0.8));
 		}
 	}
 }

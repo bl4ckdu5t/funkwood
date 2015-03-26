@@ -1,32 +1,45 @@
 <section class="user_profile">
 	<div class="user_profile-wrapper clearfix">
-		<div class="user_profile-box">
-			<%= image_tag 'avatar.jpg', class: 'user_profile-avatar' %>
-			<h2 id="js-profile-name"><%= @user.fullname ? @user.fullname : 'No name' %></h2>
-			<p class="user_profile-engagement ghost">
+		<aside class="user_profile-aside">
+			<div class="user_profile-box">
+				<%= image_tag 'avatar.jpg', class: 'user_profile-avatar' %>
+				<h2 id="js-profile-name"><%= @user.fullname ? @user.fullname : 'No name' %></h2>
+				<p class="user_profile-engagement ghost">
+					<svg viewBox="0 0 1024 1024">
+						<path class="path1" d="M704 512c58.88 0 106.24-47.787 106.24-106.667s-47.36-106.667-106.24-106.667c-58.88 0-106.667 47.787-106.667 106.667s47.787 106.667 106.667 106.667zM384 469.333c70.613 0 127.573-57.387 127.573-128s-56.96-128-127.573-128c-70.613 0-128 57.387-128 128s57.387 128 128 128zM704 597.333c-78.293 0-234.667 39.253-234.667 117.333v96h469.333v-96c0-78.080-156.373-117.333-234.667-117.333zM384 554.667c-99.627 0-298.667 49.92-298.667 149.333v106.667h298.667v-96c0-36.267 14.293-99.627 101.12-148.053-37.12-7.893-73.173-11.947-101.12-11.947z"></path>
+					</svg>
+					Engaged to <a href="">Manoela</a>
+				</p>
+				<div class="user_profile-buttons">
+					<% if @user.user_id.eql? current_user.id %>
+					<button class="button" id="js-editProfile">Edit Profile</button>
+					<% elsif Chat.between(current_user.id, @user.user_id).present? && Chat.between(current_user.id, @user.user_id).first.accepted === false && Chat.between(current_user.id, @user.user_id).first.recipient_id == @user.user_id %>
+					<button class="disabled button">Request sent</button>
+					<% elsif Chat.between(current_user.id, @user.user_id).present? && Chat.between(current_user.id, @user.user_id).first.accepted === false %>
+					<button class="verified button" id="js-arequest" data-id="<%= Chat.between(current_user.id, @user.user_id).first.id %>" data-rid="<%= Chat.between(current_user.id, @user.user_id).first.sender_id %>">Accept chat request</button>
+					<!--<button class="warn button" id="js-drequest" data-id="" data-rid="">Decline Request</button>-->
+					<template id="js-acceptedReturn">
+						<button class="button start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= @user.id %>">send a message</button>
+						<button class="button">Arrange a date</button>
+					</template>
+					<% elsif Chat.between(current_user.id, @user.user_id).present? %>
+					<button class="button start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= @user.id %>">send a message</button>
+					<button class="button">Arrange a date</button>
+					<button class="warn button" data-remodal-target="block-user">Block Chat</button>
+					<% else %>
+					<button class="button" id="js-crequest" data-id="<%= @user.user_id %>">Send chat request</button>
+					<% end %>
+				</div>
+			</div>
+			<nav>
+				<%= link_to home_path do %>
 				<svg viewBox="0 0 1024 1024">
-					<path class="path1" d="M704 512c58.88 0 106.24-47.787 106.24-106.667s-47.36-106.667-106.24-106.667c-58.88 0-106.667 47.787-106.667 106.667s47.787 106.667 106.667 106.667zM384 469.333c70.613 0 127.573-57.387 127.573-128s-56.96-128-127.573-128c-70.613 0-128 57.387-128 128s57.387 128 128 128zM704 597.333c-78.293 0-234.667 39.253-234.667 117.333v96h469.333v-96c0-78.080-156.373-117.333-234.667-117.333zM384 554.667c-99.627 0-298.667 49.92-298.667 149.333v106.667h298.667v-96c0-36.267 14.293-99.627 101.12-148.053-37.12-7.893-73.173-11.947-101.12-11.947z"></path>
+					<path d="M512 32l-512 512 96 96 96-96v416h256v-192h128v192h256v-416l96 96 96-96-512-512zM512 448c-35.346 0-64-28.654-64-64s28.654-64 64-64c35.346 0 64 28.654 64 64s-28.654 64-64 64z"></path>
 				</svg>
-				Engaged to <a href="">Vanessa</a>
-			</p>
-			<% if @user.user_id.eql? current_user.id %>
-			<button class="button" id="js-editProfile">Edit Profile</button>
-			<% elsif Chat.between(current_user.id, @user.user_id).present? && Chat.between(current_user.id, @user.user_id).first.accepted === false && Chat.between(current_user.id, @user.user_id).first.recipient_id == @user.user_id %>
-			<button class="disabled button">Request sent</button>
-			<% elsif Chat.between(current_user.id, @user.user_id).present? && Chat.between(current_user.id, @user.user_id).first.accepted === false %>
-			<button class="button" id="js-arequest" data-id="<%= Chat.between(current_user.id, @user.user_id).first.id %>" data-rid="<%= Chat.between(current_user.id, @user.user_id).first.sender_id %>">Accept chat request</button>
-			<template id="js-acceptedReturn">
-				<button class="button start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= @user.id %>">send a message</button>
-				<button class="button">Arrange a date</button>
-			</template>
-			<% elsif Chat.between(current_user.id, @user.user_id).present? %>
-			<button class="button start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= @user.id %>">send a message</button>
-			<button class="button">Arrange a date</button>
-			<button class="red button">Block Chat</button>
-			<% else %>
-			<button class="button" id="js-crequest" data-id="<%= @user.user_id %>">Send chat request</button>
-			<% end %>
-		</div>
+				Home
+				<% end %>
+			</nav>
+		</aside>
 		<div class="user_profile-content">
 			<div class="user_profile-gallery"></div>
 			<div class="user_profile-review">
@@ -34,11 +47,15 @@
 				<p id="js-userStory"><%= @user.about.present? ? @user.about : 'No information about user' %></p>
 				<ul class="user_profile-details">
 					<li><strong data-value="<%= @user.username %>" id="usernameLabel">Username:</strong> <%= @user.username %></li>
+					<li><strong data-value="<%= @user.gender %>" id="genderLabel">Gender:</strong> <%= @user.gender %></li>
 					<li><strong data-value="<%= @user.height %>" id="heightLabel">Height:</strong> <%= @user.height %></li>
 					<li><strong data-value="<%= @user.weight %>" id="weightLabel">Weight:</strong> <%= @user.weight %></li>
+					<li><strong data-value="<%= @user.age_range %>" id="age_rangeLabel">Age:</strong> <%= @user.age_range %></li>
 					<li><strong data-value="<%= @user.body_type %>" id="body_typeLabel">Body type:</strong> <%= @user.body_type %></li>
 					<li><strong data-value="<%= @user.complexion %>" id="complexionLabel">Complexion:</strong> <%= @user.complexion %></li>
 					<li><strong data-value="<%= @user.religion %>" id="religionLabel">Religion:</strong> <%= @user.religion %></li>
+					<li><strong data-value="<%= @user.location %>" id="locationLabel">Lives in:</strong> <%= @user.location %></li>
+					<li><strong data-value="<%= @user.career %>" id="careerLabel">Occupation:</strong> <%= @user.career %></li>
 				</ul>
 				<h3>Dating Preference</h3>
 				<ul class="user_profile-details">
