@@ -5,18 +5,17 @@ var ready = function () {
      * send an ajax request to our rails app with the sender_id and
      * recipient_id
      */
- 
+    if(window.location.hostname === 'localhost'){
+        var baseurl = window.location.protocol + '//localhost:3000/';
+    }else{
+        var baseurl = window.location.protocol + '//' + window.location.hostname + '/';
+    } 
     $('.start-conversation').click(function (e) {
         e.preventDefault();
  
         var sender_id = $(this).data('sid');
         var recipient_id = $(this).data('rip');
-        if(document.location.hostname === 'localhost'){
-            var url = document.location.protocol + '//localhost:3000/' + 'conversations';
-        }else{
-            var url = document.location.protocol + '//' + document.location.hostname + '/' + 'conversations';
-        }
-        $.post('http://localhost:3000/conversations', { sender_id: sender_id, recipient_id: recipient_id }, function (data) {
+        $.post(baseurl+'conversations', { sender_id: sender_id, recipient_id: recipient_id }, function (data) {
             chatBox.chatWith(data.conversation_id);
         });
     });

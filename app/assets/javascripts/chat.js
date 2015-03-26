@@ -12,6 +12,12 @@ var chatboxFocus = new Array();
 var chatBoxes = new Array();
  
 var ready = function () {
+
+    if(window.location.hostname === 'localhost'){
+        var baseurl = window.location.protocol + '//localhost:3000/';
+    }else{
+        var baseurl = window.location.protocol + '//' + window.location.hostname + '/';
+    }
  
     chatBox = {
  
@@ -96,7 +102,7 @@ var ready = function () {
  
             $("body").append('<div id="chatbox_' + conversation_id + '" class="chatbox"></div>')
  
-            $.get("conversations/" + conversation_id, function (data) {
+            $.get(baseurl+"conversations/" + conversation_id, function (data) {
                 $('#chatbox_' + conversation_id).html(data);
                 $("#chatbox_" + conversation_id + " .chatboxcontent").scrollTop($("#chatbox_" + conversation_id + " .chatboxcontent")[0].scrollHeight);
             }, "html");

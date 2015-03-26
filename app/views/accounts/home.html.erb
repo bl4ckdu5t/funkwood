@@ -41,9 +41,9 @@
 					<li class="start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= user.id %>">
 						<small class="<%= User.find(user.id).online? ? 'online' : '' %>"></small>
 						<strong><%= Preference.find_by(user_id: user.id).fullname.present? ? Preference.find(user.id).fullname : user.email %></strong>
-						<span><%= Conversation.between(current_user.id, 2).first.messages.last.body %></span>
+						<span><%= Conversation.between(current_user.id, user.id).first.messages.last.body %></span>
 						<time>
-							<%= Conversation.between(current_user.id, 2).first.messages.last.created_at.strftime('%v %R') %>
+							<%= Conversation.between(current_user.id, user.id).first.messages.last.created_at.strftime('%v %R') %>
 						</time>
 					</li>
 					<% end %>
