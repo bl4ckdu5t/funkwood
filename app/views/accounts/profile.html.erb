@@ -45,7 +45,10 @@
 			<div class="user_profile-gallery"></div>
 			<div class="user_profile-review">
 				<h3>About</h3>
+				<p id="example"></p>
+				<%= form_for @user, remote: true do %>
 				<p id="js-userStory"><%= @user.about.present? ? @user.about : 'No information about user' %></p>
+				<input type="hidden" name="preference[fullname]" id="nameCloneInput">
 				<ul class="editable user_profile-details">
 					<li><strong data-value="<%= @user.username %>" id="usernameLabel">Username:</strong> <%= @user.username %></li>
 					<li><strong data-value="<%= @user.gender %>" id="genderLabel">Gender:</strong> <%= @user.gender %></li>
@@ -58,6 +61,7 @@
 					<li><strong data-value="<%= @user.location %>" id="locationLabel">Lives in:</strong> <%= @user.location %></li>
 					<li><strong data-value="<%= @user.career %>" id="careerLabel">Occupation:</strong> <%= @user.career %></li>
 				</ul>
+				<% end %>
 				<h3>Dating Preference</h3>
 				<ul class="user_profile-details">
 					<li><strong>Interested in:</strong> <%= @user.relationship_type.present? ? "#{@user.relationship_type} relationships".capitalize : '' %></li>

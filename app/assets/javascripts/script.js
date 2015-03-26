@@ -52,23 +52,7 @@ var ready = function(){
   });
 	// Save profile changes
 	$('.user_profile-buttons').on('click', '#js-save-profile', function(){
-		var url = baseurl + 'preferences';
-		var data = 'preference["fullname"]=' + $('[name=fullname]').val() + '&preference["about"]=' + $('[name=about]').val() 
-		+ '&preference["username"]=' + $('[name=username]').val()+'&preference["height"]='+$('[name=height]').val()+
-		'&preference["weight"]='+$('[name=weight]').val()+'&preference["body_type"]='+$('[name=body_type]').val()
-		+'&preference["complexion"]='+$('[name=complexion]').val()+'&preference["religion"]='+$('[name=religion]').val()
-		+'&preference["gender"]='+$('[name=gender]').val()+'&preference["age"]='+$('[name=age]').val()
-		+'&preference["location"]='+$('[name=location]').val()+'&preference["working_class"]='+$('[name=working_class]').val()
-		+'&_method=patch&controller=preferences&action=update';
-		$.ajax({
-			type: 'POST',
-			data: data,
-			url: url
-		}).done(function(response){
-			alert('Successful!');
-		}).fail(function(){
-			alert('Failed');
-		});
+		$('.edit_preference').submit();
 	});
 	// Cancel profile changes
 	$('.user_profile-buttons').on('click', '#js-cancel-profile',function(){
@@ -76,21 +60,28 @@ var ready = function(){
 	});
 	// Edit profile
 	$('#js-editProfile').click(function(){
-		$(this).closest('.user_profile-buttons').html('<button id="js-save-profile" class="blue button">Save Changes</button>'
-			+'<button id="js-cancel-profile" class="warn button">Cancel</button>');
+		$(this).closest('.user_profile-buttons').html(
+			'<button id="js-save-profile" type="submit" class="blue button">Save Changes</button>'
+			+'<button id="js-cancel-profile" type="button" class="warn button">Cancel</button>');
 		$('.user_profile-details.editable strong').each(function() {
 			var newName = $(this).prop('id').slice(0, -5);
 			$reserve = $(this);
 			$(this).closest('li').html($reserve);
-      $(this).after('<input type="text" name="'+newName+'" placeholder="'+newName.replace('_', ' ')+' here" value="'+
+      $(this).after('<input type="text" name="preference['+newName+']" placeholder="'+newName.replace('_', ' ')+
+      	' here" value="'+
       	$(this).data('value')+'">');
     });
     var profileName = $('#js-profile-name').text();
-    $('#js-profile-name').html('<input type="text" class="unameEntry" name="fullname" value="'+profileName+'">');
+    $('#js-profile-name')
+    .html('<input type="text" class="unameEntry" name="preference[fullname]" value="'+profileName+'">');
     var aboutUser = $('#js-userStory').text();
-    $('#js-userStory').html('<textarea class="user-story" name="about">'+aboutUser+'</textarea>');
+    $('#nameCloneInput').val($('.unameEntry').val());
+    $('#js-userStory').html('<textarea class="user-story" name="preference[about]">'+aboutUser+'</textarea>');
     $('.unameEntry').focus();
     $('.js-profile-unwanted').fadeOut();
+	});
+	$(document).on('keyup','.unameEntry',function(){
+		$('#nameCloneInput').val($(this).val());
 	});
 	// Infinite Scrolling
 	$('#js-infinite-scroll').jscroll({
