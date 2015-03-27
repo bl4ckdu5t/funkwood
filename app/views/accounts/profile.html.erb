@@ -2,7 +2,7 @@
 	<div class="user_profile-wrapper clearfix">
 		<aside class="user_profile-aside">
 			<div class="user_profile-box">
-				<%= image_tag 'avatar.jpg', class: 'user_profile-avatar' %>
+				<%= image_tag @preference.avatar.url(:medium), class: 'user_profile-avatar' %>
 				<h2 id="js-profile-name"><%= @user.fullname ? @user.fullname : 'No name' %></h2>
 				<p class="user_profile-engagement ghost">
 					<svg viewBox="0 0 1024 1024">

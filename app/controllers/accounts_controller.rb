@@ -22,6 +22,8 @@ class AccountsController < ApplicationController
 	  	end
 	  end
     @conversations = Conversation.involving(current_user).order(created_at: :desc)
+    @client = GooglePlaces::Client.new('AIzaSyDMnERpbaiRapKJwxGIlrQlPTr8MWIfV14')
+    #render text: @client.spots(-33.8670522, 151.1957362, types: ['restaurant']) and return
   end
 
   def profile

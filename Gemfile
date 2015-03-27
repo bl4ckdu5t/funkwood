@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 ruby "2.1.2"
+# Google Places
+gem 'google_places'
 # Paperclip to handle uploads
 gem 'paperclip'
 # AWS S3 SDK
