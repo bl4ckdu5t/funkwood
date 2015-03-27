@@ -1,5 +1,5 @@
 class AccountsController < ApplicationController
-	before_action :authenticate_user!
+	before_action :authenticate_user!, except: [:profile]
 	before_filter :init
 	layout 'account'
   def home
@@ -36,9 +36,11 @@ class AccountsController < ApplicationController
   private
 
   def init
-  	@preference = Preference.where(user_id: current_user.id).first
-    @users = User.where.not(id: current_user.id).order(created_at: :desc)
-    @notifications = Notification.where({seen: false, receiver_id: current_user.id}).count
-    @allnotifications = Notification.where({seen: false, receiver_id: current_user.id}).take(4)
+  	@preference = user_signed_in? ? Preference.where(user_id: current_user.id).first : 0
+    @users = user_signed_in? ? User.where.not(id: current_user.id).order(created_at: :desc) : User.all
+    if user_signed_in?
+      @notifications = Notification.where({seen: false, receiver_id: current_user.id}).count
+      @allnotifications = Notification.where({seen: false, receiver_id: current_user.id}).take(4)
+    end
   end
 end
