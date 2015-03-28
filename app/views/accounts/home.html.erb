@@ -4,9 +4,9 @@
 			<h2>Hello <span id="js-visitor-name"><%= @preference.fullname %></span>,</h2>
 			<% if @users.present? %>
 			<div id="owl-plugin" class="owl-carousel">
-			<% @users.take(5).each_with_index do |user, index| %>
+			<% @users.take(10).each_with_index do |user, index| %>
 			  <a href="<%= root_url %>user/<%= Preference.find_by(user_id: user.id).username.blank? ? user.id : Preference.find_by(user_id: user.id).username %>">
-				<%= image_tag 'avatar.jpg', class: 'tailored-image' %>
+				<%= image_tag Preference.find_by(user_id: user.id).avatar.url(:thumb), class: 'tailored-image' %>
 				</a>
 			<% end %>
 			</div>
@@ -24,6 +24,16 @@
 				<% end %>
 			</div>
 		</div>
+		<!-- <div class="places">
+			<h2>Some date places around you</h2>
+			<ul class="places-list">
+				<li>Hotel California</li>
+				<li>Hotel California</li>
+				<li>Hotel California</li>
+				<li>Hotel California</li>
+				<li>Hotel California</li>
+			</ul>
+		</div> -->
 	</div>
 	<div data-grid="6">
 		<%= form_tag "/search", method: 'get', class: 'search-form' do %>
@@ -36,6 +46,9 @@
 			<div class="chat-box">
 				<ul>
 					<% if @conversations.any? %>
+					<% if @users.count == 0 %>
+					<li>It appears there are no other users on this application. Spread the word</li>
+					<% end %>
 					<% @users.each_with_index do |user, index| %>
 					<% if Conversation.between(current_user.id, user.id) %>
 					<li class="start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= user.id %>">
