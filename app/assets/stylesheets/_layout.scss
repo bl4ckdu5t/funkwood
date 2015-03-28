@@ -1161,3 +1161,25 @@ section{
 	}
 }
 #materialPreloader{ z-index: 9999; }
+.notifier{
+	position: absolute;
+	right: 0;
+	top: 120px;
+	z-index: 99999;
+	max-height: 150px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-height: 1.6;
+  -webkit-box-orient: vertical;
+	max-width: 320px;
+	@include breakpoint($breakpoint-iphone-portrait){
+		max-width: 100%;
+	}
+	padding: 10px;
+	background-color: rgba($color-title-pink, $reg_alpha);
+	border: solid thin $color-title-pink;
+	border-left: solid 4px $color-title-pink;
+	color: darken($color-title-pink, 10%);
+}

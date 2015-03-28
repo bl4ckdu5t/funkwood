@@ -1,3 +1,6 @@
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :class => 'notifier' %>
+<% end %>
 <div class="top">
 	<h1 class="title">muster<span>d8</span></h1>
 	<%= link_to('<button data-button="curvy transparent">Member sign in</button>'.html_safe, new_user_session_path)  %> 

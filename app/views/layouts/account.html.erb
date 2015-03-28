@@ -21,6 +21,9 @@
 	<p class="browsehappy">You are using an <strong>outdated</strong> browser. 
 	Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> 
 	<![endif]-->
+	<% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :class => 'notifier' %>
+  <% end %>
 	<div class="account">
 		<header class="account-header">
 			<% if user_signed_in? %>

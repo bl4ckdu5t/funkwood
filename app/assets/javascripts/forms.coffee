@@ -7,10 +7,14 @@ ready = ->
 		return
 
 	$('.user_profile-review form').on("ajax:success", (e, data, status, xhr) ->
-		alert('Profile updated')
-		window.location.reload()
+		if $('.notifier').length == 0
+			$('body').prepend('<div class="notifier">Profile updated successfully</div>')
+		else
+			$('.notifier').text('Profile updated successfully')
+		
+		window.location.replace('/user/'+$('meta[name=user-id]').prop('content'))
 	).on "ajax:error", (e, data, status, error) ->
-		alert('Profile failed to update')
+		console.log(error)
 		return
 
 $(document).ready(ready)

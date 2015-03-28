@@ -7,7 +7,7 @@ class PreferencesController < ApplicationController
   def update
   	updated = @preference.update_attributes(pref_params)
 		if updated
-			redirect_to :back, notice: 'Record updated'
+			render json: { response: 'success' }
 		else
 			render "edit"
 		end

@@ -10,7 +10,7 @@ var ready = function () {
     }else{
         var baseurl = window.location.protocol + '//' + window.location.hostname + '/';
     } 
-    $('.start-conversation').click(function (e) {
+    $(document).on('click','.start-conversation',function (e) {
         e.preventDefault();
  
         var sender_id = $(this).data('sid');
@@ -59,7 +59,7 @@ var ready = function () {
      * conversation chatbox
      */
  
-    $('.conversation').click(function (e) {
+    $(document).on('click','.conversation',function (e) {
         e.preventDefault();
  
         var conversation_id = $(this).data('cid');

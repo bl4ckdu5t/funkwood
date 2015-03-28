@@ -4,8 +4,10 @@ var ready = function(){
 	}else{
 		var baseurl = window.location.protocol + '//' + window.location.hostname + '/';
 	}
+	// Fading out notifications
+	$(".notifier").filter(":visible").delay(7000).fadeOut('slow');
 	// Confirming user block
-	$('#blockUser').click(function(event){
+	$(document).on('click','#blockUser', function(event){
 		swal({
 			title: "Are you sure?",
 			text: "If you do this, conversations with this user will be cleared",

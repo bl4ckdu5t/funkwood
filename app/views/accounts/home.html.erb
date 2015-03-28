@@ -50,7 +50,7 @@
 					<li>It appears there are no other users on this application. Spread the word</li>
 					<% end %>
 					<% @users.each_with_index do |user, index| %>
-					<% if Conversation.between(current_user.id, user.id) %>
+					<% if Conversation.between(current_user.id, user.id).exists? %>
 					<li class="start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= user.id %>">
 						<small class="<%= User.find(user.id).online? ? 'online' : '' %>"></small>
 						<strong><%= Preference.find_by(user_id: user.id).fullname.present? ? Preference.find(user.id).fullname : user.email %></strong>
