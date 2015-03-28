@@ -697,9 +697,6 @@ section{
 		height: 80px;
 		border-radius: 50%;
 		margin: 0 6px;
-		&:first-of-type{
-			margin-left: 30px;
-		}
 	}
 	p{
 		text-align: right;
@@ -707,6 +704,10 @@ section{
 		margin-right: 50px;
 		font-size: 1.5rem;
 	}
+}
+.owl-item{
+	width: 100px !important;
+	text-align: center;
 }
 .profile{
 	position: relative;
@@ -1178,8 +1179,7 @@ section{
 		max-width: 100%;
 	}
 	padding: 10px;
-	background-color: rgba($color-title-pink, $reg_alpha);
-	border: solid thin $color-title-pink;
+	background-color: rgba($white, .85);
 	border-left: solid 4px $color-title-pink;
 	color: darken($color-title-pink, 10%);
 }

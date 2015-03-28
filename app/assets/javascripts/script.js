@@ -5,7 +5,7 @@ var ready = function(){
 		var baseurl = window.location.protocol + '//' + window.location.hostname + '/';
 	}
 	// Fading out notifications
-	$(".notifier").filter(":visible").delay(7000).fadeOut('slow');
+	$(".notifier").filter(":visible").delay(9000).fadeOut('slow');
 	// Confirming user block
 	$(document).on('click','#blockUser', function(event){
 		swal({
