@@ -14,11 +14,10 @@
 	<form action="" id="js-register">
 		<input type="text" name="name" id="js-name" placeholder="My name is?" required>
 		<select name="age" id="js-age" required>
-			<option value="" disabled selected>My age is between?</option>
-			<option value="1">18 - 25</option>
-			<option value="2">26 - 35</option>
-			<option value="3">36 - 45</option>
-			<option value="4">46 above</option>
+			<option value="" disabled selected>My age is?</option>
+			<% (18..70).each do |age| %>
+			<option value="<%= age %>"><%= age %> years</option>
+			<% end %>
 		</select>
 		<select name="gender" id="js-gender" required>
 			<option value="" disabled selected>I am a?</option>

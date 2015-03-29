@@ -8,7 +8,7 @@
   	<fieldset class="preference-section" id="js-form-1">
   		<h3>Hello, <span id="js-visitor-name"><%= @preference.fullname %></span></h3>
       <%= f.hidden_field :fullname, class: 'js-visitor-name', value: "#{@preference.fullname}" %>
-      <%= f.hidden_field :age_range, class: 'js-visitor-age', value: "#{@preference.age_range}" %>
+      <%= f.hidden_field :age, class: 'js-visitor-age', value: "#{@preference.age}" %>
       <%= f.hidden_field :gender, class: 'js-visitor-gender', value: "#{@preference.gender}" %>
       <%= f.label :relationship_type, "What kind of relationship do you seek?", class: 'preference-label' %>
       <p class="preference--line">
