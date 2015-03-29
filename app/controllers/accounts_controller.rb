@@ -29,9 +29,9 @@ class AccountsController < ApplicationController
   def profile
   	profile = params[:profile]
   	if profile.to_i == 0
-      @user = Preference.find_by_username(profile) or render_404
+      @user = Preference.find_by_username(profile) or render nothing: true, status: 404
   	else
-      @user = Preference.find_by_user_id(profile) or render_404
+      @user = Preference.find_by_user_id(profile) or render nothing: true, status: 404
   	end
   end
 

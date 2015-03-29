@@ -21,7 +21,6 @@ module Musterd8
     # config.i18n.default_locale = :de
     config.generators { |g| g.assets false }
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
-    config.exceptions_app = self.routes
     config.to_prepare do
       Devise::Mailer.layout "email" # email.haml or email.erb
     end

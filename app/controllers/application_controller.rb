@@ -7,9 +7,6 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     home_path
   end
-  def render_404
-	  raise ActionController::RoutingError.new('Not Found')
-	end
 
 	private
 

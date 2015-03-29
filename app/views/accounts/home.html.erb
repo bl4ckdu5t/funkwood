@@ -4,7 +4,7 @@
 			<h2>Hello <span id="js-visitor-name"><%= @preference.fullname %></span>,</h2>
 			<% if @users.present? %>
 			<div id="owl-plugin" class="owl-carousel">
-			<% @users.take(10).each_with_index do |user, index| %>
+			<% @users.take(20).each_with_index do |user, index| %>
 			  <a href="<%= root_url %>user/<%= Preference.find_by(user_id: user.id).username.blank? ? user.id : Preference.find_by(user_id: user.id).username %>">
 				<%= image_tag Preference.find_by(user_id: user.id).avatar.url(:thumb), class: 'tailored-image' %>
 				</a>
