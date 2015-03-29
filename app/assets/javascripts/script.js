@@ -4,6 +4,13 @@ var ready = function(){
 	}else{
 		var baseurl = window.location.protocol + '//' + window.location.hostname + '/';
 	}
+	// Uploading images
+	$('.user_profile-avatar').click(function(){
+		var v = $('.user-story').length;
+		if(v === 1){
+			alert('Upload feature under development');
+		}
+	});
 	// Fading out notifications
 	$(".notifier").filter(":visible").delay(9000).fadeOut('slow');
 	// Confirming user block
@@ -58,7 +65,7 @@ var ready = function(){
 	});
 	// Cancel profile changes
 	$('.user_profile-buttons').on('click', '#js-cancel-profile',function(){
-		window.location.reload();
+		window.location.replace(window.location.href);
 	});
 	// Edit profile
 	$('#js-editProfile').click(function(){
