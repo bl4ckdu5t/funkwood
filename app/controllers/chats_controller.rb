@@ -26,6 +26,12 @@ class ChatsController < ApplicationController
 	end
 
 	def decline
-		Chat.find(params[:id]).destroy
+		chat = Chat.find(params[:id])
+		if chat.destroy
+			if Conversation.between(current_user.id, params[:rid]).exists?
+				Conversation.between(current_user.id, params[:rid]).first.destroy
+			end
+			render json: { status: 'success' }
+		end
 	end
 end

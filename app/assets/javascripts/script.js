@@ -20,7 +20,7 @@ var ready = function(){
 			var url = baseurl + 'chat_d';
 			$.ajax({
 				type: 'POST',
-				data: 'id='+$('#blockUser').data('id'),
+				data: 'id='+$('#blockUser').data('id')+'&rid='+$('#blockUser').data('rid'),
 				url: url
 			});
 			$('.user_profile-buttons').html('<button class="button" id="js-crequest" data-id="'+$('#blockUser').data('rid')
@@ -98,7 +98,7 @@ var ready = function(){
 		var url = baseurl + 'chat_d';
 		$.ajax({
 			type: 'POST',
-			data: 'id='+$(this).data('id'),
+			data: 'id='+$(this).data('id')+'&rid='+$(this).data('rid'),
 			url: url
 		}).done(function(){
 			$('.user_profile-buttons').html('<button class="button" id="js-crequest" data-id="'+$(this).data('rid')
