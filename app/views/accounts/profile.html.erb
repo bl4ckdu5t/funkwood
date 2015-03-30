@@ -50,9 +50,11 @@
 			<div class="user_profile-review">
 				<h3>About</h3>
 				<p id="example"></p>
-				<%= form_for @user, remote: true do %>
+				<%= form_for @user, remote: true, html: { multipart: true } do %>
 				<p id="js-userStory"><%= @user.about.present? ? @user.about : 'No information about user' %></p>
 				<input type="hidden" name="preference[fullname]" id="nameCloneInput">
+				<%= token_tag form_authenticity_token %>
+				<%= file_field_tag :avatar, accept: 'image/png,image/gif,image/jpeg, image/jpg', id: 'uploadAvatar', class: 'invisible' %>
 				<ul class="editable user_profile-details">
 					<li><strong data-value="<%= @user.username %>" id="usernameLabel">Username:</strong> <%= @user.username %></li>
 					<li><strong data-value="<%= @user.gender %>" id="genderLabel">Gender:</strong> <%= @user.gender %></li>

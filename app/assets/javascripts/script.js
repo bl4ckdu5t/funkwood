@@ -8,7 +8,21 @@ var ready = function(){
 	$('.user_profile-avatar').click(function(){
 		var v = $('.user-story').length;
 		if(v === 1){
-			alert('Upload feature under development');
+			$('#uploadAvatar').trigger('click');
+		}
+	});
+	$('#uploadAvatar').change(function(){
+		var s = this;
+		if(this.files && this.files[0]){
+			var reader = new FileReader();
+			reader.onload = function(e){
+				$(".user_profile-avatar::before").addRule({
+					background: "url("+e.target.result+")",
+					content: ""
+				});
+				$(".user_profile-avatar::before").addRule("background-size: 100%");
+			}
+			reader.readAsDataURL(this.files[0]);
 		}
 	});
 	// Fading out notifications
