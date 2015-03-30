@@ -35,6 +35,11 @@ class AccountsController < ApplicationController
   	end
   end
 
+  def test
+    # method to test functionality of file uploads without ajax
+    @user = Preference.find_by_user_id(current_user.id)
+  end
+
   private
 
   def init

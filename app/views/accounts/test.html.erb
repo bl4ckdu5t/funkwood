@@ -1,0 +1,6 @@
+<h1>Test file form</h1>
+<%= form_for @user, html: { multipart: true } do |f| %>
+<%= f.file_field :avatar, accept: 'image/png,image/gif,image/jpeg, image/jpg' %>
+<br>
+<%= f.submit %>
+<% end %>
