@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 ruby "2.1.2"
+gem 'remotipart', '~> 1.2'
 # Google Places
 gem 'google_places'
 # Paperclip to handle uploads
