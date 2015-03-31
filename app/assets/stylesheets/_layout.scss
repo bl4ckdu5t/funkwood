@@ -1103,17 +1103,20 @@ section{
 	font-weight: bold;
 	color: #777;
 	@include gradient-light-linear;
+	&:hover{
+		background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(200, 200, 200, 0.8));
+	}
 	&.disabled{
 		color: #ccc;
+		&:hover{
+			background: #eee;
+		}
 	}
 	svg{
 		width: 24px;
 		vertical-align: middle;
 		margin-top: -5px;
 		fill: #777;
-	}
-	&:hover{
-		background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(200, 200, 200, 0.8));
 	}
 	&.blue{
 		background-color: $myblue;

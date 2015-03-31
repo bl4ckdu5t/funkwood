@@ -43,7 +43,7 @@ class AccountsController < ApplicationController
   end
 
   def search
-    @results = Preference.where(fullname: params[:q]).where.not(user_id: current_user.id)
+    @results = Preference.where('fullname ilike ?',"%#{params[:q]}%").where.not(user_id: current_user.id)
   end
 
   def test
