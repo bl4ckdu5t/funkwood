@@ -27,11 +27,13 @@
 		<div class="places">
 			<h2>Date locations nearby</h2>
 			<ul class="places-list">
-				<li><strong>Hotel California</strong> - <span>some random rant</span> <%= image_tag 'sunshine.jpg' %></li>
-				<li><strong>Hotel California</strong> - <span>some random rant</span> <%= image_tag 'sunshine.jpg' %></li>
-				<li><strong>Hotel California</strong> - <span>some random rant</span> <%= image_tag 'sunshine.jpg' %></li>
-				<li><strong>Hotel California</strong> - <span>some random rant</span> <%= image_tag 'sunshine.jpg' %></li>
-				<li><strong>Hotel California</strong> - <span>some random rant</span> <%= image_tag 'sunshine.jpg' %></li>
+				<% unless @coordinates.blank? %>
+				<% @client.spots(@coordinates[0], @coordinates[1], types: @placeTypes).each do |x| %>
+					<li><strong><%= x.name %></strong> - <span><%= x.vicinity %></span> <%= image_tag x.icon %></li>
+				<% end %>
+				<% else %>
+				<li>It's taking too long to fetch places. Check your network</li>
+				<% end %>
 			</ul>
 		</div>
 	</div>

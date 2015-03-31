@@ -23,7 +23,14 @@ class AccountsController < ApplicationController
 	  end
     @conversations = Conversation.involving(current_user).order(created_at: :desc)
     @client = GooglePlaces::Client.new('AIzaSyDMnERpbaiRapKJwxGIlrQlPTr8MWIfV14')
-    #render text: @client.spots(-33.8670522, 151.1957362, types: ['restaurant']) and return
+    # Supported places types from https://developers.google.com/places/supported_types?csw=1
+    @placeTypes = ['restaurant', 'spa', 'hotel', 'amusement_park', 'movie_theater', 'meal_takeaway', 'night_club']
+    if Rails.env == "production"
+      @geo =  Geocoder.search(current_user.current_sign_in_ip.to_s)
+    else
+      @geo = Geocoder.search("197.242.107.185")
+    end
+    @coordinates = @geo.map { |l| [l.latitude, l.longitude] }.flatten
   end
 
   def profile

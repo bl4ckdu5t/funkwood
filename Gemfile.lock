@@ -93,6 +93,7 @@ GEM
       websocket-driver (>= 0.5.1)
     ffi (1.9.8)
     formatador (0.2.5)
+    geocoder (1.2.8)
     google_places (0.30.0)
       httparty (~> 0.13.1)
     guard (2.12.5)
@@ -252,6 +253,7 @@ DEPENDENCIES
   aws-sdk
   coffee-rails (~> 4.0.0)
   devise
+  geocoder
   google_places
   guard-livereload
   jbuilder (~> 2.0)

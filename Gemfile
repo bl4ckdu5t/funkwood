@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
 ruby "2.1.2"
+# Submitting multipart forms with ajax
 gem 'remotipart', '~> 1.2'
+# Geocoder for grabbing coordinates
+gem 'geocoder'
 # Google Places
 gem 'google_places'
 # Paperclip to handle uploads
