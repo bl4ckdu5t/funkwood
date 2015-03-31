@@ -11,7 +11,7 @@
 			<h3><%= user.fullname %></h3>
 			<div class="user_profile-buttons">
 				<% if Chat.between(current_user.id, user.user_id).present? && Chat.between(current_user.id, user.user_id).first.accepted === false %>
-				<button class="disabled">Request pending</button>
+				<button class="button disabled">Request pending</button>
 				<% elsif Chat.between(current_user.id, user.user_id).present? %>
 				<button class="warn button" id="blockUser" data-id="<%= Chat.between(current_user.id, user.user_id).first.id %>" data-rid="<%= user.id %>">Block chat</button>
 				<% else %>
