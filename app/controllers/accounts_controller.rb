@@ -24,7 +24,7 @@ class AccountsController < ApplicationController
     @conversations = Conversation.involving(current_user).order(created_at: :desc)
     @client = GooglePlaces::Client.new('AIzaSyDMnERpbaiRapKJwxGIlrQlPTr8MWIfV14')
     # Supported places types from https://developers.google.com/places/supported_types?csw=1
-    @placeTypes = ['restaurant', 'spa', 'hotel', 'amusement_park', 'movie_theater', 'meal_takeaway', 'night_club']
+    @placeTypes = ['restaurant', 'food', 'spa', 'hotel', 'amusement_park', 'movie_theater', 'meal_takeaway', 'night_club']
     if Rails.env == "production"
       @geo =  Geocoder.search(current_user.current_sign_in_ip.to_s)
     else
