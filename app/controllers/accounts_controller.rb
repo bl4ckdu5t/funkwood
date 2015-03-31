@@ -42,6 +42,10 @@ class AccountsController < ApplicationController
   	end
   end
 
+  def search
+    @results = Preference.where(fullname: params[:q]).where.not(user_id: current_user.id)
+  end
+
   def test
     # method to test functionality of file uploads without ajax
     @user = Preference.find_by_user_id(current_user.id)

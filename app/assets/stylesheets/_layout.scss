@@ -756,33 +756,38 @@ section{
 		font-style: italic;
 	}
 }
-.search-form{
-	label{
-		font-weight: 800;
-		display: block;
-		margin: 0 0 10px;
-		font-size: 3rem;
-	}
-	input[type="text"]{
-		width: 100%;
-		height: 50px;
-		border-radius: 4px;
-		border: solid 3px #ccc;
-		padding: 10px;
-	}
-	[type="submit"]{
-		border: none;
-		background: #ccc;
-		color: #666;
-		width: 100px;
-		border-radius: 0 0 5px 5px;
-		margin-top: -2px;
-		padding: 10px;
-		&:hover{
-			background: #bbb;
-			width: 110px;
-			transition: width 1s;
+.search{
+	&-form{
+		label{
+			font-weight: 800;
+			display: block;
+			margin: 0 0 10px;
+			font-size: 3rem;
 		}
+		input[type="text"]{
+			width: 100%;
+			height: 50px;
+			border-radius: 4px;
+			border: solid 3px #ccc;
+			padding: 10px;
+		}
+		[type="submit"]{
+			border: none;
+			background: #ccc;
+			color: #666;
+			width: 100px;
+			border-radius: 0 0 5px 5px;
+			margin-top: -2px;
+			padding: 10px;
+			&:hover{
+				background: #bbb;
+				width: 110px;
+				transition: width 1s;
+			}
+		}
+	}
+	&-area{
+		padding: 0 20px 10px;
 	}
 }
 .chat{
@@ -1239,5 +1244,28 @@ section{
 				width: 15px;
 			}
 		}
+	}
+}
+.showcase{
+	&-item{
+		float: left;
+		width: 250px;
+		height: 320px;
+		background: $white;
+		border: solid thin #ccc;
+		border-top: solid 2px #ccc;
+		text-align: center;
+		padding: 20px 10px;
+		margin-right: 10px;
+		margin-bottom: 10px;
+	}
+	img{
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		border: solid 2px #ccc;
+	}
+	.button{
+		width: 100%;
 	}
 }

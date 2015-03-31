@@ -1,0 +1,25 @@
+<section class="search-area">
+	<h2>Search Results...</h2>
+	<% if @results.count == 0 %>
+	<p>There were no results found</p>
+	<% else %>
+	<p><%= "#{@results.count} result#{@results.count < 2? '':'s'}" %> found</p>
+	<div class="showcase clearfix">
+		<% @results.each do |user| %>
+		<div class="showcase-item">
+			<%= image_tag user.avatar(:thumb) %>
+			<h3><%= user.fullname %></h3>
+			<div class="user_profile-buttons">
+				<% if Chat.between(current_user.id, user.user_id).present? && Chat.between(current_user.id, user.user_id).first.accepted === false %>
+				<button class="disabled">Request pending</button>
+				<% elsif Chat.between(current_user.id, user.user_id).present? %>
+				<button class="warn button" id="blockUser" data-id="<%= Chat.between(current_user.id, user.user_id).first.id %>" data-rid="<%= user.id %>">Block chat</button>
+				<% else %>
+				<button class="blue button">Send chat request</button>
+				<% end %>
+			</div>
+		</div>
+		<% end %>
+	</div>
+	<% end %>
+</section>
