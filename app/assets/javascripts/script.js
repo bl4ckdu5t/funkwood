@@ -4,6 +4,10 @@ var ready = function(){
 	}else{
 		var baseurl = window.location.protocol + '//' + window.location.hostname + '/';
 	}
+	// Picking date locations
+	$(document).on('click', '#js-date-picks li', function(){
+		alert('processing...');
+	});
 	// Uploading images
 	$('.user_profile-avatar').click(function(){
 		var v = $('.user-story').length;

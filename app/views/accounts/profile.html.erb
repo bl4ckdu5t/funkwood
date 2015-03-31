@@ -23,12 +23,12 @@
 						<button class="warn button" id="js-drequest" data-id="<%= Chat.between(current_user.id, @user.user_id).first.id %>" data-rid="<%= @user.id %>">Decline Request</button>
 						<template id="js-acceptedReturn">
 							<button class="button start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= @user.id %>">Send a message</button>
-							<button class="button">Arrange a date</button>
+							<button class="button" data-remodal-target="date">Arrange a date</button>
 							<button class="warn button" id="blockUser" data-id="<%= Chat.between(current_user.id, @user.user_id).first.id %>" data-rid="<%= @user.id %>">Block chat</button>
 						</template>
 						<% elsif Chat.between(current_user.id, @user.user_id).present? %>
 						<button class="button start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= @user.id %>">Send a message</button>
-						<button class="button">Arrange a date</button>
+						<button class="button" data-remodal-target="date">Arrange a date</button>
 						<button class="warn button" id="blockUser" data-id="<%= Chat.between(current_user.id, @user.user_id).first.id %>" data-rid="<%= @user.id %>">Block chat</button>
 						<% else %>
 						<button class="button" id="js-crequest" data-id="<%= @user.user_id %>">Send chat request</button>
@@ -86,3 +86,19 @@
 		</div>
 	</div>
 </section>
+<!-- Modal for Arranging dates -->
+<div class="remodal" data-remodal-id="date">
+    <h1>Pick a date location</h1>
+    <ul class="places-list" id="js-date-picks">
+			<% unless @coordinates.blank? %>
+			<% @client.spots(@coordinates[0], @coordinates[1], types: @placeTypes).each do |x| %>
+				<li><strong><%= x.name %></strong> - <span><%= x.vicinity %></span> <%= image_tag x.icon %></li>
+			<% end %>
+			<% else %>
+			<li>It's taking too long to fetch places. Check your network</li>
+			<% end %>
+		</ul>
+    <br>
+    <a class="remodal-cancel" href="#">Cancel</a>
+    <a class="remodal-confirm" href="#">OK</a>
+</div>

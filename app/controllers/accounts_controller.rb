@@ -22,15 +22,6 @@ class AccountsController < ApplicationController
 	  	end
 	  end
     @conversations = Conversation.involving(current_user).order(created_at: :desc)
-    @client = GooglePlaces::Client.new('AIzaSyDMnERpbaiRapKJwxGIlrQlPTr8MWIfV14')
-    # Supported places types from https://developers.google.com/places/supported_types?csw=1
-    @placeTypes = ['restaurant', 'food', 'spa', 'hotel', 'amusement_park', 'movie_theater', 'meal_takeaway', 'night_club']
-    if Rails.env == "production"
-      @geo =  Geocoder.search(current_user.current_sign_in_ip.to_s)
-    else
-      @geo = Geocoder.search("197.242.107.185")
-    end
-    @coordinates = @geo.map { |l| [l.latitude, l.longitude] }.flatten
   end
 
   def profile
@@ -56,9 +47,18 @@ class AccountsController < ApplicationController
   def init
   	@preference = user_signed_in? ? Preference.where(user_id: current_user.id).first : 0
     @users = user_signed_in? ? User.where.not(id: current_user.id).order(created_at: :desc) : User.all
+    @client = GooglePlaces::Client.new('AIzaSyDMnERpbaiRapKJwxGIlrQlPTr8MWIfV14')
+    # Supported places types from https://developers.google.com/places/supported_types?csw=1
+    @placeTypes = ['restaurant', 'food', 'spa', 'hotel', 'amusement_park', 'movie_theater', 'meal_takeaway', 'night_club']
     if user_signed_in?
       @notifications = Notification.where({seen: false, receiver_id: current_user.id}).count
       @allnotifications = Notification.where({seen: false, receiver_id: current_user.id}).take(4)
+      if Rails.env == "production"
+        @geo =  Geocoder.search(current_user.current_sign_in_ip.to_s)
+      else
+        @geo = Geocoder.search("197.242.107.185")
+      end
+      @coordinates = @geo.map { |l| [l.latitude, l.longitude] }.flatten
     end
   end
 end

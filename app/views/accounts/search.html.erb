@@ -8,7 +8,9 @@
 		<% @results.each do |user| %>
 		<div class="showcase-item">
 			<%= image_tag user.avatar(:thumb) %>
-			<h3><%= user.fullname %></h3>
+			<h3><a href="<%= root_url %>user/<%= Preference.find_by(user_id: user.id).username.blank? ? user.id : Preference.find_by(user_id: user.id).username %>">
+				<%= user.fullname %>
+			</a></h3>
 			<div class="user_profile-buttons">
 				<% if Chat.between(current_user.id, user.user_id).present? && Chat.between(current_user.id, user.user_id).first.accepted === false %>
 				<button class="button disabled">Request pending</button>
