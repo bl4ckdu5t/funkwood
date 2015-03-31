@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331152312) do
+ActiveRecord::Schema.define(version: 20150331205310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: true do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.string   "place"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.string   "placetype"
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "appointments", ["recipient_id"], name: "index_appointments_on_recipient_id", using: :btree
+  add_index "appointments", ["sender_id"], name: "index_appointments_on_sender_id", using: :btree
 
   create_table "chats", force: true do |t|
     t.integer  "sender_id"

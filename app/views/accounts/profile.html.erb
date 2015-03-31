@@ -12,6 +12,10 @@
 					</svg>
 					Engaged to <a href="">Manoela</a>
 				</p>
+				<div class="user_profile-counters clearfix">
+					<div><a href="">conversations<h6><%= Conversation.involving(User.find(@user.user_id)).count %></h6></a></div>
+					<div><a href="">appointments<h6><%= Appointment.involving(User.find(@user.user_id)).count %></h6></a></div>
+				</div>
 				<div class="user_profile-buttons">
 					<% if user_signed_in? %>
 						<% if @user.user_id.eql? current_user.id %>
