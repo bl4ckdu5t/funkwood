@@ -3,7 +3,7 @@
 		<aside class="user_profile-aside">
 			<div class="user_profile-box">
 				<div class="user_profile-avatar">
-					<%= image_tag @preference.avatar.url(:medium) %>
+					<%= image_tag @user.avatar.url(:medium) %>
 				</div>
 				<h2 id="js-profile-name"><%= @user.fullname ? @user.fullname : 'No name' %></h2>
 				<p class="user_profile-engagement ghost">
