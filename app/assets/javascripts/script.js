@@ -110,7 +110,8 @@ var ready = function(){
     });
     var profileName = $('#js-profile-name').text();
     $('#js-profile-name')
-    .html('<input type="text" class="unameEntry" name="preference[fullname]" value="'+profileName+'">');
+    .html('<input type="text" class="unameEntry" placeholder="Your name" name="preference[fullname]" value="'+
+    	profileName+'">');
     var aboutUser = $('#js-userStory').text();
     $('#nameCloneInput').val($('.unameEntry').val());
     $('#js-userStory').html('<textarea class="user-story" name="preference[about]">'+aboutUser+'</textarea>');
