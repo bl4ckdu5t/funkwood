@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 	resources :appointments
 	get 'search' => 'accounts#search'
-	if Rails.env == "development"
-		get 'test' => 'accounts#test'
-	end
+	get 'test' => 'accounts#test'
   get 'notifications' => 'notifications#index', :as => :notifications
 
 	post 'chat_d' => 'chats#decline'

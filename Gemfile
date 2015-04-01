@@ -10,7 +10,7 @@ gem 'google_places'
 # Paperclip to handle uploads
 gem 'paperclip'
 # AWS S3 SDK
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 # Timing out
 gem 'rack-timeout'
 # Pagination needs 
