@@ -53,7 +53,6 @@
 			<div class="user_profile-gallery"></div>
 			<div class="user_profile-review">
 				<h3>About</h3>
-				<p id="example"></p>
 				<%= form_for @user, remote: true, html: { multipart: true } do |f| %>
 				<p id="js-userStory"><%= @user.about.present? ? @user.about : 'No information about user' %></p>
 				<input type="hidden" name="preference[fullname]" id="nameCloneInput">
@@ -96,12 +95,26 @@
     <ul class="places-list" id="js-date-picks">
 			<% unless @coordinates.blank? %>
 			<% @client.spots(@coordinates[0], @coordinates[1], types: @placeTypes).each do |x| %>
-				<li><strong><%= x.name %></strong> - <span><%= x.vicinity %></span> <%= image_tag x.icon %></li>
+				<li data-lat="<%= x.lat %>" data-lng="<%= x.lng %>" data-types="<%= x.types %>">
+					<strong><%= x.name %></strong> - <span><%= x.vicinity %></span> <%= image_tag x.icon %>
+				</li>
 			<% end %>
 			<% else %>
 			<li>It's taking too long to fetch places. Check your network</li>
 			<% end %>
 		</ul>
+		<span id="js-place-selected"></span>
+		<%= form_for @appointment, remote: true do |f| %>
+		<%= f.hidden_field :latitude %>
+		<%= f.hidden_field :longitude %>
+		<%= f.hidden_field :sender_id, value: current_user.id %>
+		<%= f.hidden_field :recipient_id, value: @user.user_id %>
+		<%= f.hidden_field :place %>
+		<div class="date-select invisible">
+			<%= f.label :date, "When:" %>
+			<%= f.date_field :date %>
+		</div>
+		<% end %>
     <br>
     <a class="remodal-cancel" href="#">Cancel</a>
     <a class="remodal-confirm" href="#">OK</a>

@@ -17,4 +17,13 @@ ready = ->
 		console.log(error)
 		return
 
+	$('#new_appointment').on("ajax:success", (e, data, status, xhr) ->
+		if $('.notifier').length == 0
+			$('body').prepend('<div class="notifier">Date appointment created</div>')
+		else
+			$('.notifier').text('Date appointment created')
+	).on "ajax:error", (e, data, status, error) ->
+		console.log(error)
+		return
+
 $(document).ready(ready)

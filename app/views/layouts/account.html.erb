@@ -13,8 +13,6 @@
 	<%= stylesheet_link_tag    'application', media: 'all' %>
 	<link rel="shortcut icon" href="<%= root_url %>/favicon.png">
 	<link rel="author" href="http://ostrich-dev.com">
-	<!-- JS -->
-	<%= javascript_include_tag 'application' %>
 </head>
 <body ng-controller="appController as app">
 	<!--[if lt IE 7]>
@@ -129,5 +127,8 @@
 		<% end %>
 		<%= yield %>
 	</div>
+	<audio id="chatAudio"><source src="<%= root_url %>sounds/notification.mp3" type="audio/mpeg"></audio>
+	<!-- JS -->
+	<%= javascript_include_tag 'application' %>
 </body>
 </html>

@@ -31,6 +31,7 @@ class AccountsController < ApplicationController
   	else
       @user = Preference.find_by_user_id(profile) or render 'public/404.html',:layout => false, status: 404
   	end
+    @appointment = Appointment.new
   end
 
   def search

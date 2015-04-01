@@ -4,9 +4,18 @@ var ready = function(){
 	}else{
 		var baseurl = window.location.protocol + '//' + window.location.hostname + '/';
 	}
+	$(document).on('confirm', '.remodal', function () {
+  	$('#new_appointment').submit();
+	});
 	// Picking date locations
 	$(document).on('click', '#js-date-picks li', function(){
-		alert('processing...');
+		if($(this).data('lat')){
+			$('#appointment_latitude').val($(this).data('lat'));
+			$('#appointment_longitude').val($(this).data('lng'));
+			$('#appointment_place').val($(this).text().trim());
+			$('.date-select').css({'visibility': 'visible'});
+			$('#js-place-selected').text('You have selected '+$(this).text());
+		}
 	});
 	// Uploading images
 	$('.user_profile-avatar').click(function(){
@@ -30,7 +39,7 @@ var ready = function(){
 		}
 	});
 	// Fading out notifications
-	$(".notifier").filter(":visible").delay(9000).fadeOut('slow');
+	$(".notifier").filter(":visible").delay(9000).fadeOut('slow');;
 	// Confirming user block
 	$(document).on('click','#blockUser', function(event){
 		swal({
