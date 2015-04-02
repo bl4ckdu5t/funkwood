@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require chat
 //= require private_pub
-//= require angular/angular
 //= require Snap.svg/dist/snap.svg-min
 //= require jquery.jscroll/jquery.jscroll
 //= require remodal/dist/jquery.remodal

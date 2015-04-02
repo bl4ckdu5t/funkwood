@@ -28,6 +28,7 @@ var ready = function () {
         e.preventDefault();
  
         var id = $(this).data('cid');
+        //alert(id);
         chatBox.toggleChatBoxGrowth(id);
     });
  

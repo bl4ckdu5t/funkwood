@@ -17,7 +17,7 @@
 				<% elsif Chat.between(current_user.id, user.user_id).present? %>
 				<button class="warn button" id="blockUser" data-id="<%= Chat.between(current_user.id, user.user_id).first.id %>" data-rid="<%= user.id %>">Block chat</button>
 				<% else %>
-				<button class="blue button">Send chat request</button>
+				<button class="blue button" id="js-crequest" data-id="<%= user.user_id %>">Send chat request</button>
 				<% end %>
 			</div>
 		</div>
