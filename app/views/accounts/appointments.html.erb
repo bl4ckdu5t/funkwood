@@ -1,0 +1,50 @@
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+<section class="search-area">
+	<div class="maps clearfix">
+
+		<% Appointment.involving(User.find(@user.user_id)).each_with_index do |date, count| %>
+		<script>
+		var map;
+		var myLatlng = new google.maps.LatLng(<%= date.latitude %>, <%= date.longitude %>);
+
+		function initialize() {
+		  var mapOptions = {
+		    center: myLatlng,
+		    zoom: 18,
+		    //mapTypeId: google.maps.MapTypeId.SATELLITE
+		  };
+		  map = new google.maps.Map(document.getElementById('map-canvas-<%= count + 1 %>'), mapOptions);
+		  map.setTilt(45);
+
+		  var marker = new google.maps.Marker({
+		      position: myLatlng,
+		      map: map,
+		      title: 'This is the location'
+		  });
+
+		  var request = {
+		    location: myLatlng,
+		    radius: 500,
+		    types: ['restaurant', 'food', 'spa', 'hotel', 'amusement_park', 'movie_theater', 'meal_takeaway', 'night_club']
+		  };
+		  infowindow = new google.maps.InfoWindow();
+		  var service = new google.maps.places.PlacesService(map);
+		  service.nearbySearch(request, callback);
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+		<div class="maps-box">
+			<div class="maps-title"><%= date.place %></div>
+			<div class="maps-canvas" id="map-canvas-<%= count + 1 %>"></div>
+			<div class="maps-data">
+				<p>With <%= @user.user_id == date.sender_id ? name_or_email(date.recipient_id) : name_or_email(date.sender_id) %></p>
+				<div class="maps-buttons">
+					<button class="blue button">Going</button>
+					<button class="warn button">Not Going</button>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</section>

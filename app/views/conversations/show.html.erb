@@ -1,3 +1,22 @@
+<% unless request.xhr? %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Our Company description">
+  <meta name="author" content="Joseph Rex">
+  <meta name='user-id' content='<%= user_signed_in? ? current_user.id : "" %>'>
+    <%= csrf_meta_tags %>
+  <title>Musterd8 online dating &dash; Find the love of your life</title>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Quicksand' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <link rel="shortcut icon" href="<%= root_url %>/favicon.png">
+  <link rel="author" href="http://ostrich-dev.com">
+</head>
+<body>
+<% end %>
 <div class="chatboxhead">
   <div class="chatboxtitle">
     <svg viewBox="0 0 1024 1024">
@@ -31,4 +50,16 @@
   <% end %>
 </div>
  
+<% unless request.xhr? %>
+  <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
+  <!-- JS -->
+  <%= javascript_include_tag 'application' %>
+  <script>
+  $(document).ready(function(){
+    $(".chatboxcontent").scrollTop($(".chatboxcontent")[0].scrollHeight);
+  });
+  </script>
+</body>
+</html>
+<% end %>
 <%= subscribe_to conversation_path(@conversation) %>

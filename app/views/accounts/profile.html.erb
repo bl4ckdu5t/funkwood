@@ -20,7 +20,11 @@
 						conversations<h6><%= Conversation.involving(User.find(@user.user_id)).count %></h6>
 						<% end %>
 					</div>
-					<div><a href="">appointments<h6><%= Appointment.involving(User.find(@user.user_id)).count %></h6></a></div>
+					<div>
+						<%= link_to date_path(@user.username.blank? ? @user.user_id : @user.username) do %>
+						appointments<h6><%= Appointment.involving(User.find(@user.user_id)).count %></h6>
+						<% end %>
+					</div>
 				</div>
 				<div class="user_profile-buttons">
 					<% if user_signed_in? %>

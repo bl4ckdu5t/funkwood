@@ -1304,3 +1304,41 @@ section{
 		cursor: pointer;
 	}
 }
+.maps{
+	margin-top: 10px;
+	width: 100%;
+	&-box{
+		width: 310px;
+		margin-left: 10px;
+		margin-bottom: 10px;
+		float: left;
+	}
+	&-title{
+		background: $white;
+		border: solid thin #ccc;
+		border-bottom: none;
+		width: 90%;
+		height: 100px;
+		margin: 0 auto;
+		padding: 10px;
+	}
+	&-canvas{
+		width: 100%;
+		height: 200px;
+		border: solid thin #ccc;
+	}
+	&-data{
+		background: $white;
+		border: solid thin #ccc;
+		border-top: none;
+		width: 90%;
+		max-height: 98px;
+		margin: 0 auto;
+		padding: 10px;
+		p{
+			margin: 5px 0;
+			padding: 0;
+			font-size: 1.6rem;
+		}
+	}
+}

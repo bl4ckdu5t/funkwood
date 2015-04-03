@@ -45,7 +45,15 @@ class AccountsController < ApplicationController
     else
       @user = Preference.find_by_user_id(profile) or render 'public/404.html',:layout => false, status: 404
     end
-    #render text: @user.id and return
+  end
+
+  def appointments
+    profile = params[:profile]
+    if profile.to_i == 0
+      @user = Preference.find_by_username(profile) or render 'public/404.html',:layout => false, status: 404
+    else
+      @user = Preference.find_by_user_id(profile) or render 'public/404.html',:layout => false, status: 404
+    end
   end
 
   def test
