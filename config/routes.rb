@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+	get ':profile/conversations' => 'accounts#conversations', :as => :follower
 	resources :appointments
 	get 'search' => 'accounts#search'
 	if Rails.env == "development"

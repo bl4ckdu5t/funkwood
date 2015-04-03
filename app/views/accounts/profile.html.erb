@@ -3,7 +3,9 @@
 		<aside class="user_profile-aside">
 			<div class="user_profile-box">
 				<div class="user_profile-avatar">
+					<%= link_to @user.avatar.url, 'data-lightbox' => 'profile', 'data-title' => "#{@user.fullname}" do %>
 					<%= image_tag @user.avatar.url(:medium) %>
+					<% end %>
 				</div>
 				<h2 id="js-profile-name"><%= @user.fullname ? @user.fullname : 'No name' %></h2>
 				<p class="user_profile-engagement ghost">
@@ -13,7 +15,11 @@
 					Engaged to <a href="">Manoela</a>
 				</p>
 				<div class="user_profile-counters clearfix">
-					<div><a href="">conversations<h6><%= Conversation.involving(User.find(@user.user_id)).count %></h6></a></div>
+					<div>
+						<%= link_to follower_path(@user.username.blank? ? @user.user_id : @user.username) do %>
+						conversations<h6><%= Conversation.involving(User.find(@user.user_id)).count %></h6>
+						<% end %>
+					</div>
 					<div><a href="">appointments<h6><%= Appointment.involving(User.find(@user.user_id)).count %></h6></a></div>
 				</div>
 				<div class="user_profile-buttons">

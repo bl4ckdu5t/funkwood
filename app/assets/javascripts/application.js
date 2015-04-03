@@ -20,5 +20,6 @@
 //= require owl-carousel/owl-carousel/owl.carousel
 //= require Material-Preloader/js/materialPreloader
 //= require sweetalert/lib/sweet-alert
+//= require lightbox2/js/lightbox
 //= require jquery.remotipart
 //= require_tree .

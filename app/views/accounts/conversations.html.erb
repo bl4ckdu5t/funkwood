@@ -1,0 +1,32 @@
+<section class="search-area">
+	<h2>Conversations</h2>
+	<div class="showcase clearfix">
+		<% Conversation.involving(User.find(@user.user_id)).each do |c| %>
+		<% if Preference.exists?(c.recipient_id) && Preference.exists?(c.sender_id) %>
+
+		<% follower = c.sender_id == @user.user_id ? Preference.find(c.recipient_id) : Preference.find(c.sender_id) %>
+		<div class="showcase-item">
+			<%= image_tag follower.avatar(:thumb) %>
+			<h3><a href="<%= root_url %>user/<%= follower.username.blank? ? follower.id : follower.username %>">
+				<%= follower.fullname.blank? ? 'Unknown' : follower.fullname %>
+			</a></h3>
+			<div class="user_profile-buttons">
+				<% if user_signed_in? %>
+				<% if Chat.between(current_user.id, follower.user_id).present? && Chat.between(current_user.id, follower.user_id).first.accepted === false %>
+				<button class="button disabled">Request pending</button>
+				<% elsif Chat.between(current_user.id, follower.user_id).present? %>
+				<button class="warn button" id="blockUser" data-id="<%= Chat.between(current_user.id, follower.user_id).first.id %>" data-rid="<%= follower.id %>">Block chat</button>
+				<% elsif current_user.id == follower.user_id %>
+				<button class="disabled button">That's you</button>
+				<% else %>
+				<button class="blue button" id="js-crequest" data-id="<%= follower.user_id %>">Send chat request</button>
+				<% end %>
+				<% else %>
+				<% end %>
+			</div>
+		</div>
+		<% end %>
+
+		<% end %>
+	</div>
+</section>
