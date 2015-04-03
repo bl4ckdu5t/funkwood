@@ -714,7 +714,7 @@ section{
 	background: $white;
 	box-shadow: 0 0 4px darken($white, 30%);
 	margin: 20px auto;
-	max-width: 598px;
+	width: 100%;
 	padding: 20px;
 	height: 125px;
 	overflow: hidden;
@@ -749,7 +749,7 @@ section{
 		background: #eee;
 		top: 0;
 		left: 275px;
-		width: 325px;
+		width: 361px;
 		height: 100%;
 		color: #555;
 		padding: 20px 10px;
