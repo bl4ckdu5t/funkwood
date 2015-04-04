@@ -195,6 +195,10 @@ input, select{
 	span{
 		color: $color-title-pink;
 	}
+	@include breakpoint(470px){
+		font-size: 2.5rem;
+		margin: 0;
+	}
 }
 footer{
 	position: relative;
@@ -525,6 +529,10 @@ section{
 		height: 100px;
 		background: $white;
 		box-shadow: 0 1px 3px #888;
+		@include breakpoint(470px){
+			height: 80px;
+			padding: 15px 50px 15px 20px;
+		}
 		>svg{
 			width: 24px;
 			height: 24px;
@@ -533,8 +541,8 @@ section{
 			right: 20px;
 			top: 35px;
 			cursor: pointer;
-			&.active{
-				transform: rotate(180deg);
+			@include breakpoint(470px){
+				top: 25px;
 			}
 		}
 		.title{
@@ -560,6 +568,11 @@ section{
 		border: solid 4px $white;
 		box-shadow: 0 0 2px darken($white, 40%);
 		margin-left: 10px;
+		@include breakpoint(470px){
+			width: 40px;
+			height: 40px;
+			margin: 0;
+		}
 	}
 	&-menu{
 		display: inline;
@@ -634,6 +647,10 @@ section{
 			vertical-align: middle;
 			margin-right: 6px;
 		}
+		@include breakpoint(470px){
+			width: 100%;
+			top: 95px;
+		}
 	}
 	&-notifier{
 		position: absolute;
@@ -682,6 +699,12 @@ section{
 				height: 40px;
 				vertical-align: middle;
 			}
+		}
+		@include breakpoint(470px){
+			right: 0;
+			left: 0;
+			width: 100%;
+			top: 95px;
 		}
 	}
 }
@@ -743,17 +766,63 @@ section{
 		height: 0;
 		border-top: 125px solid #eee;
 		border-left: 125px solid transparent;
+		@include breakpoint(455px){
+			left: 70%;
+		}
 	}
 	&-description{
 		position: absolute;
 		background: #eee;
 		top: 0;
-		left: 275px;
+		left: 278px;
 		width: 361px;
 		height: 100%;
 		color: #555;
 		padding: 20px 10px;
 		font-style: italic;
+		@include breakpoint(1290px){
+			font-size: 1.8rem;
+			width: 330px;
+			padding-right: 10px;
+		}
+		@include breakpoint(1210px){
+			width: 290px;
+			padding-right: 20px;
+		}
+		@include breakpoint(1170px){
+			font-size: 1.5rem;
+			width: 270px;
+			padding-right: 40px;
+		}
+		@include breakpoint(1100px){
+			width: 240px;
+		}
+		@include breakpoint($breakpoint-tablet-wide){
+			font-size: 2rem;
+			padding-right: 10px;
+			width: 74%;
+		}
+		@include breakpoint(1000px){
+			width: 71%;
+		}
+		@include breakpoint(900px){
+			width: 67.8%;
+			padding-right: 40px;
+		}
+		@include breakpoint(765px){
+			width: 62%;
+		}
+		@include breakpoint(640px){
+			width: 54%;
+			font-size: 1.6rem;
+		}
+		@include breakpoint(540px){
+			width: 45%;
+			font-size: 1.4rem;
+		}
+		@include breakpoint(455px){
+			display: none;
+		}
 	}
 }
 .search{
@@ -969,10 +1038,17 @@ section{
 	&-wrapper{
 		width: 80%;
 		margin: 10px auto;
+		@include breakpoint($breakpoint-laptop + 100px){
+			width: 90%;
+		}
 	}
 	&-aside{
 		float: left;
-		width: 22%;
+		width: 238px;
+		@include breakpoint(975px){
+			width: 100%;
+			margin-bottom: 20px;
+		}
 		nav a{
 			display: block;
 			background-color: $white;
@@ -1047,8 +1123,15 @@ section{
 	&-content{
 		background: $white;
 		border: solid thin #ddd;
-		width: 77%;
+		width: 76%;
 		float: right;
+		@include breakpoint($breakpoint-laptop - 50px){
+			width: 72%;
+		}
+		@include breakpoint(975px){
+			width: 100%;
+			float: left;
+		}
 	}
 	&-gallery{
 		background-color: #676C77;
@@ -1332,7 +1415,7 @@ section{
 		border: solid thin #ccc;
 		border-top: none;
 		width: 90%;
-		max-height: 98px;
+		max-height: 120px;
 		margin: 0 auto;
 		padding: 10px;
 		p{

@@ -39,9 +39,12 @@
 			<div class="maps-canvas" id="map-canvas-<%= count + 1 %>"></div>
 			<div class="maps-data">
 				<p>With <%= @user.user_id == date.sender_id ? name_or_email(date.recipient_id) : name_or_email(date.sender_id) %></p>
+				<p>on <%= date.date.strftime('%B %e, %Y') %></p>
 				<div class="maps-buttons">
-					<button class="blue button">Going</button>
-					<button class="warn button">Not Going</button>
+					<% if current_user.id == @user.user_id %>
+					<button class="blue button" id="js-accept-date">Going</button>
+					<button class="warn button" id="js-decline-date">Not Going</button>
+					<% end %>
 				</div>
 			</div>
 		</div>

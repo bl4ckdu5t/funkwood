@@ -176,7 +176,11 @@ var ready = function(){
 	});
 	var d = Snap('#js-dropper');
 	if(d){
-		d.path("M707.627 366.293l-195.627 195.627-195.627-195.627-60.373 60.373 256 256 256-256z");
+		if(window.innerWidth > 470){
+			d.path("M707.627 366.293l-195.627 195.627-195.627-195.627-60.373 60.373 256 256 256-256z");
+		}else{
+			d.path("M128 640h768v-85.333h-768v85.333zM128 810.667h768v-85.333h-768v85.333zM128 469.333h768v-85.333h-768v85.333zM128 213.333v85.333h768v-85.333h-768z");
+		}
 	}
 	// home page settings dropdown
 	$('.account-header > svg').click(function(){
