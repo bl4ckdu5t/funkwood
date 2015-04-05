@@ -1,5 +1,5 @@
 class AccountsController < ApplicationController
-	before_action :authenticate_user!, except: [:profile]
+	before_action :authenticate_user!, except: [:profile, :conversations, :appointments]
 	before_filter :init
 	layout 'account'
   def home

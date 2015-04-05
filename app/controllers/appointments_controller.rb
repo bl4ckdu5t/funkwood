@@ -12,6 +12,22 @@ class AppointmentsController < ApplicationController
 	end
 
 	def update
+		decision = params[:decision]
+		@appointment = Appointment.find(params[:id])
+		sender_id = params[:sender]
+		if decision == 'accept'
+			@appointment.accepted = true;
+			@appointment.save
+			Notification.new({
+				sender_id: current_user.id,
+				receiver_id: sender_id,
+				message: 'appointment accepted'
+				}).save
+			render json: { status: 'confirmed'}
+		else
+			@appointment.destroy
+			render json: { status: 'cancelled'}
+		end
 	end
 
 	def destroy

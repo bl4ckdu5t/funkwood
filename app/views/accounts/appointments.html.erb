@@ -41,11 +41,15 @@
 				<p>With <%= @user.user_id == date.sender_id ? name_or_email(date.recipient_id) : name_or_email(date.sender_id) %></p>
 				<p>on <%= date.date.strftime('%B %e, %Y') %></p>
 				<div class="maps-buttons">
+					<% if user_signed_in? %>
 					<% if current_user.id == @user.user_id %>
 						<% unless date.sender_id == current_user.id %>
-						<button class="blue button" id="js-accept-date" data-id="<%= date.id %>">Going</button>
-						<button class="warn button" id="js-decline-date" data-id="<%= date.id %>">Not Going</button>
+						<% if date.accepted == false %>
+						<button class="blue button js-process-date" data-id="<%= date.id %>" data-send="<%= date.sender_id %>" data-act="accept">Going</button>
+						<button class="warn button js-process-date" data-id="<%= date.id %>" data-send="<%= date.sender_id %>" data-act="decline">Not Going</button>
 						<% end %>
+						<% end %>
+					<% end %>
 					<% end %>
 				</div>
 			</div>

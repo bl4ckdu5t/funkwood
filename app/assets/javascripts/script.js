@@ -6,13 +6,27 @@ var ready = function(){
 	}
 	// Datepicker -> http://keith-wood.name/datepick.HTML
 	$('.date').datepick();
-	// Declining appointments
-	$('#js-decline-date').click(function(){
-		alert('Declining');
-	});
-	// Accepting appointments 
-	$('#js-accept-date').click(function(){
-		alert('Accepting');
+	// Accepting and Declining appointments
+	$('.js-process-date').click(function(){
+		var appointmentId = $(this).data('id'), action = $(this).data('act');
+		var url = baseurl + 'appointments/'+appointmentId;
+		var button_wrapper = $(this).closest('.maps-buttons');
+		$.ajax({
+			type: 'POST',
+			url: url,
+			data: 'sender='+$(this).data('send')+'&decision='+action+'&_method=patch'
+		}).done(function(response){
+			if (response.status == 'confirmed') {
+				button_wrapper.html('');
+				swal('Confirmed', "The appointment has been confirmed", "success");
+			}else{
+				swal('Cancelled', "The appointment has been cancelled","error");
+				button_wrapper.html('');
+			}
+		}).fail(function(response){
+			console.log('Failed');
+		})
+		//alert(action);
 	});
 	// Creating new appointments
 	$(document).on('confirm', '.remodal', function () {

@@ -17,6 +17,7 @@
 </head>
 <body>
 <% end %>
+<section class="chatbox" style="display:block; height:100%; width:100%; position:relative">
 <div class="chatboxhead">
   <div class="chatboxtitle">
     <svg viewBox="0 0 1024 1024">
@@ -51,7 +52,7 @@
       <%= f.text_area :body, class: "chatboxtextarea", "data-cid" => @conversation.id %>
   <% end %>
 </div>
- 
+</section>
 <% unless request.xhr? %>
   <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
   <!-- JS -->

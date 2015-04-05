@@ -54,7 +54,7 @@
 			</svg>
 			<% end %>
 			<h1 class="title">
-				<%= link_to home_path do %>
+				<%= link_to user_signed_in? ? home_path : root_url do %>
 					muster<span>d8</span>
 				<% end %>
 			</h1>

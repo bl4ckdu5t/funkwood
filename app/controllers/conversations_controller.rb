@@ -17,8 +17,7 @@ class ConversationsController < ApplicationController
 		@conversation = Conversation.find(params[:id])
 		@receiver = interlocutor(@conversation)
 		@sender = @conversation.sender_id
-		#@recipient = @receiver.id == current_user.id ? @sender : @receiver.id
-		@recipient = User.find(@conversation.recipient_id)
+		@recipient = current_user.id == @sender ? User.find(@conversation.recipient_id) : User.find(@sender)
 		@messages = @conversation.messages
 		@message = Message.new
 	end

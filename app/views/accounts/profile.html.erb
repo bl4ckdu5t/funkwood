@@ -117,7 +117,7 @@
 		<%= form_for @appointment, remote: true do |f| %>
 		<%= f.hidden_field :latitude %>
 		<%= f.hidden_field :longitude %>
-		<%= f.hidden_field :sender_id, value: current_user.id %>
+		<%= f.hidden_field :sender_id, value: user_signed_in? ? current_user.id : '' %>
 		<%= f.hidden_field :recipient_id, value: @user.user_id %>
 		<%= f.hidden_field :place %>
 		<div class="date-select invisible">
