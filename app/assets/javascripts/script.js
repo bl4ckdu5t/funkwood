@@ -4,6 +4,17 @@ var ready = function(){
 	}else{
 		var baseurl = window.location.protocol + '//' + window.location.hostname + '/';
 	}
+	// Datepicker -> http://keith-wood.name/datepick.HTML
+	$('.date').datepick();
+	// Declining appointments
+	$('#js-decline-date').click(function(){
+		alert('Declining');
+	});
+	// Accepting appointments 
+	$('#js-accept-date').click(function(){
+		alert('Accepting');
+	});
+	// Creating new appointments
 	$(document).on('confirm', '.remodal', function () {
   	$('#new_appointment').submit();
 	});

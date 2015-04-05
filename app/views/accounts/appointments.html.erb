@@ -42,8 +42,10 @@
 				<p>on <%= date.date.strftime('%B %e, %Y') %></p>
 				<div class="maps-buttons">
 					<% if current_user.id == @user.user_id %>
-					<button class="blue button" id="js-accept-date">Going</button>
-					<button class="warn button" id="js-decline-date">Not Going</button>
+						<% unless date.sender_id == current_user.id %>
+						<button class="blue button" id="js-accept-date" data-id="<%= date.id %>">Going</button>
+						<button class="warn button" id="js-decline-date" data-id="<%= date.id %>">Not Going</button>
+						<% end %>
 					<% end %>
 				</div>
 			</div>

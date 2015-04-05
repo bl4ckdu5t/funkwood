@@ -12,12 +12,16 @@ var ready = function () {
     } 
     $(document).on('click','.start-conversation',function (e) {
         e.preventDefault();
- 
-        var sender_id = $(this).data('sid');
-        var recipient_id = $(this).data('rip');
-        $.post(baseurl+'conversations', { sender_id: sender_id, recipient_id: recipient_id }, function (data) {
-            chatBox.chatWith(data.conversation_id);
-        });
+        
+        if(window.innerWidth > 1075){
+            var sender_id = $(this).data('sid');
+            var recipient_id = $(this).data('rip');
+            $.post(baseurl+'conversations', { sender_id: sender_id, recipient_id: recipient_id }, function (data) {
+                chatBox.chatWith(data.conversation_id);
+            });
+        }else{
+            window.location.replace(baseurl + 'conversations/' + $(this).data('cid'));
+        }
     });
  
     /**
@@ -38,9 +42,13 @@ var ready = function () {
  
     $(document).on('click', '.closeChat', function (e) {
         e.preventDefault();
- 
-        var id = $(this).data('cid');
-        chatBox.close(id);
+        
+        if(window.innerWidth > 1075){
+            var id = $(this).data('cid');
+            chatBox.close(id);
+        }else{
+            window.location.replace(baseurl + 'home');
+        }
     });
  
  

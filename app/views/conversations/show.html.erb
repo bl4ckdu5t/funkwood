@@ -26,10 +26,12 @@
     <h1 title="<%= name_or_email(@recipient) %>"><%= link_to name_or_email(@recipient), profile_path(@recipient) %></h1>
   </div>
   <div class="chatboxoptions">
+    <% if request.xhr? %>
     <%= link_to "#", class: "toggleChatBox", "data-cid" => @conversation.id do %>
     <svg width="15">
       <line x1="0" y1="10" x2="15" y2="10" stroke="white" stroke-width="2">
     </svg>
+    <% end %>
     <% end %>
     <%= link_to "#", class: "closeChat", "data-cid" => @conversation.id  do %>
     <svg viewBox="0 0 1024 1024">

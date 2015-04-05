@@ -440,7 +440,7 @@ section{
 	min-height: 100%;
 	width: 100%;
 	background: darken($white, 5%);
-	padding: 40px;
+	padding: 40px 5px;
 	input{
 		margin-bottom: 10px;
 		border-radius: 4px;
@@ -857,6 +857,9 @@ section{
 	}
 	&-area{
 		padding: 0 20px 10px;
+		@include breakpoint($breakpoint-tablet-wide){
+			padding: 0;
+		}
 	}
 }
 .chat{

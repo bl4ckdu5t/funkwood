@@ -21,5 +21,7 @@
 //= require Material-Preloader/js/materialPreloader
 //= require sweetalert/lib/sweet-alert
 //= require lightbox2/js/lightbox
+//= require datepick/jquery.plugin
+//= require datepick/jquery.datepick
 //= require jquery.remotipart
 //= require_tree .
