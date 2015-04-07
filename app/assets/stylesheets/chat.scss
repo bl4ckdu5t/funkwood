@@ -46,7 +46,7 @@
 .chatboxcontent {
     font-family: arial, sans-serif;
     height: 75%;
-    @media (min-width: 281px){
+    @media (max-width: 1075px){
         height: 82.5vh;
     }
     width: 100%;

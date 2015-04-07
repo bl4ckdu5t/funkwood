@@ -764,7 +764,7 @@ section{
 		left: 153px;
 		width: 0;
 		height: 0;
-		border-top: 125px solid #eee;
+		border-top: 125px solid #65CC93;
 		border-left: 125px solid transparent;
 		@include breakpoint(455px){
 			left: 70%;
@@ -772,14 +772,15 @@ section{
 	}
 	&-description{
 		position: absolute;
-		background: #eee;
+		background: #65CC93;
 		top: 0;
 		left: 278px;
 		width: 361px;
 		height: 100%;
-		color: #555;
+		color: $white;
 		padding: 20px 10px;
 		font-style: italic;
+		a{ color: #368A58 }
 		@include breakpoint(1290px){
 			font-size: 1.8rem;
 			width: 330px;
@@ -868,14 +869,15 @@ section{
 		text-align: center;
 		margin: 0;
 		font-weight: 400;
-		background: #ccc;
+		background: #6196B4;
+		color: $white;
 		padding: 10px;
 		width: 100px;
 		margin-bottom: -2px;
 		border-radius: 5px 5px 0 0;
 	}
 	&-box{
-		border: solid 3px #ccc;
+		border: solid 3px #6196B4;
 		border-radius: 4px;
 		overflow-y: auto;
 		overflow-x: hidden;
@@ -1335,13 +1337,14 @@ section{
 .places{
 	h2{
 		margin: 10px 0;
+		color: #CE7979;
 	}
 	&-list{
 		list-style-type: none;
 		padding: 0;
 		margin: 0;
 		height: 150px;
-		border: solid 2px #ccc;
+		border: solid 2px #CE7979;
 		overflow: auto;
 		font-weight: 300;
 		margin-bottom: 10px;
