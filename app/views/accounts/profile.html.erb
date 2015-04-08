@@ -3,7 +3,7 @@
 		<aside class="user_profile-aside">
 			<div class="user_profile-box">
 				<div class="user_profile-avatar">
-					<%= link_to @user.avatar.url, 'data-lightbox' => 'profile', 'data-title' => "#{@user.fullname}" do %>
+					<%= link_to @user.avatar.url(:medium), 'data-lightbox' => 'profile', 'data-title' => "#{@user.fullname}" do %>
 					<%= image_tag @user.avatar.url(:medium) %>
 					<% end %>
 				</div>
