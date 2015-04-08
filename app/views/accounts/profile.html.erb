@@ -36,12 +36,12 @@
 						<button class="verified button" id="js-arequest" data-id="<%= Chat.between(current_user.id, @user.user_id).first.id %>" data-rid="<%= Chat.between(current_user.id, @user.user_id).first.sender_id %>">Accept chat request</button>
 						<button class="warn button" id="js-drequest" data-id="<%= Chat.between(current_user.id, @user.user_id).first.id %>" data-rid="<%= @user.id %>">Decline Request</button>
 						<template id="js-acceptedReturn">
-							<button class="button start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= @user.id %>" data-cid="<%= Conversation.between(current_user.id, @user.user_id).first.id %>">Send a message</button>
+							<button class="button start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= @user.id %>" data-cid="<%= Conversation.between(current_user.id, @user.user_id).exists? ? Conversation.between(current_user.id, @user.user_id).first.id : '' %>">Send a message</button>
 							<button class="button" data-remodal-target="date">Arrange a date</button>
 							<button class="warn button" id="blockUser" data-id="<%= Chat.between(current_user.id, @user.user_id).first.id %>" data-rid="<%= @user.id %>">Block chat</button>
 						</template>
 						<% elsif Chat.between(current_user.id, @user.user_id).present? %>
-						<button class="button start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= @user.id %>" data-cid="<%= Conversation.between(current_user.id, @user.user_id).first.id %>">Send a message</button>
+						<button class="button start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= @user.id %>" data-cid="<%= Conversation.between(current_user.id, @user.user_id).exists? ? Conversation.between(current_user.id, @user.user_id).first.id : '' %>">Send a message</button>
 						<button class="button" data-remodal-target="date">Arrange a date</button>
 						<button class="warn button" id="blockUser" data-id="<%= Chat.between(current_user.id, @user.user_id).first.id %>" data-rid="<%= @user.id %>">Block chat</button>
 						<% else %>
