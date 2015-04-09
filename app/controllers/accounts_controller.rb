@@ -73,11 +73,12 @@ class AccountsController < ApplicationController
       @notifications = Notification.where({seen: false, receiver_id: current_user.id}).count
       @allnotifications = Notification.where({seen: false, receiver_id: current_user.id}).take(4)
       if Rails.env == "production"
-        #@geo =  Geocoder.search(current_user.current_sign_in_ip.to_s)
-        @geo = Geocoder.search("197.242.107.185")
+        @geo =  Geocoder.search("#{current_user.current_sign_in_ip}")
       else
         #MKE IP
         @geo = Geocoder.search("129.89.197.43")
+        #NIG IP
+        #@geo = Geocoder.search("197.242.107.185")
       end
       @coordinates = @geo.map { |l| [l.latitude, l.longitude] }.flatten
     end
