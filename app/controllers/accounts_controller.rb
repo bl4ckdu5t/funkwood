@@ -70,7 +70,6 @@ class AccountsController < ApplicationController
     # Supported places types from https://developers.google.com/places/supported_types?csw=1
     @placeTypes = ['restaurant', 'food', 'spa', 'hotel', 'amusement_park', 'movie_theater', 'meal_takeaway', 'night_club']
     if user_signed_in?
-      render text: current_user.current_sign_in_ip and return
       @notifications = Notification.where({seen: false, receiver_id: current_user.id}).count
       @allnotifications = Notification.where({seen: false, receiver_id: current_user.id}).take(4)
       if Rails.env == "production"
