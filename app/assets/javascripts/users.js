@@ -20,7 +20,15 @@ var ready = function () {
                 chatBox.chatWith(data.conversation_id);
             });
         }else{
-            window.location.replace(baseurl + 'conversations/' + $(this).data('cid'));
+            if($(this).data('cid')){
+                window.location.replace(baseurl + 'conversations/' + $(this).data('cid'));
+            }else{
+                var sender_id = $(this).data('sid');
+                var recipient_id = $(this).data('rip');
+                $.post(baseurl+'conversations', { sender_id: sender_id, recipient_id: recipient_id }, function (data) {
+                    window.location.replace(baseurl + 'conversations/' + data.conversation_id);
+                });
+            }
         }
     });
  
@@ -47,7 +55,7 @@ var ready = function () {
             var id = $(this).data('cid');
             chatBox.close(id);
         }else{
-            window.location.replace(baseurl + 'home');
+            window.history.back();
         }
     });
  

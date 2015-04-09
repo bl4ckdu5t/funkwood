@@ -64,7 +64,7 @@ var ready = function(){
 		}
 	});
 	// Fading out notifications
-	$(".notifier").filter(":visible").delay(9000).fadeOut('slow');;
+	$(".notifier").filter(":visible").delay(6000).fadeOut('slow');;
 	// Confirming user block
 	$(document).on('click','#blockUser', function(event){
 		swal({
