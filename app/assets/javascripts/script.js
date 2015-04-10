@@ -4,6 +4,37 @@ var ready = function(){
 	}else{
 		var baseurl = window.location.protocol + '//' + window.location.hostname + '/';
 	}
+	// Expandable Search button -> Inspired by http://codepen.io/nikhil/pen/qcyGF/
+	var submitIcon = $('.filters-search-icon');
+	var inputBox = $('.filters-search-input');
+	var searchBox = $('.filters-search');
+	var isOpen = false;
+	submitIcon.click(function(){
+		if(isOpen == false){
+			searchBox.css('width','300px');
+			inputBox.focus();
+			isOpen = true;
+		}else{
+			if(inputBox.val() != ''){
+				searchBox.submit();
+			}
+			searchBox.css('width', 0);
+			inputBox.focusout();
+			isOpen = false;
+		}
+	});
+	submitIcon.mouseup(function(){
+		return false;
+	});
+  searchBox.mouseup(function(){
+  	return false;
+  });
+  $(document).mouseup(function(){
+  	if(isOpen == true){
+  		$('.filters-search-icon').css('display','block');
+  		submitIcon.click();
+  	}
+  });
 	// Datepicker -> http://keith-wood.name/datepick.HTML
 	$('.date').datepick();
 	// Accepting and Declining appointments
