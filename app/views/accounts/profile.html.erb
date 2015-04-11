@@ -142,7 +142,7 @@
 <div class="remodal" data-remodal-id="gallery">
 	<h1 class="gallery-title">Photo Gallery</h1>
 	<em gallery-description>Select photos to upload</em>
-	<%= form_for @photo, html: {multipart: true} do |f| %>
+	<%= form_for @photo, remote: true, html: {multipart: true} do |f| %>
 		<div class="fileUpload">
 			<span>Select image</span>
 			<%= f.hidden_field :user_id, value: user_signed_in? ? current_user.id : '' %>
