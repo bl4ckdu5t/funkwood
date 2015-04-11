@@ -71,7 +71,7 @@
 				<div class="owl-carousel gallery-exhibit" id="owl-gallery">
 					<% if @photos.exists? %>
 						<% @photos.each do |image| %>
-							<%= image_tag image.photo.url(:thumb) %>
+							<%= image_tag image.photo.url(:medium) %>
 						<% end %>
 					<% end %>
 				</div>
