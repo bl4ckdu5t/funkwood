@@ -1575,10 +1575,10 @@ section{
 		content: '';
 		position: absolute;
 		left: 0;
-		top: 0;
+		bottom: 0;
 		z-index: 1;
-		background-image: linear-gradient(top, rgba($black, 0) 30%, rgba($black, .9) 70%);
-		height: 100%;
+		background-image: linear-gradient(top, rgba($black, 0) 10%, rgba($black, .9) 90%);
+		height: 30%;
 		width: 100%;
 	}
 }
