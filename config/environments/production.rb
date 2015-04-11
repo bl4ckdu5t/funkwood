@@ -85,6 +85,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  # Paperclipe Settings
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
@@ -94,4 +95,6 @@ Rails.application.configure do
     :bucket => ENV['S3_BUCKET_NAME'],
     :s3_host_name => 's3.amazonaws.com'
   }
+  # Telling Minifications not to mess up with AngularJS variables
+  config.assets.js_compressor = Uglifier.new(mangle: false)
 end
