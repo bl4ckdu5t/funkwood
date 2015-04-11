@@ -1,8 +1,13 @@
 class PhotosController < ApplicationController
 	before_action :authenticate_user!
+	layout false
 	def index
-		photos = Photo.where(user_id: current_user.id)
-		render json: { photos: photos.map{ |photo| photo.photo_file_name } }
+		@photos = Photo.where(user_id: current_user.id)
+		# if request.xhr?
+		# 	@photos = Photo.where(user_id: current_user.id)
+		# else
+		# 	render 'public/404.html',:layout => false, status: 404
+		# end
 	end
 	def create
 		photo = Photo.new(photo_params)

@@ -29,21 +29,23 @@ ready = ->
 	$('#new_photo').on("ajax:success", (e, data, status, xhr) ->
 		console.log data
 		$.get '/photos', (data) ->
-		  $('.gallery-preview').html('')
-		  arrayLength = data.photos.length
-		  i = 0
-		  while i < arrayLength
-		  	$('.gallery-preview').prepend('<img src="http://musterd8.s3.amazonaws.com/images/gallery/6/thumb/'+data.photos[i]+'" alt="preview">')
-		  	i++
+			console.log jQuery.parseJSON(data)
+		  # $('.gallery-preview').html('')
+		  # arrayLength = data.photos.length
+		  # i = 0
+		  # while i < arrayLength
+		  # 	$('.gallery-preview').prepend('<img src="http://musterd8.s3.amazonaws.com/images/gallery/'+data.user+'/thumb/'+data.photos[i]+'" alt="preview">')
+		  # 	i++
 	).on "ajax:error", (e, data, status, error) ->
 		console.log error
 		$.get '/photos', (data) ->
-		  $('.gallery-preview').html('')
-		  arrayLength = data.photos.length
-		  i = 0
-		  while i < arrayLength
-		  	$('.gallery-preview').prepend('<img src="http://musterd8.s3.amazonaws.com/images/gallery/6/thumb/'+data.photos[i]+'" alt="preview">')
-		  	i++
+			console.log jQuery.parseJSON(data)
+		  # $('.gallery-preview').html('')
+		  # arrayLength = data.photos.length
+		  # i = 0
+		  # while i < arrayLength
+		  # 	$('.gallery-preview').prepend('<img src="http://musterd8.s3.amazonaws.com/images/gallery/'+data.user+'/thumb/'+data.photos[i]+'" alt="preview">')
+		  # 	i++
 		return
 
 $(document).ready(ready)
