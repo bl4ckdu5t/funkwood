@@ -69,9 +69,11 @@
 				</svg>
 				<% end %>
 				<div class="owl-carousel gallery-exhibit" id="owl-gallery">
-					<% if @photos.exists? %>
-						<% @photos.each do |image| %>
+					<% if Photo.where(user_id: @user.user_id).exists? %>
+						<% Photo.where(user_id: @user.user_id).each do |image| %>
+							<%= link_to image.photo.url(:original), 'data-lightbox' => 'gallery', 'data-title' => "#{@user.fullname}" do %>
 							<%= image_tag image.photo.url(:medium) %>
+							<% end %>
 						<% end %>
 					<% end %>
 				</div>
