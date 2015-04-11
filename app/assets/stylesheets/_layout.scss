@@ -1145,14 +1145,20 @@ section{
 		position: relative;
 		background-color: #676C77;
 		min-height: 100px;
-		svg{
+		.uploader{
 			position: absolute;
 			right: 10px;
 			z-index: 10;
 			bottom: 10px;
+			cursor: pointer;
+			span{
+				font-size: 1.4rem;
+				color: $white;
+			}
+		}
+		svg{
 			width: 24px;
 			fill: $white;
-			cursor: pointer;
 		}
 	}
 	&-review{

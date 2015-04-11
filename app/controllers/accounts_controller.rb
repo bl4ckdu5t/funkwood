@@ -33,7 +33,6 @@ class AccountsController < ApplicationController
   	end
     @appointment = Appointment.new
     @photo = Photo.new
-    @photos = Photo.where(user_id: current_user.id)
   end
 
   def search
