@@ -1515,7 +1515,8 @@ section{
 .gallery{
 	&-preview{
 		width: 100%;
-		min-height: 200px;
+		height: 200px;
+		overflow: auto;
 		border: solid 2px #aaa;
 		margin: 10px 0;
 		text-align: left;
