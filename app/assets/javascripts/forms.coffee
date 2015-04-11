@@ -27,6 +27,8 @@ ready = ->
 		return
 
 	$('#new_photo').on 'ajax:success', (e, data, status, xhr) ->
-		window.location.replace(window.location.href)
+		$.get '/photos', (data) ->
+		  console.log data
+		  return
 
 $(document).ready(ready)
