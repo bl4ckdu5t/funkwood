@@ -2,7 +2,7 @@ class PhotosController < ApplicationController
 	before_action :authenticate_user!
 	def index
 		photos = Photo.where(user_id: current_user.id)
-		render json: { photos: photos.map{ |photo| [photo.photo_file_name] } }
+		render json: { photos: photos.map{ |photo| photo.photo_file_name } }
 	end
 	def create
 		photo = Photo.new(photo_params)
