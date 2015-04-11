@@ -32,6 +32,8 @@ class AccountsController < ApplicationController
       @user = Preference.find_by_user_id(profile) or render 'public/404.html',:layout => false, status: 404
   	end
     @appointment = Appointment.new
+    @photo = Photo.new
+    @photos = Photo.where(user_id: current_user.id)
   end
 
   def search

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   has_many :conversations, :foreign_key => :sender_id
+  has_many :photos, dependent: :destroy
 
   def online?
 	  updated_at > 10.minutes.ago

@@ -23,5 +23,6 @@
 //= require lightbox2/js/lightbox
 //= require datepick/jquery.plugin
 //= require datepick/jquery.datepick
+//= require angular/angular
 //= require jquery.remotipart
 //= require_tree .

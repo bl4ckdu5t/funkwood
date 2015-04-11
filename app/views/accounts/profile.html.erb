@@ -14,6 +14,7 @@
 					</svg>
 					Engaged to <a href="">Manoela</a>
 				</p>
+				<% if user_signed_in? && current_user.id == @user.user_id %>
 				<div class="user_profile-counters clearfix">
 					<div>
 						<%= link_to follower_path(@user.username.blank? ? @user.user_id : @user.username) do %>
@@ -26,6 +27,7 @@
 						<% end %>
 					</div>
 				</div>
+				<% end %>
 				<div class="user_profile-buttons">
 					<% if user_signed_in? %>
 						<% if @user.user_id.eql? current_user.id %>
@@ -61,9 +63,11 @@
 		</aside>
 		<div class="user_profile-content">
 			<div class="user_profile-gallery">
-				<svg viewBox="0 0 1040 1024">
+				<% if user_signed_in? && current_user.id == @user.user_id %>
+				<svg viewBox="0 0 1040 1024" data-remodal-target="gallery">
 					<path d="M851.328 946.784l-83.968-23.040-0.192-232.256 80.32 22.592 115.808-432.288-586.624-157.184-38.656 144.192h-66.176l59.616-222.464 710.176 190.272-190.304 710.176zM737.248 1024h-737.248v-735.264h737.248v735.264zM673.312 352.672h-609.376v447.52h609.376v-447.52zM251.168 671.776l73.056-118.144 73.056 73.632 100.448-151.264 105.056 260.288h-465.792l59.36-118.72 54.816 54.208zM207.488 546.752c-26.496 0-47.968-21.44-47.968-47.936s21.472-47.936 47.968-47.936 47.936 21.44 47.936 47.936-21.44 47.936-47.936 47.936z"></path>
 				</svg>
+				<% end %>
 			</div>
 			<div class="user_profile-review">
 				<h3>About</h3>
@@ -104,32 +108,54 @@
 	</div>
 </section>
 <!-- Modal for Arranging dates -->
-<div class="remodal" data-remodal-id="date">
-    <h1>Pick a date location</h1>
-    <ul class="places-list" id="js-date-picks">
-			<% unless @coordinates.blank? %>
-			<% @client.spots(@coordinates[0], @coordinates[1], types: @placeTypes).each do |x| %>
-				<li data-lat="<%= x.lat %>" data-lng="<%= x.lng %>" data-types="<%= x.types %>">
-					<strong><%= x.name %></strong> - <span><%= x.vicinity %></span> <%= image_tag x.icon %>
-				</li>
-			<% end %>
-			<% else %>
-			<li>It's taking too long to fetch places. Check your network</li>
-			<% end %>
-		</ul>
-		<span id="js-place-selected"></span>
-		<%= form_for @appointment, remote: true do |f| %>
-		<%= f.hidden_field :latitude %>
-		<%= f.hidden_field :longitude %>
-		<%= f.hidden_field :sender_id, value: user_signed_in? ? current_user.id : '' %>
-		<%= f.hidden_field :recipient_id, value: @user.user_id %>
-		<%= f.hidden_field :place %>
-		<div class="date-select invisible">
-			<%= f.label :date, "When:" %>
-			<%= f.text_field :date, class: 'date' %>
-		</div>
+<div class="remodal" id="js-remodal-appointment" data-remodal-id="date">
+  <h1>Pick a date location</h1>
+  <ul class="places-list" id="js-date-picks">
+		<% unless @coordinates.blank? %>
+		<% @client.spots(@coordinates[0], @coordinates[1], types: @placeTypes).each do |x| %>
+			<li data-lat="<%= x.lat %>" data-lng="<%= x.lng %>" data-types="<%= x.types %>">
+				<strong><%= x.name %></strong> - <span><%= x.vicinity %></span> <%= image_tag x.icon %>
+			</li>
 		<% end %>
-    <br>
-    <a class="remodal-cancel" href="#">Cancel</a>
-    <a class="remodal-confirm" href="#">OK</a>
+		<% else %>
+		<li>It's taking too long to fetch places. Check your network</li>
+		<% end %>
+	</ul>
+	<span id="js-place-selected"></span>
+	<%= form_for @appointment, remote: true do |f| %>
+	<%= f.hidden_field :latitude %>
+	<%= f.hidden_field :longitude %>
+	<%= f.hidden_field :sender_id, value: user_signed_in? ? current_user.id : '' %>
+	<%= f.hidden_field :recipient_id, value: @user.user_id %>
+	<%= f.hidden_field :place %>
+	<div class="date-select invisible">
+		<%= f.label :date, "When:" %>
+		<%= f.text_field :date, class: 'date' %>
+	</div>
+	<% end %>
+  <br>
+  <a class="remodal-cancel" href="#">Cancel</a>
+  <a class="remodal-confirm" href="#">OK</a>
+</div>
+
+<!-- modal for gallery selection -->
+<div class="remodal" data-remodal-id="gallery">
+	<h1 class="gallery-title">Photo Gallery</h1>
+	<em gallery-description>Select photos to upload</em>
+	<%= form_for @photo, html: {multipart: true} do |f| %>
+		<div class="fileUpload">
+			<span>Select image</span>
+			<%= f.file_field :photo, class: 'upload' %>
+		</div>
+	<% end %>
+	<div class="gallery-preview">
+		<% unless @photos.exists? %>
+			<p class="gallery-alert">There are no images uploaded yet</p>
+		<% else %>
+			<% @photos.each do |image| %>
+				<%= image_tag image.photo.url(:thumb) %>
+			<% end %>
+		<% end %>
+	</div>
+  <br>
 </div>

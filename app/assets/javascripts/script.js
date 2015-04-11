@@ -4,6 +4,10 @@ var ready = function(){
 	}else{
 		var baseurl = window.location.protocol + '//' + window.location.hostname + '/';
 	}
+	// Gallery upload
+	$(document).on('change','.fileUpload', function(){
+		$('#new_photo').submit();
+	});
 	// Expandable Search button -> Inspired by http://codepen.io/nikhil/pen/qcyGF/
 	var submitIcon = $('.filters-search-icon');
 	var inputBox = $('.filters-search-input');

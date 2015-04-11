@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+	resources :photos
 	get ':profile/appointments' => 'accounts#appointments', :as => :date
 	get ':profile/conversations' => 'accounts#conversations', :as => :follower
 	resources :appointments

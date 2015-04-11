@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="musterd8" ng-controller="appController">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Our Company description">
-	<meta name="author" content="Joseph Rex">
+	<meta name="description" content="{{description}}">
+	<meta name="author" content="{{author}}">
 	<meta name='user-id' content='<%= user_signed_in? ? current_user.id : "" %>'>
     <%= csrf_meta_tags %>
-	<title>Musterd8 online dating &dash; Find the love of your life</title>
+	<title>{{title}}</title>
 	<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Quicksand' rel='stylesheet' type='text/css'>
 	<%= stylesheet_link_tag    'application', media: 'all' %>
 	<link rel="shortcut icon" href="<%= root_url %>/favicon.png">
-	<link rel="author" href="http://ostrich-dev.com">
+	<link rel="author" href="{{authorURL}}">
 </head>
 <body>
 	<!--[if lt IE 7]>
