@@ -33,7 +33,7 @@ ready = ->
 		  arrayLength = data.photos.length
 		  i = 0
 		  while i < arrayLength
-		  	$('.gallery-preview').prepend(data.photos[i])
+		  	$('.gallery-preview').prepend('<img src="'+data.photos[i]+'" alt="preview">')
 		  	i++
 	).on "ajax:error", (e, data, status, error) ->
 		console.log error
@@ -42,7 +42,7 @@ ready = ->
 		  arrayLength = data.photos.length
 		  i = 0
 		  while i < arrayLength
-		  	$('.gallery-preview').prepend(data.photos[i])
+		  	$('.gallery-preview').prepend('<img src="'+data.photos[i]+'" alt="preview">')
 		  	i++
 		return
 
