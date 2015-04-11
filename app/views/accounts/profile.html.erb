@@ -145,6 +145,7 @@
 	<%= form_for @photo, html: {multipart: true} do |f| %>
 		<div class="fileUpload">
 			<span>Select image</span>
+			<%= f.hidden_field :user_id, value: user_signed_in? ? current_user.id : '' %>
 			<%= f.file_field :photo, class: 'upload' %>
 		</div>
 	<% end %>
