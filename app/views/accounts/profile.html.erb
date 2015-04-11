@@ -151,7 +151,7 @@
 	<em gallery-description>Select photos to upload</em>
 	<%= form_for @photo, remote: true, html: {multipart: true} do |f| %>
 		<div class="fileUpload">
-			<span>Select image</span>
+			<span>Upload image</span>
 			<%= f.hidden_field :user_id, value: user_signed_in? ? current_user.id : '' %>
 			<%= f.file_field :photo, class: 'upload' %>
 		</div>
