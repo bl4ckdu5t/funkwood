@@ -32,6 +32,8 @@ ready = ->
 		  console.log data
 	).on "ajax:error", (e, data, status, error) ->
 		console.log error
+		$.get '/photos', (data) ->
+		  console.log data
 		return
 
 $(document).ready(ready)
