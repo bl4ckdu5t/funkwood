@@ -1576,10 +1576,8 @@ section{
 		position: absolute;
 		left: 0;
 		top: 0;
-		background-image: linear-gradient(top, rgba($black, .8), rgba($black, .8));
-		@include breakpoint($breakpoint-tablet-landscape){
-			background-image: linear-gradient(top, rgba($black, 0) 30%, rgba($black, .9) 70%);
-		}
+		z-index: 1;
+		background-image: linear-gradient(top, rgba($black, 0) 30%, rgba($black, .9) 70%);
 		height: 100%;
 		width: 100%;
 	}
