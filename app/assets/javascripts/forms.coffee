@@ -29,11 +29,21 @@ ready = ->
 	$('#new_photo').on("ajax:success", (e, data, status, xhr) ->
 		console.log data
 		$.get '/photos', (data) ->
-		  console.log data
+		  $('.gallery-preview').html('')
+		  arrayLength = data.photos.length
+		  i = 0
+		  while i < arrayLength
+		  	$('.gallery-preview').prepend(data.photos[i])
+		  	i++
 	).on "ajax:error", (e, data, status, error) ->
 		console.log error
 		$.get '/photos', (data) ->
-		  console.log data
+		  $('.gallery-preview').html('')
+		  arrayLength = data.photos.length
+		  i = 0
+		  while i < arrayLength
+		  	$('.gallery-preview').prepend(data.photos[i])
+		  	i++
 		return
 
 $(document).ready(ready)
