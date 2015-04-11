@@ -728,9 +728,12 @@ section{
 		font-size: 1.5rem;
 	}
 }
-.owl-item{
+#owl-plugin .owl-item{
 	width: 100px !important;
 	text-align: center;
+}
+#owl-gallery .owl-item{
+	width: 200px !important;
 }
 .profile{
 	position: relative;
@@ -1538,6 +1541,12 @@ section{
 		font-weight: bold;
 		font-size: 3rem;
 		color: #999;
+	}
+	&-exhibit{
+		img{
+			width: 200px;
+			height: 200px;
+		}
 	}
 }
 .fileUpload {

@@ -132,6 +132,12 @@ var ready = function(){
 		stopOnHover: true,
 		lazyLoad: true
 	});
+	$('#owl-gallery').owlCarousel({
+		lazyLoad: true,
+		stopOnHover: true,
+		autoPlay: false,
+		items: 4
+	})
 	// Material preloader
 	var preloader = new $.materialPreloader({
     position: 'top',
