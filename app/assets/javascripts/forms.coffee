@@ -26,9 +26,12 @@ ready = ->
 		console.log(error)
 		return
 
-	$('#new_photo').on 'ajax:success', (e, data, status, xhr) ->
+	$('#new_photo').on("ajax:success", (e, data, status, xhr) ->
+		console.log data
 		$.get '/photos', (data) ->
 		  console.log data
-		  return
+	).on "ajax:error", (e, data, status, error) ->
+		console.log error
+		return
 
 $(document).ready(ready)
