@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.2.0"
+ruby "2.1.2"
 # Submitting multipart forms with ajax
 gem 'remotipart', '~> 1.2'
 # Geocoder for grabbing coordinates
