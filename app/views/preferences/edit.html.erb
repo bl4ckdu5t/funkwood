@@ -24,12 +24,14 @@
         <%= f.radio_button :relationship_type, 'one-night', id: 'one-night' %><label for="one-night">One night stand</label>
       </p>
   		<nav class="clearfix fr">
+        <% if current_user.sign_in_count > 1 %>
   			<%= link_to home_path, class: 'preference-nav preference-skip' do %>
   				<svg viewBox="0 0 1024 1024">
 						<path d="M85.76 896l895.573-384-895.573-384-0.427 298.667 640 85.333-640 85.333z"></path>
 					</svg>
   				Skip
   			<% end %>
+        <% end %>
   			<a href="javascript:void(0)" class="preference-nav preference-next" id="js-next-1">
   				<svg viewBox="0 0 1024 1024">
 						<path d="M512 341.333v-170.667l341.333 341.333-341.333 341.333v-170.667h-341.333v-341.333z"></path>

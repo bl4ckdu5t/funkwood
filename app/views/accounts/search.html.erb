@@ -9,24 +9,17 @@
 		</span>
 	<% end %>
 		<label for="">Filters:</label><br>
-		<select name="" id="">
-			<option value="">Gender</option>
-			<option value="">Male</option>
-			<option value="">Female</option>
+		<select name="" id="" class="filter">
+			<option disable selected>Gender</option>
+			<option ng-repeat="gender in genders" value="{{gender.value}}">{{gender.label}}</option>
 		</select>
-		<select name="" id="">
-			<option value="">Age range</option>
-			<option value="">18 - 29</option>
-			<option value="">30 - 39</option>
-			<option value="">40 - 50</option>
-			<option value="">51 - 70</option>
+		<select name="" id="" class="filter">
+			<option disable selected>Age range</option>
+			<option ng-repeat="ageRange in ageRanges" value="{{ageRange.value}}">{{ageRange.range}}</option>
 		</select>
-		<select name="" id="">
-			<option value="">Religion</option>
-			<option value="">Christian</option>
-			<option value="">Muslim</option>
-			<option value="">Atheist</option>
-			<option value="">Other</option>
+		<select name="" id="" class="filter">
+			<option disable selected>Religion</option>
+			<option ng-repeat="religion in religions" value="{{religion.value}}">{{religion.name}}</option>
 		</select>
 </div>
 <section class="search-area">

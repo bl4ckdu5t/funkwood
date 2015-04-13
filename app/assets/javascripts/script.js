@@ -4,6 +4,25 @@ var ready = function(){
 	}else{
 		var baseurl = window.location.protocol + '//' + window.location.hostname + '/';
 	}
+	// Filtering search
+	$(document).on('change', '.filter', function () {
+    var filters = $.map($('.filter').filter(function () {
+        return !!$(this).val() && $(this).val() !== 'a';
+    }), function (elm) {
+        return ['[data-', $(elm).data('filter'), '="', $(elm).val(), '"]'].join('');
+    }).join('');
+
+    if(filters.length > 0) {
+        var items = $('.apply-list h4'),
+        matches = items.filter(filters);
+        matches.closest('li').fadeIn();
+        console.log(filters);
+        items.not(matches).closest('li').stop().fadeOut();
+    } else {
+        $('.apply-list li').fadeIn();
+    }
+      
+  });
 	// Gallery upload
 	$(document).on('change','.fileUpload', function(){
 		$('#new_photo').submit();
