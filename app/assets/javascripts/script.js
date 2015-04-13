@@ -149,7 +149,8 @@ var ready = function(){
 	$("#owl-plugin").owlCarousel({
 		autoPlay: true,
 		stopOnHover: true,
-		lazyLoad: true
+		lazyLoad: true,
+		items: 6
 	});
 	$('#owl-gallery').owlCarousel({
 		lazyLoad: true,
