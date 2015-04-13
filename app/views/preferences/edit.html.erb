@@ -1,12 +1,17 @@
+<style>body{background: #fff; }</style>
 <section class="preference">
 	<h1 class="title">
   <%= link_to root_url do %>
   muster<span>d8</span>
   <% end %>
   </h1>
+  <nav class="preference-navigation clearfix">
+    <span class="chosen one"></span>
+    <span class="two"></span>
+    <span class="three"></span>
+  </nav>
   <%= form_for @preference, id: 'js-preference-form', remote: true do |f| %>
-  	<fieldset class="preference-section" id="js-form-1">
-  		<h3>Hello, <span id="js-visitor-name"><%= @preference.fullname %></span></h3>
+  	<fieldset class="preference-section" id="step-1">
       <%= f.hidden_field :fullname, class: 'js-visitor-name', value: "#{@preference.fullname}" %>
       <%= f.hidden_field :age, class: 'js-visitor-age', value: "#{@preference.age}" %>
       <%= f.hidden_field :gender, class: 'js-visitor-gender', value: "#{@preference.gender}" %>
@@ -41,7 +46,7 @@
   		</nav>
   	</fieldset>
 
-  	<fieldset class="preference-section ghost" id="js-form-2">
+  	<fieldset class="preference-section ghost" id="step-2">
       <%= f.label :partner_complexion, "Which is your preferred partner complexion?", class: 'preference-label' %>
       <p class="preference--line">
         <%= f.radio_button :partner_complexion, 'light-skin-partner', id: 'light-skin-partner' %><label for="light-skin-partner">Light Skinned</label>
@@ -62,6 +67,9 @@
       <p class="preference--line">
         <%= f.radio_button :partner_body_type, 'short-thick-partner', id: 'short-thick-partner' %><label for="short-thick-partner">Short and Thick</label>
       </p>
+      <p class="preference--line">
+        <%= f.radio_button :partner_body_type, 'average', id: 'average' %><label for="average">Average</label>
+      </p>
   		<nav class="clearfix fr">
   			<a href="javascript:void(0)" class='preference-nav preference-prev' id="js-prev-2">
   				<svg viewBox="0 0 1024 1024">
@@ -78,7 +86,7 @@
   		</nav>
   	</fieldset>
 
-  	<fieldset class="preference-section ghost" id="js-form-3">
+  	<fieldset class="preference-section ghost" id="step-3">
       <%= f.label :partner_working_class, "Which of these describes a partner you want", class: 'preference-label' %>
   		<p class="preference--line">
         <%= f.radio_button :partner_working_class, 'student', id: 'student_partner' %><label for="student_partner">Student</label>
@@ -91,10 +99,10 @@
   		</p>
       <%= f.label :partner_religion, "Which religion will you like a partner from?", class: 'preference-label' %>
   		<p class="preference--line">
-  			<%= f.radio_button :partner_religion, 'christianity', id: 'christianity_partner' %><label for="christianity_partner">Christianity</label>
+  			<%= f.radio_button :partner_religion, 'christian', id: 'christianity_partner' %><label for="christianity_partner">Christian</label>
   		</p>
   		<p class="preference--line">
-  			<%= f.radio_button :partner_religion, 'islam', id: 'islam_partner' %><label for="islam_partner">Islam</label>
+  			<%= f.radio_button :partner_religion, 'muslim', id: 'islam_partner' %><label for="islam_partner">Muslim</label>
   		</p>
       <p class="preference--line">
         <%= f.radio_button :partner_religion, 'atheist', id: 'atheist_partner' %><label for="atheist_partner">Atheist</label>
@@ -118,7 +126,7 @@
   		</nav>
   	</fieldset>
 
-  	<fieldset class="preference-section ghost" id="js-form-complete">
+  	<fieldset class="preference-section ghost" id="step-complete">
   		<div class="preference-complete">
   			<svg viewBox="0 0 1024 1024">
 					<path d="M384 689.92l-177.92-177.92-60.373 60.373 238.293 238.293 512-512-60.373-60.373z"></path>

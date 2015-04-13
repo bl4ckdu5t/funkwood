@@ -1,9 +1,10 @@
 ready = ->
 	$('.edit_preference').on("ajax:success", (e, data, status, xhr) ->
-		$('#js-form-4').hide()
-		$('#js-form-complete').show()
+		$('#step-4').hide()
+		$('#step-complete').show()
 	).on "ajax:error", (e, data, status, error) ->
-		$('#js-form-4').hide()
+		$('#step-4').hide()
+		console.log error
 		return
 
 	$('.user_profile-review form').on("ajax:success", (e, data, status, xhr) ->

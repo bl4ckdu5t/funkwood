@@ -319,29 +319,41 @@ var ready = function(){
 	}
   // Multisite Form navigation
   $('#js-next-1').click(function(){
-  	$('#js-form-1').hide();
-  	$('#js-form-2').show();
+  	$('#step-1').hide();
+  	$('#step-2').show();
+  	$('.preference-navigation > span').removeClass('chosen');
+  	$('.preference-navigation .two').addClass('chosen');
   });
   $('#js-next-2').click(function(){
-  	$('#js-form-2').hide();
-  	$('#js-form-3').show();
+  	$('#step-2').hide();
+  	$('#step-3').show();
+  	$('.preference-navigation > span').removeClass('chosen');
+  	$('.preference-navigation .three').addClass('chosen');
   });
   $('#js-next-3').click(function(){
-  	$('#js-form-3').hide();
-  	$('#js-form-4').show();
+  	$('#step-3').hide();
+  	$('#step-4').show();
+  	$('.preference-navigation > span').removeClass('chosen');
+  	$('.preference-navigation .four').addClass('chosen');
   });
 
   $('#js-prev-2').click(function(){
-  	$('#js-form-2').hide();
-  	$('#js-form-1').show();
+  	$('#step-2').hide();
+  	$('#step-1').show();
+  	$('.preference-navigation > span').removeClass('chosen');
+  	$('.preference-navigation .one').addClass('chosen');
   });
   $('#js-prev-3').click(function(){
-  	$('#js-form-3').hide();
-  	$('#js-form-2').show();
+  	$('#step-3').hide();
+  	$('#step-2').show();
+  	$('.preference-navigation > span').removeClass('chosen');
+  	$('.preference-navigation .two').addClass('chosen');
   });
   $('#js-prev-4').click(function(){
-  	$('#js-form-4').hide();
-  	$('#js-form-3').show();
+  	$('#step-4').hide();
+  	$('#step-3').show();
+  	$('.preference-navigation > span').removeClass('chosen');
+  	$('.preference-navigation .three').addClass('chosen');
   });
 };
 // Ready Pages
