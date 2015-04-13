@@ -1605,3 +1605,21 @@ section{
 		width: 100%;
 	}
 }
+$color-remodal: #16A085;
+.remodal-button{
+	color: $color-remodal;
+	border: 2px solid $color-remodal;
+	background: #F4F4F4;
+	border-radius: 6px;
+	font-size: 1.4rem;
+	width: 120px;
+	padding: 8px 2px;
+	display: inline-block;
+	margin: 0 0 5px;
+	text-align: center;
+	transition: all 0.2s ease-out 0s;
+	&:hover{
+		background: $color-remodal;
+		color: $white;
+	}
+}

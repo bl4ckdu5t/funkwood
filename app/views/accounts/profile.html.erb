@@ -1,3 +1,6 @@
+<% content_for :head do %>
+	<title>Musterd8 - <%= @user.fullname.present? ? @user.fullname : User.find(@user.user_id).email %></title>
+<% end %>
 <section class="user_profile">
 	<div class="user_profile-wrapper clearfix">
 		<aside class="user_profile-aside">
@@ -173,4 +176,10 @@
 		<% end %>
 	</div>
   <br>
+</div>
+<!-- modal for unsigned in users -->
+<div class="remodal" data-remodal-id="unsigned">
+	<h1>Join musterd8 and meet people</h1>
+	<%= link_to 'Register now', root_path, class: 'remodal-button' %>
+	<%= link_to 'Log in', new_user_session_path, class: 'remodal-cancel' %>
 </div>

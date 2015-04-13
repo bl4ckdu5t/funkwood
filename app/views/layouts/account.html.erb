@@ -7,8 +7,12 @@
 	<meta name="description" content="{{description}}">
 	<meta name="author" content="{{author}}">
 	<meta name='user-id' content='<%= user_signed_in? ? current_user.id : "" %>'>
-    <%= csrf_meta_tags %>
+  <%= csrf_meta_tags %>
+  <% if params[:action] == 'profile' %>
+  <%= yield :head %>
+  <% else %>
 	<title>Musterd8 online dating - Find the love of your life</title>
+	<% end %>
 	<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Quicksand' rel='stylesheet' type='text/css'>
 	<%= stylesheet_link_tag    'application', media: 'all' %>
 	<link rel="shortcut icon" href="<%= root_url %>/favicon.png">
@@ -130,6 +134,12 @@
 	<audio id="chatAudio"><source src="<%= root_url %>sounds/notification.mp3" type="audio/mpeg"></audio>
 	<!-- JS -->
 	<%= javascript_include_tag 'application' %>
+	<% unless user_signed_in? %>
+	<script>
+	    var options = {};
+	    $('[data-remodal-id=unsigned]').remodal(options).open();
+	</script>
+	<% end %>
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
