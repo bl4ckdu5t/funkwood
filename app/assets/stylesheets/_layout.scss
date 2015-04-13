@@ -1410,6 +1410,9 @@ section{
 		padding: 20px 10px;
 		margin-right: 10px;
 		margin-bottom: 10px;
+		h3{
+			@include ellipsis-line(200px);
+		}
 	}
 	img{
 		width: 150px;

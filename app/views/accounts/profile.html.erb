@@ -93,7 +93,9 @@
 					<li><strong data-value="<%= @user.gender %>" id="genderLabel">Gender:</strong> <%= @user.gender %></li>
 					<li><strong data-value="<%= @user.height %>" id="heightLabel">Height:</strong> <%= @user.height %></li>
 					<li><strong data-value="<%= @user.weight %>" id="weightLabel">Weight:</strong> <%= @user.weight %></li>
+					<% if user_signed_in? && current_user.id == @user.user_id %>
 					<li><strong data-value="<%= @user.age %>" id="ageLabel">Age:</strong> <%= @user.age %></li>
+					<% end %>
 					<li><strong data-value="<%= @user.body_type %>" id="body_typeLabel">Body type:</strong> <%= @user.body_type %></li>
 					<li><strong data-value="<%= @user.complexion %>" id="complexionLabel">Complexion:</strong> <%= @user.complexion %></li>
 					<li><strong data-value="<%= @user.religion %>" id="religionLabel">Religion:</strong> <%= @user.religion %></li>

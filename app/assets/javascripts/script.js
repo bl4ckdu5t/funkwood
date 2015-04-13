@@ -13,13 +13,13 @@ var ready = function(){
     }).join('');
 
     if(filters.length > 0) {
-        var items = $('.apply-list h4'),
+        var items = $('.showcase-item h3'),
         matches = items.filter(filters);
-        matches.closest('li').fadeIn();
+        matches.closest('.showcase-item').fadeIn();
         console.log(filters);
-        items.not(matches).closest('li').stop().fadeOut();
+        items.not(matches).closest('.showcase-item').stop().fadeOut();
     } else {
-        $('.apply-list li').fadeIn();
+        $('.showcase .showcase-item').fadeIn();
     }
       
   });

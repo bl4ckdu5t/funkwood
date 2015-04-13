@@ -9,15 +9,15 @@
 		</span>
 	<% end %>
 		<label for="">Filters:</label><br>
-		<select name="" id="" class="filter">
+		<select name="" id="" class="filter" data-filter="gender">
 			<option disable selected>Gender</option>
 			<option ng-repeat="gender in genders" value="{{gender.value}}">{{gender.label}}</option>
 		</select>
-		<select name="" id="" class="filter">
+		<select name="" id="" class="filter" data-filter="age">
 			<option disable selected>Age range</option>
 			<option ng-repeat="ageRange in ageRanges" value="{{ageRange.value}}">{{ageRange.range}}</option>
 		</select>
-		<select name="" id="" class="filter">
+		<select name="" id="" class="filter" data-filter="religion">
 			<option disable selected>Religion</option>
 			<option ng-repeat="religion in religions" value="{{religion.value}}">{{religion.name}}</option>
 		</select>
@@ -32,9 +32,11 @@
 		<% @results.each do |user| %>
 		<div class="showcase-item">
 			<%= image_tag user.avatar(:thumb) %>
-			<h3><a href="<%= root_url %>user/<%= Preference.find_by(user_id: user.id).username.blank? ? user.id : Preference.find_by(user_id: user.id).username %>">
-				<%= user.fullname %>
-			</a></h3>
+			<h3 data-gender="<%= user.gender %>" data-age="<%= user.age %>" data-religion="<%= user.religion %>">
+				<a href="<%= root_url %>user/<%= Preference.find_by(user_id: user.id).username.blank? ? user.id : Preference.find_by(user_id: user.id).username %>">
+					<%= user.fullname %>
+				</a>
+			</h3>
 			<div class="user_profile-buttons">
 				<% if Chat.between(current_user.id, user.user_id).present? && Chat.between(current_user.id, user.user_id).first.accepted === false %>
 				<button class="button disabled">Request pending</button>
