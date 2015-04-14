@@ -10,15 +10,15 @@
 	<% end %>
 		<label for="">Filters:</label><br>
 		<select name="" id="" class="filter" data-filter="gender">
-			<option disable selected>Gender</option>
+			<option disable selected value="a">Gender</option>
 			<option ng-repeat="gender in genders" value="{{gender.value}}">{{gender.label}}</option>
 		</select>
 		<select name="" id="" class="filter" data-filter="age">
-			<option disable selected>Age range</option>
+			<option disable selected value="a">Age range</option>
 			<option ng-repeat="ageRange in ageRanges" value="{{ageRange.value}}">{{ageRange.range}}</option>
 		</select>
 		<select name="" id="" class="filter" data-filter="religion">
-			<option disable selected>Religion</option>
+			<option disable selected value="a">Religion</option>
 			<option ng-repeat="religion in religions" value="{{religion.value}}">{{religion.name}}</option>
 		</select>
 </div>
