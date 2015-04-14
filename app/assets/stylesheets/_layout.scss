@@ -1638,3 +1638,16 @@ $color-remodal: #16A085;
 		color: $white;
 	}
 }
+.ads{
+	width: 320px;
+	position: absolute;
+	top: 20px;
+	right: 200px;
+	@include breakpoint($breakpoint-tablet-portrait){
+		position: relative;
+		top: auto;
+		right: auto;
+		left: 50%;
+		margin-left: -35%;
+	}
+}
