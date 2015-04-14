@@ -103,6 +103,9 @@ var ready = function(){
 			$('#uploadAvatar').trigger('click');
 		}
 	});
+	$('.preference-avatar').click(function(){
+		$('#uploadAvatar').trigger('click');
+	});
 	$('#uploadAvatar').change(function(){
 		var s = this;
 		if(this.files && this.files[0]){
@@ -113,6 +116,11 @@ var ready = function(){
 					content: ""
 				});
 				$(".user_profile-avatar::before").addRule("background-size: 100%");
+				$('.preference-avatar').css({
+					'background': 'url('+e.target.result+')',
+					'background-size': '100%',
+					'color': 'transparent'
+				});
 			}
 			reader.readAsDataURL(this.files[0]);
 		}

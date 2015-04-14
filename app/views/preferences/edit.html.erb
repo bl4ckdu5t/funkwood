@@ -9,6 +9,7 @@
     <span class="chosen one"></span>
     <span class="two"></span>
     <span class="three"></span>
+    <span class="four"></span>
   </nav>
   <%= form_for @preference, id: 'js-preference-form', remote: true do |f| %>
   	<fieldset class="preference-section" id="step-1">
@@ -117,14 +118,28 @@
 					</svg>
   				Previous
   			</a>
-  			<button class="preference-nav preference-submit" id="js-next-3" type="submit">
-  				<svg viewBox="0 0 1024 1024">
-						<path d="M810.667 42.667h-597.333c-47.147 0-84.907 38.187-84.907 85.333l-0.427 551.893c0 29.44 14.933 55.467 37.547 70.827l346.24 230.613 346.24-230.613c22.613-15.36 37.547-41.387 37.547-70.827l0.427-551.893c0-47.147-38.187-85.333-85.333-85.333zM426.667 682.667l-213.333-213.333 60.373-60.373 152.96 152.96 323.627-323.627 60.373 60.373-384 384z"></path>
-					</svg>
-  				Submit
-  			</button>
+        <a href="javascript:void(0)" class="preference-nav preference-next" id="js-next-3">
+          <svg viewBox="0 0 1024 1024">
+            <path d="M512 341.333v-170.667l341.333 341.333-341.333 341.333v-170.667h-341.333v-341.333z"></path>
+          </svg>
+          Next
+        </a>
   		</nav>
   	</fieldset>
+
+    <fieldset class="preference-section ghost" id="step-4">
+      <%= f.label :avatar, "Give your profile a face", class: 'preference-label' %>
+      <div class="preference-avatar">Click to <br>upload</div>
+      <%= f.file_field :avatar, accept: 'image/png,image/gif,image/jpeg, image/jpg',id: 'uploadAvatar', class: 'invisible' %>
+      <nav>
+        <button class="preference-nav preference-submit" type="submit">
+          <svg viewBox="0 0 1024 1024">
+            <path d="M810.667 42.667h-597.333c-47.147 0-84.907 38.187-84.907 85.333l-0.427 551.893c0 29.44 14.933 55.467 37.547 70.827l346.24 230.613 346.24-230.613c22.613-15.36 37.547-41.387 37.547-70.827l0.427-551.893c0-47.147-38.187-85.333-85.333-85.333zM426.667 682.667l-213.333-213.333 60.373-60.373 152.96 152.96 323.627-323.627 60.373 60.373-384 384z"></path>
+          </svg>
+          Submit
+        </button>
+      </nav>
+    </fieldset>
 
   	<fieldset class="preference-section ghost" id="step-complete">
   		<div class="preference-complete">
