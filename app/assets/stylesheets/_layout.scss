@@ -59,9 +59,8 @@ input, select{
 		height: $top-height + 50px;
 		text-align: center;
 		[data-button]{
-			left: 0;
-			right: 0;
-			margin: 0 auto;
+			left: 50%;
+			margin-left: -70px;
 			top: 60px;
 		}
 	}
