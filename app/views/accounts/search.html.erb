@@ -32,7 +32,17 @@
 		<% @results.each do |user| %>
 		<div class="showcase-item">
 			<%= image_tag user.avatar(:thumb) %>
-			<h3 data-gender="<%= user.gender %>" data-age="<%= user.age %>" data-religion="<%= user.religion %>">
+			<h3 data-gender="<%= user.gender %>"
+				<% if user.age.to_i < 30 %>
+				data-age="1"
+				<% elsif user.age.to_i < 40 %>
+				data-age="2"
+				<% elsif user.age.to_i < 51 %>
+				data-age="3"
+				<% elsif user.age.to_i < 71 %>
+				data-age="4"
+				<% end %>
+				data-religion="<%= user.religion %>">
 				<a href="<%= root_url %>user/<%= Preference.find_by(user_id: user.id).username.blank? ? user.id : Preference.find_by(user_id: user.id).username %>">
 					<%= user.fullname %>
 				</a>
