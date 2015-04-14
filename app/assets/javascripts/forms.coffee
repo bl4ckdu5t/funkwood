@@ -4,7 +4,7 @@ ready = ->
 		$('#step-complete').show()
 	).on "ajax:error", (e, data, status, error) ->
 		$('#step-4').hide()
-		console.log error
+		$('#step-complete').show()
 		return
 
 	$('.user_profile-review form').on("ajax:success", (e, data, status, xhr) ->
