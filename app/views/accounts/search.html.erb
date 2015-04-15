@@ -42,7 +42,7 @@
 				<% elsif user.age.to_i < 71 %>
 				data-age="4"
 				<% end %>
-				data-religion="<%= user.religion %>">
+				data-religion="<%= "#{user.religion}".downcase %>">
 				<a href="<%= root_url %>user/<%= Preference.find_by(user_id: user.id).username.blank? ? user.id : Preference.find_by(user_id: user.id).username %>">
 					<%= user.fullname %>
 				</a>
