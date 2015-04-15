@@ -148,7 +148,7 @@
 				</svg>
   		</div>
 			<h2>Done!</h2>
-			<%= link_to home_path, class: 'preference-nav preference-skip' do %>
+			<%= link_to current_user.sign_in_count > 1 ? home_path : search_path, class: 'preference-nav preference-skip' do %>
 				<svg viewBox="0 0 1024 1024">
 					<path d="M85.76 896l895.573-384-895.573-384-0.427 298.667 640 85.333-640 85.333z"></path>
 				</svg>
