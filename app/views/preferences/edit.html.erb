@@ -13,7 +13,6 @@
   </nav>
   <%= form_for @preference, id: 'js-preference-form', remote: true do |f| %>
   	<fieldset class="preference-section" id="step-1">
-      <%= f.hidden_field :fullname, class: 'js-visitor-name', value: "#{@preference.fullname}" %>
       <%= f.hidden_field :age, class: 'js-visitor-age', value: "#{@preference.age}" %>
       <%= f.hidden_field :gender, class: 'js-visitor-gender', value: "#{@preference.gender}" %>
       <%= f.label :relationship_type, "What kind of relationship do you seek?", class: 'preference-label' %>
@@ -130,6 +129,7 @@
     <fieldset class="preference-section ghost" id="step-4">
       <%= f.label :avatar, "Give your profile a face", class: 'preference-label' %>
       <div class="preference-avatar">Click to <br>upload</div>
+      <%= f.text_field :fullname, class: 'js-visitor-name', value: "#{@preference.fullname}", placeholder: 'Your Name' %>
       <%= f.file_field :avatar, accept: 'image/png,image/gif,image/jpeg, image/jpg',id: 'uploadAvatar', class: 'invisible' %>
       <nav>
         <button class="preference-nav preference-submit" type="submit">

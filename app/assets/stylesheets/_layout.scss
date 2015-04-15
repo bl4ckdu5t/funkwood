@@ -1067,6 +1067,12 @@ section{
 		margin: 0 auto;
 		font-size: 1.5rem;
 		color: #ccc;
+		+ [type=text]{
+			margin-top: 10px;
+			background: $white;
+			border: none;
+			border-bottom: solid thin #ddd;
+		}
 	}
 }
 .user_profile{
