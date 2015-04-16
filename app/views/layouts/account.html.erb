@@ -4,14 +4,14 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="{{description}}">
+	<meta name="description" content=" The unparalleled dating site for those looking for casual and serious relationships">
 	<meta name="author" content="{{author}}">
 	<meta name='user-id' content='<%= user_signed_in? ? current_user.id : "" %>'>
   <%= csrf_meta_tags %>
   <% if params[:action] == 'profile' %>
   <%= yield :head %>
   <% else %>
-	<title>Musterd8 online dating - Find the love of your life</title>
+	<title>Musterd8 online dating - Free online dating</title>
 	<% end %>
 	<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Quicksand' rel='stylesheet' type='text/css'>
 	<%= stylesheet_link_tag    'application', media: 'all' %>

@@ -21,6 +21,10 @@
 			<option selected value="a">Religion</option>
 			<option ng-repeat="religion in religions" value="{{religion.value}}">{{religion.name}}</option>
 		</select>
+		<select name="" id="" class="filter" data-filter="status">
+			<option value="a" selected>Status</option>
+			<option ng-repeat="status in statuses" value="{{status}}">{{status | capitalize}}</option>
+		</select>
 </div>
 <section class="search-area">
 	<h2>Search Results...</h2>
@@ -42,6 +46,7 @@
 				<% elsif user.age.to_i < 71 %>
 				data-age="4"
 				<% end %>
+				data-status="<%= User.find(user.user_id).online? ? 'online':'offline' %>"
 				data-religion="<%= "#{user.religion}".downcase %>">
 				<a href="<%= root_url %>user/<%= Preference.find_by(user_id: user.id).username.blank? ? user.id : Preference.find_by(user_id: user.id).username %>">
 					<%= user.fullname %>

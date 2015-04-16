@@ -1,5 +1,9 @@
 var app = angular.module('musterd8', [])
-
+.filter('capitalize', function() {
+  return function(input, all) {
+    return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
+  }
+})
 .controller('appController', ['$scope',function($scope){
 	$scope.title = 'Musterd8 online dating - Find the love of your life';
 	$scope.description = 'Musterd8 is an online dating website to find partners. It includes instant feature and date locator';
@@ -33,6 +37,7 @@ var app = angular.module('musterd8', [])
 			value: 4
 		}
 	];
+	$scope.statuses = ['online', 'offline'];
 	$scope.religions = [
 		{
 			name: "Christian",
